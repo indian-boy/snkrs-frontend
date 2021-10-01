@@ -15,3 +15,10 @@ export const Primary = Template.bind({});
 Primary.args = {
   label: 'Label',
 };
+
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+  label: 'Label',
+  disabled: true,
+};
