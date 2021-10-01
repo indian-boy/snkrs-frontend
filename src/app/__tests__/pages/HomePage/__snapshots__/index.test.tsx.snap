@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> should render and match the snapshot 1`] = `
+<React.Fragment>
+  <Helmet
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      _NOT_TRANSLATED_
+      Home Page
+    </title>
+    <meta
+      content={
+        Array [
+          "_NOT_TRANSLATED_",
+          "Home Page - Meta Content",
+        ]
+      }
+      name="description"
+    />
+  </Helmet>
+  <span>
+    HomePage container
+  </span>
+</React.Fragment>
+`;

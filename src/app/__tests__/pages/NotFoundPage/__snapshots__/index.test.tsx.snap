@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFoundPage /> should render and match the snapshot 1`] = `
+<React.Fragment>
+  <Helmet
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      _NOT_TRANSLATED_
+      Not Found Page
+    </title>
+    <meta
+      content={
+        Array [
+          "_NOT_TRANSLATED_",
+          "Not Found Page - Meta Content",
+        ]
+      }
+      name="description"
+    />
+  </Helmet>
+  <NotFoundPage__Wrapper>
+    <NotFoundPage__Title>
+      4
+      <span
+        aria-label="Crying Face"
+        role="img"
+      >
+        😢
+      </span>
+      4
+    </NotFoundPage__Title>
+    <NotFoundPage__Message>
+      _NOT_TRANSLATED_
+      Page not found.
+    </NotFoundPage__Message>
+  </NotFoundPage__Wrapper>
+</React.Fragment>
+`;
