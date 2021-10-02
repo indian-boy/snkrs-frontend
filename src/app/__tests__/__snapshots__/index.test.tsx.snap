@@ -12,6 +12,8 @@ exports[`<App /> should render and match the snapshot 1`] = `
         "secondary": Object {
           "default": "#FFFFFF",
           "s200": "#F7F7F7",
+          "s300": "#D6D6D6",
+          "s500": "#737373",
         },
         "success": Object {
           "s300": "#006611",

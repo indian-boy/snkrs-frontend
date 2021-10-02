@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import styled, { css, ThemeProvider } from 'styled-components/macro';
+
 import { mainTheme } from 'styles/themes/main-theme';
 import { ConvertHexToRGBA } from 'utils/helpers';
 
@@ -20,7 +21,7 @@ export const Button = memo(({ onClick, label, ...props }: Props) => {
 });
 
 const ButtonWrapper = styled.button<{ secondary?: boolean }>`
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.5rem;
   border-radius: 3.125rem;
   font-style: normal;
   font-weight: bold;

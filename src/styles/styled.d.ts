@@ -10,6 +10,8 @@ declare module 'styled-components' {
       secondary: {
         default: string;
         s200: string;
+        s300: string;
+        s500: string;
       };
       success: {
         s300: string;

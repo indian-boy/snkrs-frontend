@@ -9,6 +9,8 @@ export const mainTheme: DefaultTheme = {
     secondary: {
       default: '#FFFFFF',
       s200: '#F7F7F7',
+      s300: '#D6D6D6',
+      s500: '#737373',
     },
     success: {
       s300: '#006611',

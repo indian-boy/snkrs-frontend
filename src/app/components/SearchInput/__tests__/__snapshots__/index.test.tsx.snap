@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchInput  /> should match snapshot 1`] = `
+.c0 {
+  position: relative;
+}
+
+.c0::before {
+  position: absolute;
+  content: '';
+  background-image: url(magnifier.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+  z-index: 10000;
+  left: 1rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.c1 {
+  font-size: 1rem;
+  padding: 0.85rem 2.5rem;
+  outline: none;
+  border-radius: 3.125rem;
+  background-color: #FFFFFF;
+  border: 1px solid #D6D6D6;
+  color: #737373;
+}
+
+.c1::-webkit-search-decoration,
+.c1::-webkit-search-cancel-button,
+.c1::-webkit-search-results-button,
+.c1::-webkit-search-results-decoration {
+  display: none;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #737373;
+  opacity: 1;
+}
+
+.c1::-moz-placeholder {
+  color: #737373;
+  opacity: 1;
+}
+
+.c1:-ms-input-placeholder {
+  color: #737373;
+  opacity: 1;
+}
+
+.c1::placeholder {
+  color: #737373;
+  opacity: 1;
+}
+
+.c1:-ms-input-placeholder {
+  color: #737373;
+}
+
+.c1::-ms-input-placeholder {
+  color: #737373;
+}
+
+<label
+  class="c0"
+>
+  <input
+    class="c1"
+    type="search"
+  />
+</label>
+`;
