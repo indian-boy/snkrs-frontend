@@ -5,27 +5,10 @@ exports[`<SearchInput  /> should match snapshot 1`] = `
   position: relative;
 }
 
-.c0::before {
-  position: absolute;
-  content: '';
-  background-image: url(magnifier.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 1rem;
-  height: 1rem;
-  z-index: 10000;
-  left: 1rem;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
 .c1 {
   font-size: 1rem;
-  padding: 0.85rem 2.5rem;
+  padding: 0.85rem 2.5rem 0.85rem 0.5rem;
   outline: none;
-  border-radius: 3.125rem;
   background-color: #FFFFFF;
   border: 1px solid #D6D6D6;
   color: #737373;
