@@ -23,7 +23,6 @@ const Template: ComponentStory<typeof Dropdown> = args => {
 export const Primary = Template.bind({});
 
 Primary.args = {
-  uniqueId: Math.random().toString(36).substr(2, 13),
   label: 'Dropdown',
   options: [
     { key: 1, selected: false, title: 'Option #1' },

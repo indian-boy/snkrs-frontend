@@ -17,4 +17,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   type: 'search',
   placeholder: 'Placeholder',
+  showSearchIcon: true,
+  isRounded: true,
 };

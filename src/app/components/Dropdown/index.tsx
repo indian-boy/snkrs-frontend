@@ -10,7 +10,6 @@ export interface Option {
 }
 
 interface Props {
-  uniqueId: string;
   label: string;
   options: Option[];
   setOptionSelected: React.Dispatch<React.SetStateAction<Option | undefined>>;
@@ -18,13 +17,9 @@ interface Props {
 }
 
 export const Dropdown = memo(
-  ({
-    uniqueId,
-    label,
-    options,
-    optionSelectedState,
-    setOptionSelected,
-  }: Props) => {
+  ({ label, options, optionSelectedState, setOptionSelected }: Props) => {
+    const ref = React.useRef<HTMLDetailsElement>(null);
+
     useEffect(() => {
       if (!optionSelectedState) {
         const [firstOption] = options;
@@ -38,7 +33,7 @@ export const Dropdown = memo(
     };
 
     const closeSummary = () => {
-      document.getElementById(uniqueId)?.removeAttribute('open');
+      ref.current?.removeAttribute('open');
     };
 
     return (
@@ -46,7 +41,7 @@ export const Dropdown = memo(
         <Wrapper>
           <FieldSet>
             <Legend>{optionSelectedState?.title || label}</Legend>
-            <Details id={uniqueId}>
+            <Details ref={ref}>
               <Sumary>{optionSelectedState?.title || label}</Sumary>
               <Options>
                 {options.map((item, index) => {
