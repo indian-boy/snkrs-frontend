@@ -15,13 +15,12 @@ import { GlobalStyles } from 'styles/global-styles';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
-import { mainTheme } from 'styles/themes/main-theme';
-import { ThemeProvider } from 'styled-components';
+import Theme from 'styles/themes/main-theme';
 
 export function App() {
   const { i18n } = useTranslation();
   return (
-    <ThemeProvider theme={mainTheme}>
+    <Theme>
       <BrowserRouter>
         <Helmet
           titleTemplate="%s - SNKRS App"
@@ -36,6 +35,6 @@ export function App() {
         </Switch>
         <GlobalStyles />
       </BrowserRouter>
-    </ThemeProvider>
+    </Theme>
   );
 }

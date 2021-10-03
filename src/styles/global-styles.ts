@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: Metropolis, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Metropolis, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     background: ${props => props.theme.palette.secondary.default};
   }

@@ -16,7 +16,7 @@ jest.mock('react-i18next', () => ({
 
 describe('<SearchInput  />', () => {
   it('should match snapshot', () => {
-    const loadingIndicator = render(<SearchInput type="search" />);
-    expect(loadingIndicator.container.firstChild).toMatchSnapshot();
+    const searchInput = render(<SearchInput type="search" />);
+    expect(searchInput.container.firstChild).toMatchSnapshot();
   });
 });

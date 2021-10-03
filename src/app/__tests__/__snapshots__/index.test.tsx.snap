@@ -1,27 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> should render and match the snapshot 1`] = `
-<Unknown
-  theme={
-    Object {
-      "palette": Object {
-        "primary": Object {
-          "default": "#000000",
-          "p700": "#1A1A1A",
-        },
-        "secondary": Object {
-          "default": "#FFFFFF",
-          "s200": "#F7F7F7",
-          "s300": "#D6D6D6",
-          "s500": "#737373",
-        },
-        "success": Object {
-          "s300": "#006611",
-        },
-      },
-    }
-  }
->
+<Theme>
   <BrowserRouter>
     <Helmet
       defaultTitle="SNKRS App"
@@ -51,5 +31,5 @@ exports[`<App /> should render and match the snapshot 1`] = `
     </Switch>
     <Memo(l) />
   </BrowserRouter>
-</Unknown>
+</Theme>
 `;

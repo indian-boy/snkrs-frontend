@@ -33,7 +33,7 @@ exports[`<Button  /> should match snapshot 1`] = `
   border: none;
   background-color: #000000;
   color: #FFFFFF;
-  box-shadow: 0px 0.2rem 0.5rem rgba(0,0,0,0.1);
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
 }
 
 .c0:focus,

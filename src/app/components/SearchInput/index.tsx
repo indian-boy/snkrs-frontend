@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
-import styled, { css, ThemeProvider } from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
-import { mainTheme } from 'styles/themes/main-theme';
+import Theme from 'styles/themes/main-theme';
 import MagnifierIcon from 'assets/svgs/icons/magnifier.svg';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -11,15 +11,15 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 
 export const SearchInput = memo(({ secondary, type, ...props }: Props) => {
   return (
-    <ThemeProvider theme={mainTheme}>
-      <LabelWrapper>
+    <Theme>
+      <Label>
         <SearchInputWrapper type={type} {...props}></SearchInputWrapper>
-      </LabelWrapper>
-    </ThemeProvider>
+      </Label>
+    </Theme>
   );
 });
 
-const LabelWrapper = styled.label`
+const Label = styled.label`
   position: relative;
 
   ::before {

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
-import styled, { css, ThemeProvider } from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
-import { mainTheme } from 'styles/themes/main-theme';
+import Theme from 'styles/themes/main-theme';
 import { ConvertHexToRGBA } from 'utils/helpers';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,11 +12,11 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = memo(({ onClick, label, ...props }: Props) => {
   return (
-    <ThemeProvider theme={mainTheme}>
+    <Theme>
       <ButtonWrapper onClick={onClick} type="button" {...props}>
         {label}
       </ButtonWrapper>
-    </ThemeProvider>
+    </Theme>
   );
 });
 
@@ -53,7 +53,7 @@ const ButtonWrapper = styled.button<{ secondary?: boolean }>`
     css`
       background-color: ${props.theme.palette.primary.default};
       color: ${props.theme.palette.secondary.default};
-      box-shadow: 0px 0.2rem 0.5rem
+      box-shadow: 0 0.2rem 0.5rem
         ${ConvertHexToRGBA(props.theme.palette.primary.default, 0.1)};
 
       :hover,
@@ -70,7 +70,7 @@ const ButtonWrapper = styled.button<{ secondary?: boolean }>`
     css`
       background-color: ${props.theme.palette.secondary.default};
       color: ${props.theme.palette.primary.default};
-      box-shadow: 0px 0.2rem 0.5rem
+      box-shadow: 0 0.2rem 0.5rem
         ${ConvertHexToRGBA(props.theme.palette.primary.default, 0.1)};
 
       :hover,

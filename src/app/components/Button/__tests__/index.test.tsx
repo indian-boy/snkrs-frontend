@@ -16,7 +16,7 @@ jest.mock('react-i18next', () => ({
 
 describe('<Button  />', () => {
   it('should match snapshot', () => {
-    const loadingIndicator = render(<Button label="Label" />);
-    expect(loadingIndicator.container.firstChild).toMatchSnapshot();
+    const button = render(<Button label="Label" />);
+    expect(button.container.firstChild).toMatchSnapshot();
   });
 });
