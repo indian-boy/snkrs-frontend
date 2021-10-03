@@ -14,7 +14,6 @@ const DropdownMock = () => {
     <Dropdown
       optionSelectedState={optionSelectedState}
       setOptionSelected={setOptionSelected}
-      uniqueId="su5a1ankyxg"
       label="Dropdown"
       options={options}
     />
@@ -23,7 +22,7 @@ const DropdownMock = () => {
 
 describe('<Dropdown  />', () => {
   it('should match snapshot', () => {
-    const loadingIndicator = render(<DropdownMock></DropdownMock>);
-    expect(loadingIndicator.container.firstChild).toMatchSnapshot();
+    const dropdown = render(<DropdownMock></DropdownMock>);
+    expect(dropdown.container.firstChild).toMatchSnapshot();
   });
 });
