@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SearchInput } from '.';
 
 export default {
-  title: 'Components/SearchInput',
+  title: 'Components/Commons/SearchInput',
   component: SearchInput,
   argTypes: {},
 } as ComponentMeta<typeof SearchInput>;

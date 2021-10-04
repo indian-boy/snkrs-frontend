@@ -3,6 +3,7 @@
 exports[`<Dropdown  /> should match snapshot 1`] = `
 .c0 {
   font-size: 0.875rem;
+  display: contents;
 }
 
 .c0 * {
@@ -147,6 +148,8 @@ exports[`<Dropdown  /> should match snapshot 1`] = `
 }
 
 .c5 {
+  position: absolute;
+  width: 100%;
   background-color: #F7F7F7;
   border: none;
   padding: 0.25rem;

@@ -7,13 +7,13 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
     encodeSpecialCharacters={true}
   >
     <title>
-      _NOT_TRANSLATED_
+      homePage.pageTitle
       Home Page
     </title>
     <meta
       content={
         Array [
-          "_NOT_TRANSLATED_",
+          "homePage.pageMetaContent",
           "Home Page - Meta Content",
         ]
       }

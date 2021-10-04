@@ -7,13 +7,13 @@ exports[`<NotFoundPage /> should render and match the snapshot 1`] = `
     encodeSpecialCharacters={true}
   >
     <title>
-      _NOT_TRANSLATED_
+      notFoundPage.pageTitle
       Not Found Page
     </title>
     <meta
       content={
         Array [
-          "_NOT_TRANSLATED_",
+          "notFoundPage.pageMetaContent",
           "Not Found Page - Meta Content",
         ]
       }
@@ -32,7 +32,7 @@ exports[`<NotFoundPage /> should render and match the snapshot 1`] = `
       4
     </NotFoundPage__Title>
     <NotFoundPage__Message>
-      _NOT_TRANSLATED_
+      notFoundPage.message
       Page not found.
     </NotFoundPage__Message>
   </NotFoundPage__Wrapper>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultTheme, ThemeProvider } from 'styled-components';
+import { DefaultTheme, ThemeProvider } from 'styled-components/macro';
 
 export const mainTheme: DefaultTheme = {
   palette: {

@@ -1,35 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> should render and match the snapshot 1`] = `
-<Theme>
-  <BrowserRouter>
-    <Helmet
-      defaultTitle="SNKRS App"
-      defer={true}
-      encodeSpecialCharacters={true}
-      htmlAttributes={
-        Object {
-          "lang": undefined,
+<IntlProvider
+  defaultFormats={Object {}}
+  defaultLocale="en"
+  formats={Object {}}
+  locale="en-US"
+  messages={Object {}}
+  onError={[Function]}
+  textComponent={Symbol(react.fragment)}
+>
+  <Theme>
+    <BrowserRouter>
+      <Helmet
+        defaultTitle="SNKRS App"
+        defer={true}
+        encodeSpecialCharacters={true}
+        htmlAttributes={
+          Object {
+            "lang": undefined,
+          }
         }
-      }
-      titleTemplate="%s - SNKRS App"
-    >
-      <meta
-        content="SNKRS App"
-        name="description"
-      />
-    </Helmet>
-    <Switch>
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/"
-      />
-      <Route
-        component={[Function]}
-      />
-    </Switch>
-    <Memo(l) />
-  </BrowserRouter>
-</Theme>
+        titleTemplate="%s - SNKRS App"
+      >
+        <meta
+          content="SNKRS App"
+          name="description"
+        />
+      </Helmet>
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+        />
+      </Switch>
+      <Memo(l) />
+    </BrowserRouter>
+  </Theme>
+</IntlProvider>
 `;

@@ -68,6 +68,7 @@ export const Dropdown = memo(
 
 const Wrapper = styled.div`
   font-size: 0.875rem;
+  display: contents;
 
   * {
     scrollbar-width: 0;
@@ -201,6 +202,8 @@ const FadeIn = keyframes`
 `;
 
 const Options = styled.div`
+  position: absolute;
+  width: 100%;
   background-color: ${props => props.theme.palette.secondary.s200};
   border: none;
   padding: 0.25rem;
