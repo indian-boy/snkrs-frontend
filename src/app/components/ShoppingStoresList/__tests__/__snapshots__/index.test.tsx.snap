@@ -307,7 +307,8 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
         <legend
           class="c4"
         >
-          Option #1
+          components.shoppingStoresList.minorDistance
+          Menor distância
         </legend>
         <details
           class="c5"
@@ -315,7 +316,8 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
           <summary
             class="c6"
           >
-            Option #1
+            components.shoppingStoresList.minorDistance
+            Menor distância
           </summary>
           <div
             class="c7"
@@ -332,7 +334,8 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
               <span
                 class="c10"
               >
-                Option #1
+                components.shoppingStoresList.minorDistance
+                Menor distância
               </span>
             </label>
             <label
@@ -346,7 +349,8 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
               <span
                 class="c10"
               >
-                Option #2
+                components.shoppingStoresList.greaterDistance
+                Maior distância
               </span>
             </label>
           </div>
