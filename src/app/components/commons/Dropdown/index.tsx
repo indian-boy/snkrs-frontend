@@ -4,7 +4,6 @@ import Theme from 'styles/themes/main-theme';
 
 export interface Option {
   title: string;
-  selected: boolean;
   key: string | number;
 }
 

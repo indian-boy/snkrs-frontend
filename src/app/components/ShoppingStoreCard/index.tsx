@@ -70,7 +70,7 @@ export const ShoppingStoreCard = memo(
               {t(messages.i18nSeeOnMapLabel())}
             </SeeOnMap>
             <ContentWrapper>
-              <Information>{address.street}</Information>
+              <Information>{address.location}</Information>
               <Information>
                 {t(messages.i18nService())}:
                 <br />

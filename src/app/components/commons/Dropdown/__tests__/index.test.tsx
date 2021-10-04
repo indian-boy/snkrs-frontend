@@ -6,8 +6,8 @@ const DropdownMock = () => {
   const [optionSelectedState, setOptionSelected] = useState<Option>();
 
   const options = [
-    { key: 1, selected: false, title: 'Option #1' },
-    { key: 2, selected: false, title: 'Option #2' },
+    { key: 1, title: 'Option #1' },
+    { key: 2, title: 'Option #2' },
   ];
 
   return (

@@ -9,5 +9,5 @@ export interface ShoppingStore {
 export interface Address {
   latitude: number;
   longitude: number;
-  street: string;
+  location: string;
 }

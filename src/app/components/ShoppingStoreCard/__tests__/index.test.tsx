@@ -19,7 +19,7 @@ const shoppingStoreData = {
   address: {
     latitude: 0,
     longitude: 0,
-    street: 'Avenida Paulista, 1227 - Bela Vista São Paulo - SP, 01311-200',
+    location: 'Avenida Paulista, 1227 - Bela Vista São Paulo - SP, 01311-200',
   },
   availability: 4,
   serviceHours: 'Segunda a Sábado 10h às 22h | Domingo 11h às 20h',

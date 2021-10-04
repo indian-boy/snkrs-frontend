@@ -3,7 +3,6 @@
     "pageTitle": "Home Page",
     "pageMetaContent": "Home Page - Meta Content"
   },
-
   "notFoundPage": {
     "pageTitle": "Not Found Page",
     "pageMetaContent": "Not Found Page - Meta Content",
@@ -15,6 +14,16 @@
       "seeOnMapLabel": "Ver no mapa",
       "service": "Atendimento",
       "availability": "Disponível em {{count}} dias úteis"
+    },
+    "shoppingStoresList": {
+      "filter": "Filtrar",
+      "minorDistance": "Menor distância",
+      "greaterDistance": "Maior distância"
+    },
+    "newsLetter": {
+      "title": "RECEBA AS NOVIDADES DA NIKE",
+      "message": "Cadastre-se e seja um dos primeiros a saber de todas as novidades e ofertas.",
+      "registerButtonLabel": "Cadastre-se"
     }
   }
 }
