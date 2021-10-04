@@ -1,9 +1,8 @@
+import CloseIcon from 'assets/svgs/icons/close.svg';
+import MagnifierIcon from 'assets/svgs/icons/magnifier.svg';
 import React, { memo } from 'react';
 import styled, { css } from 'styled-components/macro';
-
 import Theme from 'styles/themes/main-theme';
-import MagnifierIcon from 'assets/svgs/icons/magnifier.svg';
-import CloseIcon from 'assets/svgs/icons/close.svg';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   type: 'text' | 'search';

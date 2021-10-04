@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import styled, { css } from 'styled-components/macro';
-
 import Theme from 'styles/themes/main-theme';
 import { ConvertHexToRGBA } from 'utils/helpers';
 

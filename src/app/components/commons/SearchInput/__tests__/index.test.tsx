@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
-
+import * as React from 'react';
 import { SearchInput } from '..';
 
 jest.mock('react-i18next', () => ({

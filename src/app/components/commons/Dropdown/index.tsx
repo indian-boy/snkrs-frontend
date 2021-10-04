@@ -1,6 +1,5 @@
 import React, { memo, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components/macro';
-
 import Theme from 'styles/themes/main-theme';
 
 export interface Option {

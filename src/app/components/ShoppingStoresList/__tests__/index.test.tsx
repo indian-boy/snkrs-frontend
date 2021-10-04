@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
-
+import * as React from 'react';
 import { ShoppingStoresList } from '..';
 
 jest.mock('react-i18next', () => ({

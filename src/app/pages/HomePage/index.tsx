@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-
 import { messages } from './messages';
 
 export function HomePage() {

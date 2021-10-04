@@ -1,9 +1,8 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { ShoppingStoreCard } from '.';
 import styled from 'styled-components/macro';
 import Theme from 'styles/themes/main-theme';
+import { ShoppingStoreCard } from '.';
 
 export default {
   title: 'Components/ShoppingStoreCard',

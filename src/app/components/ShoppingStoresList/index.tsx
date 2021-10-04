@@ -1,9 +1,7 @@
-import React, { memo, useState } from 'react';
-import styled from 'styled-components/macro';
-import { useTranslation } from 'react-i18next';
-
-import { messages } from './messages';
 import { Dropdown, Option } from 'app/components/commons/Dropdown';
+import React, { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import styled from 'styled-components/macro';
 import Theme from 'styles/themes/main-theme';
 import { ShoppingStoreCard } from '../ShoppingStoreCard';
 

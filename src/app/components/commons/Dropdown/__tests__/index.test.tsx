@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { render } from '@testing-library/react';
+import React, { useState } from 'react';
 import { Dropdown, Option } from '..';
 
 const DropdownMock = () => {

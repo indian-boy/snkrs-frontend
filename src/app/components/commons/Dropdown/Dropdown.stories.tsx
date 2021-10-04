@@ -1,5 +1,5 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useState } from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Dropdown, Option } from '.';
 
 export default {

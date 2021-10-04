@@ -1,7 +1,7 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ShoppingStoresList } from '.';
 import styled from 'styled-components/macro';
+import { ShoppingStoresList } from '.';
 
 export default {
   title: 'Components/ShoppingStoresList',
