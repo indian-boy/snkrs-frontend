@@ -21,9 +21,32 @@
       "greaterDistance": "Maior distância"
     },
     "newsLetter": {
-      "title": "RECEBA AS NOVIDADES DA NIKE",
+      "title": "Receba As Novidades Da Nike",
       "message": "Cadastre-se e seja um dos primeiros a saber de todas as novidades e ofertas.",
       "registerButtonLabel": "Cadastre-se"
+    },
+    "footer": {
+      "findShoppingStore": "Encontre Uma Loja Nike",
+      "registerForNews": "Cadastre-se para receber novidades",
+      "siteMap": "Mapa do site",
+      "help": {
+        "summary": "Ajuda"
+      },
+      "aboutNike": {
+        "summary": "Sobre a Nike",
+        "generalQuestions": "Dúvidas Gerais",
+        "findYourSize": "Encontre seu Tamanho",
+        "orders": "Pedidos",
+        "exchangesAndReturns": "Trocas e Devoluções",
+        "editConsent": "Editar consentimento",
+        "cookiePreferences": "Cookie Preferences",
+        "payments": "Pagamentos",
+        "products": "Produtos",
+        "corporate": "Corporativo",
+        "contactUs": "Fale Conosco"
+      },
+      "socialMedias": "Redes sociais",
+      "paymentMethods": "Formas de pagamento"
     }
   }
 }

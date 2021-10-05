@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { LinkOptionsWrapped } from '..';
+import { LinksDropdown } from '..';
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
@@ -27,9 +27,9 @@ const mockData = {
   ],
 };
 
-describe('<LinkOptionsWrapped  />', () => {
+describe('<LinksDropdown  />', () => {
   it('should match snapshot', () => {
-    const linkOptionsWrapped = render(<LinkOptionsWrapped {...mockData} />);
-    expect(linkOptionsWrapped.container.firstChild).toMatchSnapshot();
+    const linksDropdown = render(<LinksDropdown {...mockData} />);
+    expect(linksDropdown.container.firstChild).toMatchSnapshot();
   });
 });

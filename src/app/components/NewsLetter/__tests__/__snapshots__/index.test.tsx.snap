@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NewsLetter  /> should match snapshot 1`] = `
+.c2 {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: black;
+  margin: 0.625rem 0 1.5rem 0;
+}
+
 .c3 {
   padding: 0.9rem 1.5rem;
   border-radius: 3.125rem;
@@ -80,14 +87,6 @@ exports[`<NewsLetter  /> should match snapshot 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.c2 {
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: #1A1A1A;
-  margin-bottom: 1rem;
-}
-
 <div
   class="c0"
 >
@@ -102,12 +101,12 @@ exports[`<NewsLetter  /> should match snapshot 1`] = `
     components.newsLetter.title
     RECEBA AS NOVIDADES DA NIKE
   </span>
-  <span
+  <p
     class="c2"
   >
     components.newsLetter.message
     Cadastre-se e seja um dos primeiros a saber de todas as novidades e ofertas.
-  </span>
+  </p>
   <button
     class="c3"
     type="button"

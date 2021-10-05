@@ -6,6 +6,7 @@ declare module 'styled-components/macro' {
       primary: {
         default: string;
         p700: string;
+        p600: string;
       };
       secondary: {
         default: string;

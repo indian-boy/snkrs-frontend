@@ -1,40 +1,5 @@
-import React, { memo } from 'react';
-import { BrowserRouter, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components/macro';
-import Theme from 'styles/themes/main-theme';
-
-interface Links {
-  label: string;
-  url: string;
-}
-
-interface Props {
-  title: string;
-  links?: Links[];
-}
-
-export const LinkOptionsWrapped = memo(({ title, links }: Props) => {
-  return (
-    <BrowserRouter>
-      <Theme>
-        <Details>
-          <Summary>
-            {title}
-            <Icon className="icon"></Icon>
-          </Summary>
-          <Options>
-            {links &&
-              links.map((link, index) => (
-                <StyledNavLink key={index} to={link.url}>
-                  {link.label}
-                </StyledNavLink>
-              ))}
-          </Options>
-        </Details>
-      </Theme>
-    </BrowserRouter>
-  );
-});
 
 const Details = styled.details`
   width: 100%;
@@ -42,10 +7,17 @@ const Details = styled.details`
   overflow: hidden;
   position: relative;
   color: ${props => props.theme.palette.secondary.default};
-  padding-bottom: 1rem;
 
   &[open] > summary {
-    .icon:after {
+    &:before {
+      background: ${props => props.theme.palette.secondary.default};
+    }
+
+    &:after {
+      background: ${props => props.theme.palette.secondary.s300};
+    }
+
+    span:after {
       transform: rotate(90deg);
     }
   }
@@ -54,11 +26,24 @@ const Details = styled.details`
 const Summary = styled.summary`
   display: block;
   background: ${props => props.theme.palette.primary.default};
-  padding: 1rem 3rem 1rem 1rem;
+  padding: 1rem 3rem 1rem 0;
   position: relative;
   cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
 
   &:before {
+    content: '';
+    background: ${props => props.theme.palette.secondary.s300};
+    position: absolute;
+    top: 0;
+    height: 1px;
+    width: calc(100% - 2.5rem);
+    left: 0;
+  }
+
+  &:after {
     content: '';
     background: ${props => props.theme.palette.secondary.default};
     position: absolute;
@@ -80,23 +65,23 @@ const Icon = styled.span`
   &:after {
     content: '';
     position: absolute;
-    background: ${props => props.theme.palette.secondary.default};
     transition: 0.2s all ease-in-out;
   }
 
   &:before {
-    top: 50%;
+    top: calc(1px - -50%);
     left: calc(100% - 2rem);
     right: 0.7rem;
     height: 0.1rem;
-    transform: translateY(-50%);
+    background: ${props => props.theme.palette.secondary.s300};
   }
 
   &:after {
-    top: 1rem;
+    top: 1.2rem;
     right: 1.3rem;
-    bottom: 0.9rem;
+    bottom: 1rem;
     width: 0.1rem;
+    background: ${props => props.theme.palette.secondary.default};
   }
 `;
 
@@ -104,16 +89,19 @@ const Options = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 1rem;
+  margin: 1rem 1.5rem;
 `;
 
 const withLinkStyles = component => styled(component)`
   text-decoration: none;
-  color: ${props => props.theme.palette.secondary.default};
-
+  color: ${props => props.theme.palette.secondary.s200};
+  font-size: 0.75rem;
+  line-height: 1.5rem;
   :visited {
     color: ${props => props.theme.palette.secondary.s300};
   }
 `;
 
 const StyledNavLink = withLinkStyles(NavLink);
+
+export { Details, Summary, Icon, Options, StyledNavLink };

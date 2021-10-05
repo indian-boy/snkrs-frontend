@@ -1,10 +1,10 @@
 import { Dropdown, Option } from 'app/components/commons/Dropdown';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from 'styled-components/macro';
 import Theme from 'styles/themes/main-theme';
 import { ShoppingStoreCard } from '../ShoppingStoreCard';
 import { messages } from './messages';
+import { Filters, List, Wrapper } from './styles';
 
 interface Props {}
 
@@ -66,20 +66,3 @@ export const ShoppingStoresList = memo((props: Props) => {
     </Theme>
   );
 });
-
-const Wrapper = styled.div`
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: ${props => props.theme.palette.secondary.s200};
-`;
-
-const Filters = styled.div`
-  display: flex;
-  justify-content: end;
-`;
-
-const List = styled.div`
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-`;

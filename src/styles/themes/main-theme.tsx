@@ -6,6 +6,7 @@ export const mainTheme: DefaultTheme = {
     primary: {
       default: '#000000',
       p700: '#1A1A1A',
+      p600: '#4D4D4D',
     },
     secondary: {
       default: '#FFFFFF',

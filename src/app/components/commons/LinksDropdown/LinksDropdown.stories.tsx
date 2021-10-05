@@ -1,16 +1,16 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { LinkOptionsWrapped } from '.';
+import { LinksDropdown } from '.';
 
 export default {
-  title: 'Components/LinkOptionsWrapped',
-  component: LinkOptionsWrapped,
+  title: 'Components/LinksDropdown',
+  component: LinksDropdown,
   argTypes: {},
-} as ComponentMeta<typeof LinkOptionsWrapped>;
+} as ComponentMeta<typeof LinksDropdown>;
 
-const Template: ComponentStory<typeof LinkOptionsWrapped> = args => (
+const Template: ComponentStory<typeof LinksDropdown> = args => (
   <div style={{ width: '50%', margin: '0 auto' }}>
-    <LinkOptionsWrapped {...args} />
+    <LinksDropdown {...args} />
   </div>
 );
 

@@ -362,7 +362,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
     class="c11"
   >
     <div
-      class="ShoppingStoreCard__Wrapper-sc-zdqw9n-0"
+      class="styles__Wrapper-sc-103prks-0"
     >
       <div
         class="c12"
@@ -414,7 +414,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ShoppingStoreCard__Wrapper-sc-zdqw9n-0"
+      class="styles__Wrapper-sc-103prks-0"
     >
       <div
         class="c12"
