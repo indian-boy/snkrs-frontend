@@ -18,6 +18,7 @@ import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 
 export function App() {
   const { i18n } = useTranslation();
+
   return (
     <IntlProvider locale={navigator.language}>
       <Theme>
