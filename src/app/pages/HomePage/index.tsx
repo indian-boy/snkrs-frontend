@@ -1,5 +1,5 @@
 import { SearchInput, ShoppingStoresList } from 'app/components';
-import api from 'app/services/resources/api';
+import { getShoppingStores } from 'app/services/resources';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
@@ -11,14 +11,6 @@ import { Main, Title, Wrapper } from './styles';
 export function HomePage() {
   const { t } = useTranslation();
   const [results, setResults] = useState<ShoppingStore[]>([]);
-
-  const getShoppingStores = (search: string) => {
-    return api.get('/shopping-stores', {
-      params: {
-        search,
-      },
-    });
-  };
 
   const getDebouncedShoppingStores = debounce(async (searchTerm: string) => {
     const result = await getShoppingStores(searchTerm);
