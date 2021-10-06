@@ -5,7 +5,7 @@ import ptBR from './ptBr/translation.json';
 import { convertLanguageJsonToObject } from './translations';
 
 export const translationsJson = {
-  ptBR: {
+  'pt-BR': {
     translation: ptBR,
   },
 };
@@ -23,7 +23,7 @@ export const i18n = i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     resources: translationsJson,
-    fallbackLng: 'ptBR',
+    fallbackLng: 'pt-BR',
     debug:
       process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test',
 

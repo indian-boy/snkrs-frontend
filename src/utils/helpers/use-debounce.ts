@@ -8,5 +8,5 @@ export default function useDebouncedFunction(handler, watchedValue, delay) {
     return () => {
       clearTimeout(timeoutHandler);
     };
-  }, [watchedValue, delay]);
+  }, [handler, watchedValue, delay]);
 }

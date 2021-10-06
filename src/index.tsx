@@ -20,6 +20,11 @@ import { configureAppStore } from 'store/configureStore';
 // Initialize languages
 import './locales/i18n';
 
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('./mocks/browser');
+  worker.start();
+}
+
 const store = configureAppStore();
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 

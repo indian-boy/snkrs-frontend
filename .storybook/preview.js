@@ -9,8 +9,8 @@ export const parameters = {
     },
   },
   i18n,
-  locale: 'ptBr',
+  locale: 'pt-BR',
   locales: {
-    'ptBr': 'Português (BR)',
+    'pt-BR': 'Português (BR)',
   },
 }

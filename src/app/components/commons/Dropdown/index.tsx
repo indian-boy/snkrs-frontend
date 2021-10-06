@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import Theme from 'styles/themes/main-theme';
 import {
   Details,
@@ -20,20 +20,13 @@ export interface Option {
 interface Props {
   label: string;
   options: Option[];
-  setOptionSelected: React.Dispatch<React.SetStateAction<Option | undefined>>;
+  setOptionSelected: React.Dispatch<React.SetStateAction<Option>>;
   optionSelectedState: Option | undefined;
 }
 
 export const Dropdown = memo(
   ({ label, options, optionSelectedState, setOptionSelected }: Props) => {
     const ref = React.useRef<HTMLDetailsElement>(null);
-
-    useEffect(() => {
-      if (!optionSelectedState) {
-        const [firstOption] = options;
-        setOptionSelected(firstOption);
-      }
-    }, [optionSelectedState, options, setOptionSelected]);
 
     const handleClick = (optionsSelected: Option) => {
       closeSummary();

@@ -9,7 +9,12 @@ export default {
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = args => {
-  const [optionSelectedState, setOptionSelected] = useState<Option>();
+  const options = [
+    { key: 1, title: 'Option #1' },
+    { key: 2, title: 'Option #2' },
+  ];
+
+  const [optionSelectedState, setOptionSelected] = useState<Option>(options[0]);
 
   return (
     <Dropdown
@@ -24,8 +29,4 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   label: 'Dropdown',
-  options: [
-    { key: 1, title: 'Option #1' },
-    { key: 2, title: 'Option #2' },
-  ],
 };

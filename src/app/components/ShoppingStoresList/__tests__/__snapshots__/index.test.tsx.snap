@@ -138,6 +138,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
   margin: 0.25rem 0;
   -webkit-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
+  white-space: nowrap;
   background-color: #F7F7F7;
   color: #1A1A1A;
 }
@@ -422,7 +423,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
         <span
           class="c13"
         >
-          Avenida paulista
+          Regus
         </span>
         <span
           class="c14"
@@ -446,7 +447,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
         <span
           class="c17"
         >
-          Avenida Paulista, 1227 - Bela Vista São Paulo - SP, 01311-200
+          Rua Werner Von Siemens, 111 - Lapa de Baixo, São Paulo - SP, 05069-010
         </span>
         <span
           class="c17"

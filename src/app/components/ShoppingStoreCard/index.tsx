@@ -1,9 +1,9 @@
-import { ShoppingStore } from 'app/entities';
 import { ReactComponent as PinLocation } from 'assets/svgs/icons/pin_location.svg';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormattedNumber, IntlProvider } from 'react-intl';
 import Theme from 'styles/themes/main-theme';
+import { ShoppingStore } from 'types';
 import { messages } from './messages';
 import {
   Availability,

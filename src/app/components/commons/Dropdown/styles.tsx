@@ -120,6 +120,7 @@ const Title = styled.span`
   border-radius: 0.25rem;
   margin: 0.25rem 0;
   transition: all 0.2s ease 0s;
+  white-space: nowrap;
 
   background-color: ${props => props.theme.palette.secondary.s200};
   color: ${props => props.theme.palette.primary.p700};

@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { Dropdown, Option } from '..';
 
 const DropdownMock = () => {
-  const [optionSelectedState, setOptionSelected] = useState<Option>();
-
   const options = [
     { key: 1, title: 'Option #1' },
     { key: 2, title: 'Option #2' },
   ];
+
+  const [optionSelectedState, setOptionSelected] = useState<Option>(options[0]);
 
   return (
     <Dropdown

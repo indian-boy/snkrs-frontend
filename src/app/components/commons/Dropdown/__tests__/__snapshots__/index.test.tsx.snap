@@ -138,6 +138,7 @@ exports[`<Dropdown  /> should match snapshot 1`] = `
   margin: 0.25rem 0;
   -webkit-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
+  white-space: nowrap;
   background-color: #F7F7F7;
   color: #1A1A1A;
 }
