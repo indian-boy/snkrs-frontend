@@ -20,8 +20,25 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       name="description"
     />
   </Helmet>
-  <span>
-    HomePage container
-  </span>
+  <styles__Wrapper>
+    <styles__Main>
+      <styles__Title>
+        homePage.shoppingStores
+        Lojas
+      </styles__Title>
+      <Memo
+        isRounded={true}
+        onChange={[Function]}
+        placeholder={
+          Array [
+            "homePage.searchPlaceholder",
+            "Busque por endereço ou CEP",
+          ]
+        }
+        showSearchIcon={true}
+        type="search"
+      />
+    </styles__Main>
+  </styles__Wrapper>
 </React.Fragment>
 `;

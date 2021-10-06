@@ -4,6 +4,7 @@ import { CloseIconButton, Label, SearchInputWrapper } from './styles';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   type: 'text' | 'search';
+  placeholder?: string;
   showSearchIcon?: boolean;
   showCloseIcon?: boolean;
   isRounded?: boolean;
@@ -11,7 +12,14 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const SearchInput = memo(
-  ({ secondary, type, showSearchIcon, showCloseIcon, ...props }: Props) => {
+  ({
+    placeholder,
+    secondary,
+    type,
+    showSearchIcon,
+    showCloseIcon,
+    ...props
+  }: Props) => {
     const ref = React.useRef<HTMLInputElement>(null);
 
     const clearSearch = () => {
@@ -27,6 +35,7 @@ export const SearchInput = memo(
             <CloseIconButton onClick={() => clearSearch()}></CloseIconButton>
           )}
           <SearchInputWrapper
+            placeholder={placeholder}
             ref={ref}
             showSearchIcon={showSearchIcon}
             type={type}

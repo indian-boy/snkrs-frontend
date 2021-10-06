@@ -6,7 +6,7 @@ const Content = styled.div`
   background-color: ${props => props.theme.palette.secondary.s200};
   align-items: center;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 4rem 1rem;
 `;
 
 const Title = styled.span`
@@ -16,6 +16,8 @@ const Title = styled.span`
   line-height: 1.2rem;
   color: ${props => props.theme.palette.primary.p700};
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
 `;
 
 const Message = styled.span`
@@ -24,6 +26,7 @@ const Message = styled.span`
   line-height: 1.5rem;
   color: ${props => props.theme.palette.primary.p700};
   margin-bottom: 1rem;
+  text-align: center;
 `;
 
 export { Content, Title, Message };

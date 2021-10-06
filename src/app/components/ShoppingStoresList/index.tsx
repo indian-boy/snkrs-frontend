@@ -1,4 +1,4 @@
-import { Dropdown, Option } from 'app/components/commons/Dropdown';
+import { Dropdown, Option } from 'app/components';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Theme from 'styles/themes/main-theme';

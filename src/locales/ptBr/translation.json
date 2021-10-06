@@ -1,7 +1,9 @@
 {
   "homePage": {
     "pageTitle": "Home Page",
-    "pageMetaContent": "Home Page - Meta Content"
+    "pageMetaContent": "Home Page - Meta Content",
+    "shoppingStores": "Lojas",
+    "searchPlaceholder": "Busque por endereço ou CEP"
   },
   "notFoundPage": {
     "pageTitle": "Not Found Page",
@@ -45,8 +47,11 @@
         "corporate": "Corporativo",
         "contactUs": "Fale Conosco"
       },
-      "socialMedias": "Redes sociais",
-      "paymentMethods": "Formas de pagamento"
+      "socialMedias": "Redes Sociais",
+      "paymentMethods": "Formas de pagamento",
+      "privacyPolicy": "Política de Privacidade",
+      "userTerms": "Termos de Uso",
+      "companyInfos": "© 2021 Nike. Todos os direitos reservados. Fisia Comércio de Produtos Esportivos Ltda - CNPJ: 59.546.515/0016-10 Rua José Semião Rodrigues Agostinho, 1370 - Galpão Unidade 17 - Nível 0, 1 e 2 - CEP 06833-300 - Embu das Artes/SP."
     }
   }
 }

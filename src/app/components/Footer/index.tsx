@@ -1,10 +1,32 @@
+import { LinksDropdown } from 'app/components';
+import { ReactComponent as Amex } from 'assets/svgs/logos/amex.svg';
+import { ReactComponent as Discover } from 'assets/svgs/logos/discover.svg';
+import { ReactComponent as Elo } from 'assets/svgs/logos/elo.svg';
+import { ReactComponent as FacebookLogo } from 'assets/svgs/logos/facebook_rounded_white.svg';
+import { ReactComponent as Hipercard } from 'assets/svgs/logos/hipercard.svg';
+import { ReactComponent as InstagramLogo } from 'assets/svgs/logos/instagram_rounded_white.svg';
+import { ReactComponent as Mastercard } from 'assets/svgs/logos/mastercard.svg';
+import { ReactComponent as Vista } from 'assets/svgs/logos/visa.svg';
+import { ReactComponent as YoutubeLogo } from 'assets/svgs/logos/youtube_rounded_white.svg';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, NavLink } from 'react-router-dom';
 import Theme from 'styles/themes/main-theme';
-import { LinksDropdown } from '../commons/LinksDropdown';
 import { messages } from './messages';
-import { Links, LinkWrapper, StyledNavLink, Wrapper } from './styles';
+import {
+  CompanyInfos,
+  Links,
+  LinksWrapper,
+  MainNavLink,
+  PaymentMethods,
+  PaymentOptions,
+  SectionLabel,
+  SocialMedias,
+  SocialMediasOptions,
+  TermLink,
+  Terms,
+  Wrapper,
+} from './styles';
 
 interface Props {}
 
@@ -66,17 +88,15 @@ export const Footer = memo((props: Props) => {
       <Theme>
         <Wrapper>
           <Links>
-            <StyledNavLink to="/lorem-a">
+            <MainNavLink to="/lorem-a">
               {t(messages.i18nFindShoppingStore())}
-            </StyledNavLink>
-            <StyledNavLink to="/lorem-b">
+            </MainNavLink>
+            <MainNavLink to="/lorem-b">
               {t(messages.i18nRegisterForNews())}
-            </StyledNavLink>
-            <StyledNavLink to="/lorem-c">
-              {t(messages.i18nSiteMap())}
-            </StyledNavLink>
+            </MainNavLink>
+            <MainNavLink to="/lorem-c">{t(messages.i18nSiteMap())}</MainNavLink>
           </Links>
-          <LinkWrapper>
+          <LinksWrapper>
             <LinksDropdown
               title={t(messages.i18nHelpLinks.i18nSummary())}
               links={helpLinks}
@@ -85,7 +105,38 @@ export const Footer = memo((props: Props) => {
               title={t(messages.i18nAboutNikeLinks.i18nSummary())}
               links={aboutNikeLinks}
             ></LinksDropdown>
-          </LinkWrapper>
+          </LinksWrapper>
+          <SocialMedias>
+            <SectionLabel>{t(messages.i18nSocialMedias())}</SectionLabel>
+            <SocialMediasOptions>
+              <NavLink to="/">
+                <FacebookLogo></FacebookLogo>
+              </NavLink>
+              <NavLink to="/">
+                <InstagramLogo></InstagramLogo>
+              </NavLink>
+              <NavLink to="/">
+                <YoutubeLogo></YoutubeLogo>
+              </NavLink>
+            </SocialMediasOptions>
+          </SocialMedias>
+          <PaymentMethods>
+            <SectionLabel>{t(messages.i18nPaymentMethods())}</SectionLabel>
+            <PaymentOptions>
+              <Amex></Amex>
+              <Discover></Discover>
+              <Elo></Elo>
+              <Hipercard></Hipercard>
+              <Mastercard></Mastercard>
+              <Vista></Vista>
+            </PaymentOptions>
+          </PaymentMethods>
+          <Terms>
+            <TermLink to="/">Brasil</TermLink>
+            <TermLink to="/">{t(messages.i18nPrivacyPolicy())}</TermLink>
+            <TermLink to="/">{t(messages.i18nUserTerms())}</TermLink>
+          </Terms>
+          <CompanyInfos>{t(messages.i18nCompanyInfos())}</CompanyInfos>
         </Wrapper>
       </Theme>
     </BrowserRouter>

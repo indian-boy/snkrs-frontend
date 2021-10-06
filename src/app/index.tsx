@@ -6,6 +6,7 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
+import { Footer, NewsLetter } from 'app/components';
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
@@ -34,6 +35,8 @@ export function App() {
             <Route exact path="/" component={HomePage} />
             <Route component={NotFoundPage} />
           </Switch>
+          <NewsLetter></NewsLetter>
+          <Footer></Footer>
           <GlobalStyles />
         </BrowserRouter>
       </Theme>

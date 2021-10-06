@@ -62,6 +62,20 @@ export const messages = {
         _t(translations.components.footer.aboutNike.contactUs, 'Fale Conosco'),
     },
   },
+  i18nSocialMedias: () =>
+    _t(translations.components.footer.socialMedias, 'Redes Sociais'),
   i18nPaymentMethods: () =>
     _t(translations.components.footer.paymentMethods, 'Formas de pagamento'),
+  i18nPrivacyPolicy: () =>
+    _t(
+      translations.components.footer.paymentMethods,
+      'Política de Privacidade',
+    ),
+  i18nUserTerms: () =>
+    _t(translations.components.footer.userTerms, 'Termos de Uso'),
+  i18nCompanyInfos: () =>
+    _t(
+      translations.components.footer.companyInfos,
+      '© 2021 Nike. Todos os direitos reservados. Fisia Comércio de Produtos Esportivos Ltda - CNPJ: 59.546.515/0016-10 Rua José Semião Rodrigues Agostinho, 1370 - Galpão Unidade 17 - Nível 0, 1 e 2 - CEP 06833-300 - Embu das Artes/SP.',
+    ),
 };

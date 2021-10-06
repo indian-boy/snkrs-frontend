@@ -1,11 +1,10 @@
-import { Message } from 'app/pages/NotFoundPage';
+import { Button } from 'app/components';
 import { ReactComponent as NikeLogo } from 'assets/svgs/logos/nike.svg';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Theme from 'styles/themes/main-theme';
-import { Button } from '../commons/Button';
 import { messages } from './messages';
-import { Content, Title } from './styles';
+import { Content, Message, Title } from './styles';
 
 interface Props {}
 

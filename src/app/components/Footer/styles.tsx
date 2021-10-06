@@ -17,7 +17,7 @@ const Links = styled.div`
   border-bottom: 1px solid ${props => props.theme.palette.primary.p600};
 `;
 
-const withLinkStyles = component => styled(component)`
+const MainNavLinks = component => styled(component)`
   text-decoration: none;
   color: ${props => props.theme.palette.secondary.default};
   text-transform: uppercase;
@@ -29,10 +29,75 @@ const withLinkStyles = component => styled(component)`
   }
 `;
 
-const StyledNavLink = withLinkStyles(NavLink);
+const MainNavLink = MainNavLinks(NavLink);
 
-const LinkWrapper = styled.div`
+const LinksWrapper = styled.div`
   padding-bottom: 1rem;
 `;
 
-export { Wrapper, Links, StyledNavLink, LinkWrapper };
+const SectionLabel = styled.div`
+  color: ${props => props.theme.palette.secondary.default};
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 0.875rem;
+`;
+
+const SocialMedias = styled.div``;
+
+const SocialMediasOptions = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const PaymentMethods = styled.div``;
+
+const PaymentOptions = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, min-content);
+  gap: 0.5rem;
+  border-bottom: 1px solid ${props => props.theme.palette.primary.p600};
+  padding-bottom: 2rem;
+`;
+
+const Terms = styled.div`
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+`;
+
+const TermLinks = component => styled(component)`
+  text-decoration: none;
+  color: ${props => props.theme.palette.secondary.default};
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+
+  :visited {
+    color: ${props => props.theme.palette.secondary.s300};
+  }
+`;
+
+const TermLink = TermLinks(NavLink);
+
+const CompanyInfos = styled.span`
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: ${props => props.theme.palette.secondary.s300};
+`;
+
+export {
+  Wrapper,
+  Links,
+  MainNavLink,
+  LinksWrapper,
+  SectionLabel,
+  SocialMedias,
+  SocialMediasOptions,
+  PaymentMethods,
+  PaymentOptions,
+  Terms,
+  TermLink,
+  CompanyInfos,
+};
