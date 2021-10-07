@@ -7,8 +7,8 @@ interface Props {}
 export const Modal = Component => (props: Props) => {
   return (
     <ModalContext.Consumer>
-      {({ state, setShowModalWrapper }) => {
-        if (!state || !state.showModalState) {
+      {({ state, setModalDataIntoContext }) => {
+        if (!state || !state.showState) {
           return null;
         }
 

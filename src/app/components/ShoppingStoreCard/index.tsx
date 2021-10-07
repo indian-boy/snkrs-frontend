@@ -24,44 +24,48 @@ export const ShoppingStoreCard = memo(
   ({ onClick, placeName, address, availability, serviceHours }: Props) => {
     const { t } = useTranslation();
 
-    const pythagoreanDistanceBetweenPoints = ({
-      userLatitude,
-      userLongitude,
-      shoppingStoreLatitude,
-      shoppingStoreLongitude,
+    const pythagoreanKilometersBetweenPoints = ({
+      latitudeA,
+      longitudeA,
+      latitudeB,
+      longitudeB,
     }: {
-      userLatitude: number;
-      userLongitude: number;
-      shoppingStoreLatitude: number;
-      shoppingStoreLongitude: number;
+      latitudeA: number;
+      longitudeA: number;
+      latitudeB: number;
+      longitudeB: number;
     }) => {
       const R = 6371e3;
+      const φ1 = (latitudeA * Math.PI) / 180;
+      const φ2 = (latitudeB * Math.PI) / 180;
+      const Δφ = ((latitudeB - latitudeA) * Math.PI) / 180;
+      let Δλ = ((longitudeB - longitudeA) * Math.PI) / 180;
 
-      const x =
-        (shoppingStoreLongitude - userLongitude) *
-        Math.cos((userLatitude + shoppingStoreLatitude) / 2);
+      const Δψ = Math.log(
+        Math.tan(Math.PI / 4 + φ2 / 2) / Math.tan(Math.PI / 4 + φ1 / 2),
+      );
+      const q = Math.abs(Δψ) > 10e-12 ? Δφ / Δψ : Math.cos(φ1);
 
-      const y = shoppingStoreLatitude - userLatitude;
+      // if dLon over 180° take shorter rhumb line across the anti-meridian:
+      if (Math.abs(Δλ) > Math.PI) {
+        Δλ = Δλ > 0 ? -(2 * Math.PI - Δλ) : 2 * Math.PI + Δλ;
+      }
 
-      return Math.sqrt(x * x + y * y) * R;
+      return Math.sqrt(Δφ * Δφ + q * q * Δλ * Δλ) * R;
     };
 
-    const convertInchInApproximatelyKilometers = (distance: number): number => {
-      const differenceBetweenInchAndKilometer = 39588;
+    const distanceInKilometersApproximately = (
+      Math.round(
+        pythagoreanKilometersBetweenPoints({
+          latitudeA: -23.5473784,
+          longitudeA: -46.6654746,
+          latitudeB: address.latitude,
+          longitudeB: address.longitude,
+        }),
+      ) / 1000
+    ).toFixed(1);
 
-      return distance / differenceBetweenInchAndKilometer;
-    };
-
-    const pythagoreanDistante = pythagoreanDistanceBetweenPoints({
-      userLatitude: -22.853095,
-      userLongitude: -47.183919,
-      shoppingStoreLatitude: -22.7392463,
-      shoppingStoreLongitude: -47.3306032,
-    });
-
-    const distanceInKilometers = Math.floor(
-      convertInchInApproximatelyKilometers(pythagoreanDistante),
-    );
+    console.log(distanceInKilometersApproximately);
 
     return (
       <IntlProvider locale={navigator.language}>
@@ -74,7 +78,7 @@ export const ShoppingStoreCard = memo(
                   style={`unit`}
                   unitDisplay="narrow"
                   unit="kilometer"
-                  value={distanceInKilometers}
+                  value={Number(distanceInKilometersApproximately)}
                 />
               </Distance>
             </Header>

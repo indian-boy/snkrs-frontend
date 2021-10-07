@@ -14,19 +14,16 @@ export function HomePage() {
   const { t } = useTranslation();
   const modalContext = useContext(ModalContext);
 
-  const [showModalState, setShowModal] = useState<{
-    showModalState: boolean;
+  const [showState, setModalData] = useState<{
+    showState: boolean;
     data: any;
   }>({
-    showModalState: false,
+    showState: false,
     data: {},
   });
 
-  const setShowModalWrapper = (
-    showModalState: boolean,
-    data: ShoppingStore,
-  ) => {
-    setShowModal({ showModalState, data });
+  const setModalDataIntoContext = (showState: boolean, data: ShoppingStore) => {
+    setModalData({ showState, data });
   };
 
   const [shoppingStoresListState, setShoppingStoresList] = useState<
@@ -49,7 +46,7 @@ export function HomePage() {
 
   useEffect(() => {
     if (shoppingStoreSelectedState) {
-      setShowModal({ showModalState: true, data: shoppingStoreSelectedState });
+      setModalData({ showState: true, data: shoppingStoreSelectedState });
     }
   }, [shoppingStoreSelectedState, modalContext]);
 
@@ -60,7 +57,7 @@ export function HomePage() {
         <meta name="description" content={t(messages.i18nPageMetaContent())} />
       </Helmet>
       <ModalContext.Provider
-        value={{ state: showModalState, setShowModalWrapper }}
+        value={{ state: showState, setModalDataIntoContext }}
       >
         <Wrapper>
           <Main>

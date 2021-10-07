@@ -16,7 +16,6 @@ const Label = styled.label<{ showSearchIcon?: boolean }>`
         background-position: center;
         width: 1rem;
         height: 1rem;
-        z-index: 10000;
         left: 1rem;
         top: 50%;
         transform: translateY(-50%);
@@ -33,7 +32,6 @@ const CloseIconButton = styled.span<{ showSearchIcon?: boolean }>`
   background-position: center;
   width: 1rem;
   height: 1rem;
-  z-index: 10000;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
