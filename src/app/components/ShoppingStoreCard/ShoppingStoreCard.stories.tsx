@@ -29,11 +29,12 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   id: 1,
-  placeName: 'Avenida paulista',
+  placeName: 'Nike Store Oscar Freire',
   address: {
-    latitude: 0,
-    longitude: 0,
-    location: 'Avenida Paulista, 1227 - Bela Vista São Paulo - SP, 01311-200',
+    latitude: -23.562692,
+    longitude: -46.6695949,
+    location:
+      'R. Oscar Freire, 969 - Jardim Paulista, São Paulo - SP, 01426-001',
   },
   availability: 4,
   serviceHours: 'Segunda a Sábado 10h às 22h | Domingo 11h às 20h',
