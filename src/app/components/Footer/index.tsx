@@ -36,50 +36,50 @@ export const Footer = memo((props: Props) => {
   const helpLinks = [
     {
       label: 'Some link',
-      url: 'some-url',
+      url: '/',
     },
   ];
 
   const aboutNikeLinks = [
     {
       label: t(messages.i18nAboutNikeLinks.links.i18nGeneralQuestions()),
-      url: 'some-url',
+      url: '/',
     },
     {
       label: t(messages.i18nAboutNikeLinks.links.i18FindYourSize()),
-      url: 'some-url',
+      url: '/',
     },
     {
       label: t(messages.i18nAboutNikeLinks.links.i18nOrders()),
-      url: 'some-url',
+      url: '/',
     },
     {
       label: t(messages.i18nAboutNikeLinks.links.i18nExchangesAndReturns()),
-      url: 'some-url',
+      url: '/',
     },
     {
       label: t(messages.i18nAboutNikeLinks.links.i18nEditConsent()),
-      url: 'some-url',
+      url: '/',
     },
     {
       label: t(messages.i18nAboutNikeLinks.links.i18nPayments()),
-      url: 'some-url',
+      url: '/',
     },
     {
       label: t(messages.i18nAboutNikeLinks.links.i18nCookiePreferences()),
-      url: 'some-url',
+      url: '/',
     },
     {
       label: t(messages.i18nAboutNikeLinks.links.i18nProducts()),
-      url: 'some-url',
+      url: '/',
     },
     {
       label: t(messages.i18nAboutNikeLinks.links.i18nCorporate()),
-      url: 'some-url',
+      url: '/',
     },
     {
       label: t(messages.i18nAboutNikeLinks.links.i18nContactUs()),
-      url: 'some-url',
+      url: '/',
     },
   ];
 
@@ -88,13 +88,13 @@ export const Footer = memo((props: Props) => {
       <Theme>
         <Wrapper>
           <Links>
-            <MainNavLink to="/lorem-a">
+            <MainNavLink to="/">
               {t(messages.i18nFindShoppingStore())}
             </MainNavLink>
-            <MainNavLink to="/lorem-b">
+            <MainNavLink to="/">
               {t(messages.i18nRegisterForNews())}
             </MainNavLink>
-            <MainNavLink to="/lorem-c">{t(messages.i18nSiteMap())}</MainNavLink>
+            <MainNavLink to="/">{t(messages.i18nSiteMap())}</MainNavLink>
           </Links>
           <LinksWrapper>
             <LinksDropdown

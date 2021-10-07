@@ -216,22 +216,25 @@ exports[`<Footer  /> should match snapshot 1`] = `
     class="c1"
   >
     <a
-      class="c2"
-      href="/lorem-a"
+      aria-current="page"
+      class="c2 active"
+      href="/"
     >
       components.footer.findShoppingStore
       Encontre Uma Loja Nike
     </a>
     <a
-      class="c2"
-      href="/lorem-b"
+      aria-current="page"
+      class="c2 active"
+      href="/"
     >
       components.footer.registerForNews
       Cadastre-se para receber novidades
     </a>
     <a
-      class="c2"
-      href="/lorem-c"
+      aria-current="page"
+      class="c2 active"
+      href="/"
     >
       components.footer.siteMap
       Mapa do site
@@ -256,8 +259,9 @@ exports[`<Footer  /> should match snapshot 1`] = `
         class="c7"
       >
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           Some link
         </a>
@@ -279,71 +283,81 @@ exports[`<Footer  /> should match snapshot 1`] = `
         class="c7"
       >
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.generalQuestions
           Dúvidas Gerais
         </a>
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.findYourSize
           Encontre seu Tamanho
         </a>
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.orders
           Pedidos
         </a>
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.exchangesAndReturns
           Trocas e Devoluções
         </a>
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.editConsent
           Editar consentimento
         </a>
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.payments
           Pagamentos
         </a>
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.cookiePreferences
           Preferências de Cookie
         </a>
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.products
           Produtos
         </a>
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.corporate
           Corporativo
         </a>
         <a
-          class="c8"
-          href="/some-url"
+          aria-current="page"
+          class="c8 active"
+          href="/"
         >
           components.footer.aboutNike.contactUs
           Fale Conosco
