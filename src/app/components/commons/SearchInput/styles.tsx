@@ -1,6 +1,6 @@
 import CloseIcon from 'assets/svgs/icons/close.svg';
 import MagnifierIcon from 'assets/svgs/icons/magnifier.svg';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 
 const Label = styled.label<{ showSearchIcon?: boolean }>`
   position: relative;
