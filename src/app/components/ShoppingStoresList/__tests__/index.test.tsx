@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
+import { ShoppingStore } from 'types';
 import { ShoppingStoresList } from '..';
 
 jest.mock('react-i18next', () => ({
@@ -39,11 +40,22 @@ const shoppingStoresMock = [
   },
 ];
 
+const ShoppingStoresMockParent = () => {
+  const [, setShoppingStoreSelected] = React.useState<ShoppingStore | null>(
+    shoppingStoresMock[0],
+  );
+
+  return (
+    <ShoppingStoresList
+      setShoppingStoreSelected={setShoppingStoreSelected}
+      shoppingStores={shoppingStoresMock}
+    />
+  );
+};
+
 describe('<ShoppingStoresList  />', () => {
   it('should match snapshot', () => {
-    const loadingIndicator = render(
-      <ShoppingStoresList shoppingStores={shoppingStoresMock} />,
-    );
+    const loadingIndicator = render(<ShoppingStoresMockParent />);
     expect(loadingIndicator.container.firstChild).toMatchSnapshot();
   });
 });

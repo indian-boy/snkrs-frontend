@@ -1,5 +1,5 @@
 import { Dropdown, Option } from 'app/components';
-import React, { memo, useState } from 'react';
+import React, { Dispatch, memo, SetStateAction, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Theme from 'styles/themes/main-theme';
 import { ShoppingStore } from 'types';
@@ -8,11 +8,12 @@ import { messages } from './messages';
 import { Filters, List, Wrapper } from './styles';
 
 interface Props {
+  setShoppingStoreSelected: Dispatch<SetStateAction<ShoppingStore | null>>;
   shoppingStores: ShoppingStore[];
 }
 
 export const ShoppingStoresList = memo(
-  ({ shoppingStores, ...props }: Props) => {
+  ({ setShoppingStoreSelected, shoppingStores, ...props }: Props) => {
     const { t } = useTranslation();
 
     const options = [
@@ -23,6 +24,10 @@ export const ShoppingStoresList = memo(
     const [optionSelectedState, setOptionSelected] = useState<Option>(
       options[0],
     );
+
+    const onSelectShoppingStore = value => {
+      setShoppingStoreSelected(value);
+    };
 
     return (
       <Theme>
@@ -38,7 +43,11 @@ export const ShoppingStoresList = memo(
           <List>
             {shoppingStores &&
               shoppingStores.map((store, index) => (
-                <ShoppingStoreCard {...store} key={index}></ShoppingStoreCard>
+                <ShoppingStoreCard
+                  onClick={() => onSelectShoppingStore(store)}
+                  {...store}
+                  key={index}
+                ></ShoppingStoreCard>
               ))}
           </List>
         </Wrapper>

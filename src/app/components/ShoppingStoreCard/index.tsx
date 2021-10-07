@@ -16,10 +16,12 @@ import {
   Wrapper,
 } from './styles';
 
-interface Props extends ShoppingStore {}
+interface Props extends ShoppingStore {
+  onClick?: () => void;
+}
 
 export const ShoppingStoreCard = memo(
-  ({ placeName, address, availability, serviceHours }: Props) => {
+  ({ onClick, placeName, address, availability, serviceHours }: Props) => {
     const { t } = useTranslation();
 
     const pythagoreanDistanceBetweenPoints = ({
@@ -34,12 +36,14 @@ export const ShoppingStoreCard = memo(
       shoppingStoreLongitude: number;
     }) => {
       const R = 6371e3;
+
       const x =
         (shoppingStoreLongitude - userLongitude) *
         Math.cos((userLatitude + shoppingStoreLatitude) / 2);
+
       const y = shoppingStoreLatitude - userLatitude;
-      const d = Math.sqrt(x * x + y * y) * R;
-      return d;
+
+      return Math.sqrt(x * x + y * y) * R;
     };
 
     const convertInchInApproximatelyKilometers = (distance: number): number => {
@@ -74,7 +78,7 @@ export const ShoppingStoreCard = memo(
                 />
               </Distance>
             </Header>
-            <SeeOnMap type="button">
+            <SeeOnMap type="button" onClick={onClick}>
               <PinLocation />
               {t(messages.i18nSeeOnMapLabel())}
             </SeeOnMap>

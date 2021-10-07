@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/macro';
+import { ShoppingStore } from 'types';
 import { ShoppingStoresList } from '.';
 
 export default {
@@ -9,11 +10,18 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof ShoppingStoresList>;
 
-const Template: ComponentStory<typeof ShoppingStoresList> = args => (
-  <Wrapper>
-    <ShoppingStoresList {...args} />
-  </Wrapper>
-);
+const Template: ComponentStory<typeof ShoppingStoresList> = args => {
+  const [, setShoppingStoreSelected] = useState<ShoppingStore | null>(null);
+
+  return (
+    <Wrapper>
+      <ShoppingStoresList
+        {...args}
+        setShoppingStoreSelected={setShoppingStoreSelected}
+      />
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   width: 320px;
