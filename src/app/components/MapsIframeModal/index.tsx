@@ -1,33 +1,52 @@
 import { environment } from 'environment';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ShoppingStore } from 'types';
+import { debounce } from 'utils/helpers';
+import { SearchInput } from '../commons';
 import { Modal } from '../commons/Modal';
 import { ModalContext } from '../commons/Modal/context';
-import { Div, Iframe } from './styles';
+import { messages } from './messages';
+import { Iframe, Wrapper } from './styles';
 
 interface Props {}
 
 const MapsIframe = ({ ...props }: Props) => {
-  const modalContext = React.useContext(ModalContext);
+  const { t } = useTranslation();
 
-  // React.useEffect(() => {
-  //   if (modalContext) {
-  //     console.log('modalContext.data', modalContext);
-  //   }
-  // }, [modalContext, modalContext.state]);
+  const [searchTermState, setSearchTerm] = React.useState<string>('');
+
+  const updateSearchDebounced = debounce(async (searchTerm: string) => {
+    if (searchTerm.length >= 3) {
+      setSearchTerm(searchTerm);
+    } else if (!searchTerm) {
+      setSearchTerm('');
+    }
+  }, 1500);
 
   return (
     <ModalContext.Consumer>
       {({ state }: { state: { data: ShoppingStore } }) => (
-        <Div>
-          MapsIframeModal {state.data.placeName}
+        <Wrapper>
+          <SearchInput
+            style={{ width: '100%' }}
+            onChange={e => updateSearchDebounced(e.target.value)}
+            showCloseIcon={true}
+            noBorders={true}
+            type="search"
+            placeholder={t(messages.i18nSearchPlaceholder())}
+          />
           <Iframe
-            src={`https://www.google.com/maps/embed/v1/place?q=${state.data.address.location}&key=${environment.googleAPIKey}`}
+            src={`https://www.google.com/maps/embed/v1/place?q=${
+              searchTermState.length >= 3
+                ? searchTermState
+                : state.data.address.location
+            }&key=${environment.googleAPIKey}`}
             width="100%"
             height="100%"
             title="googlemapsiframe"
           ></Iframe>
-        </Div>
+        </Wrapper>
       )}
     </ModalContext.Consumer>
   );

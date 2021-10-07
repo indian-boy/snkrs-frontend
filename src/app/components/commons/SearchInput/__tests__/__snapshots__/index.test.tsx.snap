@@ -7,7 +7,7 @@ exports[`<SearchInput  /> should match snapshot 1`] = `
 
 .c1 {
   font-size: 1rem;
-  padding: 0.85rem 2.5rem 0.85rem 0.5rem;
+  padding: 0.9rem 2.5rem 0.9rem 0.5rem;
   outline: none;
   background-color: #FFFFFF;
   border: 1px solid #D6D6D6;
@@ -42,10 +42,6 @@ exports[`<SearchInput  /> should match snapshot 1`] = `
 }
 
 .c1:-ms-input-placeholder {
-  color: #737373;
-}
-
-.c1::-ms-input-placeholder {
   color: #737373;
 }
 

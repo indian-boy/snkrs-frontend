@@ -26,13 +26,15 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
         "setModalDataIntoContext": [Function],
         "state": Object {
           "data": Object {},
-          "showState": false,
+          "showModal": false,
         },
       }
     }
   >
     <styles__Wrapper>
-      <styles__Main>
+      <styles__Main
+        style={Object {}}
+      >
         <styles__Title>
           homePage.shoppingStores
           Lojas

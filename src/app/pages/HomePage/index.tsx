@@ -14,16 +14,16 @@ export function HomePage() {
   const { t } = useTranslation();
   const modalContext = useContext(ModalContext);
 
-  const [showState, setModalData] = useState<{
-    showState: boolean;
+  const [state, setModalData] = useState<{
+    showModal: boolean;
     data: any;
   }>({
-    showState: false,
+    showModal: false,
     data: {},
   });
 
-  const setModalDataIntoContext = (showState: boolean, data: ShoppingStore) => {
-    setModalData({ showState, data });
+  const setModalDataIntoContext = (showModal: boolean, data: ShoppingStore) => {
+    setModalData({ showModal, data });
   };
 
   const [shoppingStoresListState, setShoppingStoresList] = useState<
@@ -33,7 +33,7 @@ export function HomePage() {
   const getDebouncedShoppingStores = debounce(async (searchTerm: string) => {
     const result = await getShoppingStores(searchTerm);
     setShoppingStoresList(result.data);
-  }, 1000);
+  }, 1500);
 
   const onSearchInputChangeHandler = (searchTerm: string) => {
     if (searchTerm.length >= 3) {
@@ -46,7 +46,7 @@ export function HomePage() {
 
   useEffect(() => {
     if (shoppingStoreSelectedState) {
-      setModalData({ showState: true, data: shoppingStoreSelectedState });
+      setModalData({ showModal: true, data: shoppingStoreSelectedState });
     }
   }, [shoppingStoreSelectedState, modalContext]);
 
@@ -56,11 +56,9 @@ export function HomePage() {
         <title>{t(messages.i18nTitle())}</title>
         <meta name="description" content={t(messages.i18nPageMetaContent())} />
       </Helmet>
-      <ModalContext.Provider
-        value={{ state: showState, setModalDataIntoContext }}
-      >
+      <ModalContext.Provider value={{ state, setModalDataIntoContext }}>
         <Wrapper>
-          <Main>
+          <Main style={state.showModal ? { pointerEvents: 'none' } : {}}>
             <Title>{t(messages.i18nShoppingStores())}</Title>
             <SearchInput
               onChange={e => onSearchInputChangeHandler(e.target.value)}

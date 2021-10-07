@@ -65,8 +65,6 @@ export const ShoppingStoreCard = memo(
       ) / 1000
     ).toFixed(1);
 
-    console.log(distanceInKilometersApproximately);
-
     return (
       <IntlProvider locale={navigator.language}>
         <Theme>

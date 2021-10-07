@@ -8,6 +8,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   showSearchIcon?: boolean;
   showCloseIcon?: boolean;
   isRounded?: boolean;
+  noBorders?: boolean;
   secondary?: boolean; // TODO
 }
 

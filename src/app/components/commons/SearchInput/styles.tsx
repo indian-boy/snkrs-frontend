@@ -40,9 +40,10 @@ const CloseIconButton = styled.span<{ showSearchIcon?: boolean }>`
 const SearchInputWrapper = styled.input<{
   showSearchIcon?: boolean;
   isRounded?: boolean;
+  noBorders?: boolean;
 }>`
   font-size: 1rem;
-  padding: 0.85rem 2.5rem 0.85rem 0.5rem;
+  padding: 0.9rem 2.5rem 0.9rem 0.5rem;
   outline: none;
 
   ::-webkit-search-decoration,
@@ -50,6 +51,19 @@ const SearchInputWrapper = styled.input<{
   ::-webkit-search-results-button,
   ::-webkit-search-results-decoration {
     display: none;
+  }
+
+  background-color: ${props => props.theme.palette.secondary.default};
+  border: 1px solid ${props => props.theme.palette.secondary.s300};
+  color: ${props => props.theme.palette.secondary.s500};
+
+  ::placeholder {
+    color: ${props => props.theme.palette.secondary.s500};
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    color: ${props => props.theme.palette.secondary.s500};
   }
 
   ${props =>
@@ -65,23 +79,9 @@ const SearchInputWrapper = styled.input<{
     `};
 
   ${props =>
+    props.noBorders &&
     css`
-      background-color: ${props.theme.palette.secondary.default};
-      border: 1px solid ${props.theme.palette.secondary.s300};
-      color: ${props.theme.palette.secondary.s500};
-
-      ::placeholder {
-        color: ${props.theme.palette.secondary.s500};
-        opacity: 1;
-      }
-
-      :-ms-input-placeholder {
-        color: ${props.theme.palette.secondary.s500};
-      }
-
-      ::-ms-input-placeholder {
-        color: ${props.theme.palette.secondary.s500};
-      }
+      border: none;
     `};
 `;
 

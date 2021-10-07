@@ -2,10 +2,10 @@ import * as React from 'react';
 
 const ModalContext = React.createContext({
   state: {
-    showState: false,
+    showModal: false,
     data: {} as any,
   },
-  setModalDataIntoContext: (_showState: boolean, _data: any) => {},
+  setModalDataIntoContext: (_showModal: boolean, _data?: any) => {},
 });
 
 ModalContext.displayName = 'ModalContext';

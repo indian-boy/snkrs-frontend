@@ -376,7 +376,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
         <span
           class="c14"
         >
-          24km
+          2.1km
         </span>
       </div>
       <button
@@ -428,7 +428,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
         <span
           class="c14"
         >
-          24km
+          9.9km
         </span>
       </div>
       <button

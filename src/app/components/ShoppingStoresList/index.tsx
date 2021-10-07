@@ -26,7 +26,7 @@ export const ShoppingStoresList = memo(
     );
 
     const onSelectShoppingStore = value => {
-      setShoppingStoreSelected(value);
+      setShoppingStoreSelected({ ...value });
     };
 
     return (

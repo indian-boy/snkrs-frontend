@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-const Div = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   z-index: 999;
   left: 5%;
@@ -13,4 +13,21 @@ const Div = styled.div`
   border-radius: 10px;
 `;
 
-export { Div };
+const CloseButton = styled.button`
+  position: fixed;
+  right: 5%;
+  bottom: 3%;
+
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  user-select: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0.5rem;
+`;
+
+export { Wrapper, CloseButton };

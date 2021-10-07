@@ -17,8 +17,6 @@ import Theme from 'styles/themes/main-theme';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 
-console.log(process.env);
-
 export function App() {
   const { i18n } = useTranslation();
 
