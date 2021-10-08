@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { createRenderer } from 'react-test-renderer/shallow';
 import { NotFoundPage } from 'app/pages/NotFoundPage';
+import React from 'react';
+import { createRenderer } from 'react-test-renderer/shallow';
 
 const renderer = createRenderer();
 

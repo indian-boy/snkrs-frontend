@@ -1,5 +1,5 @@
 import { ReactComponent as CloseIcon } from 'assets/svgs/icons/close.svg';
-import * as React from 'react';
+import React from 'react';
 import { ModalContext } from './context';
 import { CloseButton, Wrapper } from './styles';
 

@@ -7,10 +7,10 @@
 
 // Import root app
 import { App } from 'app';
-import * as React from 'react';
+import React from 'react';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
-import * as ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
 import reportWebVitals from 'reportWebVitals';
