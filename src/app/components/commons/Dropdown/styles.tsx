@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    border: 0.5rem solid black;
+    border: 0.5rem solid ${props => props.theme.palette.primary.default};
   }
 `;
 
@@ -68,7 +68,7 @@ const Summary = styled.summary`
 
   ::after {
     content: '';
-    border: solid black;
+    border: solid ${props => props.theme.palette.primary.default};
     border-width: 0 1px 1px 0;
     display: inline-block;
     padding: 0.25rem;

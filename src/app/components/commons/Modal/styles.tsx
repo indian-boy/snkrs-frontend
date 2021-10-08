@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   height: 80%;
   overflow: auto;
   box-shadow: 0 0 4rem rgb(0 0 0 / 10%);
-  background-color: white;
+  background-color: ${props => props.theme.palette.secondary.default};
   border-radius: 10px;
 `;
 
