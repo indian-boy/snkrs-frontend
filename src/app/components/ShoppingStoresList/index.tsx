@@ -1,5 +1,5 @@
 import { Dropdown, Option } from 'app/components';
-import React, { Dispatch, memo, SetStateAction, useState } from 'react';
+import React, { Dispatch, memo, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import Theme from 'styles/themes/main-theme';
 import { ShoppingStore } from 'types';
@@ -10,20 +10,24 @@ import { Filters, List, Wrapper } from './styles';
 interface Props {
   setShoppingStoreSelected: Dispatch<SetStateAction<ShoppingStore | null>>;
   shoppingStores: ShoppingStore[];
+  setFilterOptionSelected: React.Dispatch<React.SetStateAction<Option>>;
+  filterOptions: {
+    key: number;
+    title: string;
+  }[];
+  filterOptionSelected: Option;
 }
 
 export const ShoppingStoresList = memo(
-  ({ setShoppingStoreSelected, shoppingStores, ...props }: Props) => {
+  ({
+    filterOptionSelected,
+    filterOptions,
+    setFilterOptionSelected,
+    setShoppingStoreSelected,
+    shoppingStores,
+    ...props
+  }: Props) => {
     const { t } = useTranslation();
-
-    const options = [
-      { key: 1, title: t(messages.i18nMinorDistance()) },
-      { key: 2, title: t(messages.i18nGreaterDistance()) },
-    ];
-
-    const [optionSelectedState, setOptionSelected] = useState<Option>(
-      options[0],
-    );
 
     const onSelectShoppingStore = value => {
       setShoppingStoreSelected({ ...value });
@@ -35,9 +39,9 @@ export const ShoppingStoresList = memo(
           <Filters>
             <Dropdown
               label={t(messages.i18nFilter())}
-              options={options}
-              optionSelectedState={optionSelectedState}
-              setOptionSelected={setOptionSelected}
+              options={filterOptions}
+              optionSelectedState={filterOptionSelected}
+              setOptionSelected={setFilterOptionSelected}
             />
           </Filters>
           <List>

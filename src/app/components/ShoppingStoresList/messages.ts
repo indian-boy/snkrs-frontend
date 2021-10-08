@@ -9,14 +9,4 @@ import { _t } from 'utils/messages';
 export const messages = {
   i18nFilter: () =>
     _t(translations.components.shoppingStoresList.filter, 'Filtrar'),
-  i18nMinorDistance: () =>
-    _t(
-      translations.components.shoppingStoresList.minorDistance,
-      'Menor distância',
-    ),
-  i18nGreaterDistance: () =>
-    _t(
-      translations.components.shoppingStoresList.greaterDistance,
-      'Maior distância',
-    ),
 };

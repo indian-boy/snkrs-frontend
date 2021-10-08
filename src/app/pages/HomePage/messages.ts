@@ -10,4 +10,14 @@ export const messages = {
     _t(translations.homePage.searchPlaceholder, 'Busque por endereço ou CEP'),
   i18nSearchButtonLabel: () =>
     _t(translations.homePage.searchButtonLabel, 'Buscar'),
+  i18nMinorDistance: () =>
+    _t(
+      translations.components.shoppingStoresList.minorDistance,
+      'Menor distância',
+    ),
+  i18nGreaterDistance: () =>
+    _t(
+      translations.components.shoppingStoresList.greaterDistance,
+      'Maior distância',
+    ),
 };

@@ -72,6 +72,7 @@ const TermLinks = component => styled(component)`
   color: ${props => props.theme.palette.secondary.default};
   font-size: 0.75rem;
   line-height: 1.5rem;
+  white-space: nowrap;
 
   :visited {
     color: ${props => props.theme.palette.secondary.s300};
@@ -84,7 +85,7 @@ const CompanyInfos = styled.span`
   font-size: 0.75rem;
   line-height: 1.5rem;
   text-align: center;
-  max-width: 40rem;
+  max-width: 35rem;
   margin: 0 auto;
 
   ${media.medium`

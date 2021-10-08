@@ -54,6 +54,9 @@ export const ShoppingStoreCard = memo(
       return Math.sqrt(Δφ * Δφ + q * q * Δλ * Δλ) * R;
     };
 
+    // HARDCODED USER LOCATION
+    // MUSEU DO FUTEBOL - Endereço: Praça Charles Miler, s/n - Pacaembu, São Paulo - SP, 01234-010
+
     const distanceInKilometersApproximately = (
       Math.round(
         pythagoreanKilometersBetweenPoints({

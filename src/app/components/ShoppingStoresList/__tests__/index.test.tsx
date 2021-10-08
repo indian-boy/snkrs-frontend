@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
-import React from 'react';
+import { Option } from 'app/components';
+import React, { useState } from 'react';
 import { ShoppingStore } from 'types';
 import { ShoppingStoresList } from '..';
 
@@ -45,8 +46,20 @@ const ShoppingStoresMockParent = () => {
     shoppingStoresMock[0],
   );
 
+  const filterOptions = [
+    { key: 1, title: 'Filter #1' },
+    { key: 2, title: 'Filter #2' },
+  ];
+
+  const [filterOptionSelected, setFilterOptionSelected] = useState<Option>(
+    filterOptions[0],
+  );
+
   return (
     <ShoppingStoresList
+      filterOptions={filterOptions}
+      filterOptionSelected={filterOptionSelected}
+      setFilterOptionSelected={setFilterOptionSelected}
       setShoppingStoreSelected={setShoppingStoreSelected}
       shoppingStores={shoppingStoresMock}
     />

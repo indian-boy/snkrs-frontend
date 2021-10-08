@@ -1,4 +1,4 @@
-import { Button, ShoppingStoresList } from 'app/components';
+import { Button, Option, ShoppingStoresList } from 'app/components';
 import { ModalContext } from 'app/components/commons/Modal/context';
 import { MapsIframeModal } from 'app/components/MapsIframeModal';
 import { getShoppingStores } from 'app/services/resources';
@@ -45,7 +45,7 @@ export function HomePage() {
   >([]);
 
   const getDebouncedShoppingStores = debounce(async () => {
-    updateShoppingStoresList();
+    await updateShoppingStoresList();
   }, 1500);
 
   const onSearchInputChangeHandler = (searchTerm: string) => {
@@ -71,6 +71,15 @@ export function HomePage() {
     const { data } = await getShoppingStores(searchTermState);
     setShoppingStoresList(data);
   };
+
+  const filterOptions = [
+    { key: 1, title: t(messages.i18nMinorDistance()) },
+    { key: 2, title: t(messages.i18nGreaterDistance()) },
+  ];
+
+  const [filterOptionSelected, setFilterOptionSelected] = useState<Option>(
+    filterOptions[0],
+  );
 
   return (
     <>
@@ -99,6 +108,9 @@ export function HomePage() {
             </SearchWrapper>
             {!isMediumScreen && shoppingStoresListState.length > 0 && (
               <ShoppingStoresList
+                setFilterOptionSelected={setFilterOptionSelected}
+                filterOptions={filterOptions}
+                filterOptionSelected={filterOptionSelected}
                 setShoppingStoreSelected={setShoppingStoreSelected}
                 shoppingStores={shoppingStoresListState}
               />
@@ -107,6 +119,9 @@ export function HomePage() {
               <ContentWrapperMediumScreen>
                 {shoppingStoresListState.length > 0 && (
                   <ShoppingStoresList
+                    setFilterOptionSelected={setFilterOptionSelected}
+                    filterOptions={filterOptions}
+                    filterOptionSelected={filterOptionSelected}
                     setShoppingStoreSelected={setShoppingStoreSelected}
                     shoppingStores={shoppingStoresListState}
                   />

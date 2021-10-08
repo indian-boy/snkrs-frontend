@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Option } from 'app/components';
 import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 import { ShoppingStore } from 'types';
@@ -13,10 +14,22 @@ export default {
 const Template: ComponentStory<typeof ShoppingStoresList> = args => {
   const [, setShoppingStoreSelected] = useState<ShoppingStore | null>(null);
 
+  const filterOptions = [
+    { key: 1, title: 'Filter #1' },
+    { key: 2, title: 'Filter #2' },
+  ];
+
+  const [filterOptionSelected, setFilterOptionSelected] = useState<Option>(
+    filterOptions[0],
+  );
+
   return (
     <Wrapper>
       <ShoppingStoresList
         {...args}
+        filterOptions={filterOptions}
+        filterOptionSelected={filterOptionSelected}
+        setFilterOptionSelected={setFilterOptionSelected}
         setShoppingStoreSelected={setShoppingStoreSelected}
       />
     </Wrapper>
