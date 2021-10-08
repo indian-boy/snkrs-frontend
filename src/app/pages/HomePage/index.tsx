@@ -52,7 +52,7 @@ export function HomePage() {
     setSearchTerm(searchTerm);
 
     if (!isMediumScreen && searchTerm.length >= 3) {
-      getDebouncedShoppingStores(searchTerm);
+      getDebouncedShoppingStores();
     }
   };
 
