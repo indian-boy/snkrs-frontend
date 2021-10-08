@@ -32,10 +32,7 @@
       "registerForNews": "Cadastre-se para receber novidades",
       "siteMap": "Mapa do site",
       "help": {
-        "summary": "Ajuda"
-      },
-      "aboutNike": {
-        "summary": "Sobre a Nike",
+        "summary": "Ajuda",
         "generalQuestions": "Dúvidas Gerais",
         "findYourSize": "Encontre seu Tamanho",
         "orders": "Pedidos",
@@ -46,6 +43,11 @@
         "products": "Produtos",
         "corporate": "Corporativo",
         "contactUs": "Fale Conosco"
+      },
+      "aboutNike": {
+        "summary": "Sobre a Nike",
+        "madeToPlay": "Feito para Jogar",
+        "sustentability": "Sustentabilidade"
       },
       "socialMedias": "Redes Sociais",
       "paymentMethods": "Formas de pagamento",

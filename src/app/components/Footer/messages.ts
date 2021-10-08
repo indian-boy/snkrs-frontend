@@ -19,47 +19,59 @@ export const messages = {
     ),
   i18nSiteMap: () => _t(translations.components.footer.siteMap, 'Mapa do site'),
   i18nHelpLinks: {
-    i18nSummary: () => _t(translations.components.footer.help.summary, 'Ajuda'),
-  },
-  i18nAboutNikeLinks: {
-    i18nSummary: () =>
-      _t(translations.components.footer.aboutNike.summary, 'Sobre a Nike'),
+    i18nTitle: () => _t(translations.components.footer.help.summary, 'Ajuda'),
     links: {
       i18nGeneralQuestions: () =>
         _t(
-          translations.components.footer.aboutNike.generalQuestions,
+          translations.components.footer.help.generalQuestions,
           'Dúvidas Gerais',
         ),
       i18FindYourSize: () =>
         _t(
-          translations.components.footer.aboutNike.findYourSize,
+          translations.components.footer.help.findYourSize,
           'Encontre seu Tamanho',
         ),
       i18nOrders: () =>
-        _t(translations.components.footer.aboutNike.orders, 'Pedidos'),
+        _t(translations.components.footer.help.orders, 'Pedidos'),
       i18nExchangesAndReturns: () =>
         _t(
-          translations.components.footer.aboutNike.exchangesAndReturns,
+          translations.components.footer.help.exchangesAndReturns,
           'Trocas e Devoluções',
         ),
       i18nEditConsent: () =>
         _t(
-          translations.components.footer.aboutNike.editConsent,
+          translations.components.footer.help.editConsent,
           'Editar consentimento',
         ),
       i18nPayments: () =>
-        _t(translations.components.footer.aboutNike.payments, 'Pagamentos'),
+        _t(translations.components.footer.help.payments, 'Pagamentos'),
       i18nCookiePreferences: () =>
         _t(
-          translations.components.footer.aboutNike.cookiePreferences,
+          translations.components.footer.help.cookiePreferences,
           'Preferências de Cookie',
         ),
       i18nProducts: () =>
-        _t(translations.components.footer.aboutNike.products, 'Produtos'),
+        _t(translations.components.footer.help.products, 'Produtos'),
       i18nCorporate: () =>
-        _t(translations.components.footer.aboutNike.corporate, 'Corporativo'),
+        _t(translations.components.footer.help.corporate, 'Corporativo'),
       i18nContactUs: () =>
-        _t(translations.components.footer.aboutNike.contactUs, 'Fale Conosco'),
+        _t(translations.components.footer.help.contactUs, 'Fale Conosco'),
+    },
+  },
+  i18nAboutNikeLinks: {
+    i18nTitle: () =>
+      _t(translations.components.footer.aboutNike.summary, 'Sobre a Nike'),
+    links: {
+      i18nMadeToPlay: () =>
+        _t(
+          translations.components.footer.aboutNike.madeToPlay,
+          'Feito para Jogar',
+        ),
+      i18nGeneralSustentability: () =>
+        _t(
+          translations.components.footer.aboutNike.sustentability,
+          'Sustentabilidade',
+        ),
     },
   },
   i18nSocialMedias: () =>

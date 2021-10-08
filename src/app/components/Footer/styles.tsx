@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import { media } from 'styles/media';
 
-const Wrapper = styled.div`
+const SmallScreenWrapper = styled.div`
   padding: 2rem 1rem;
   background: ${props => props.theme.palette.primary.default};
   display: flex;
@@ -13,27 +14,28 @@ const Links = styled.div`
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid ${props => props.theme.palette.primary.p600};
 `;
 
-const MainNavLinks = component => styled(component)`
+const MainNavLinks = (
+  component: typeof NavLink,
+  fontSize: string,
+  fontWeight: string,
+  textTransform: string,
+) => styled(component)`
   text-decoration: none;
   color: ${props => props.theme.palette.secondary.default};
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: bold;
+  text-transform: ${textTransform};
+  font-size: ${fontSize};
+  font-weight: ${fontWeight};
 
   :visited {
     color: ${props => props.theme.palette.secondary.s300};
   }
 `;
 
-const MainNavLink = MainNavLinks(NavLink);
+const MainNavLink = MainNavLinks(NavLink, '1rem', 'bold', 'uppercase');
 
-const LinksWrapper = styled.div`
-  padding-bottom: 1rem;
-`;
+const LinksWrapper = styled.div``;
 
 const SectionLabel = styled.div`
   color: ${props => props.theme.palette.secondary.default};
@@ -57,11 +59,9 @@ const PaymentOptions = styled.div`
   display: grid;
   grid-template-columns: repeat(4, min-content);
   gap: 0.5rem;
-  border-bottom: 1px solid ${props => props.theme.palette.primary.p600};
-  padding-bottom: 2rem;
 `;
 
-const Terms = styled.div`
+const TermsSmallScreen = styled.div`
   display: flex;
   justify-content: space-around;
   gap: 0.5rem;
@@ -84,12 +84,93 @@ const CompanyInfos = styled.span`
   font-size: 0.75rem;
   line-height: 1.5rem;
   text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
+
+  ${media.medium`
+    margin: initial;
+  `}
+
   color: ${props => props.theme.palette.secondary.s300};
 `;
 
+const MediumScreenWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(12.5rem, max-content));
+  justify-content: space-between;
+`;
+
+const LinksMediumScreen = styled.div`
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+`;
+
+const SectionTitleMediumScreen = styled.div`
+  text-decoration: none;
+  color: ${props => props.theme.palette.secondary.default};
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+`;
+
+const SectionWrapper = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+`;
+
+const SectionNavLink = MainNavLinks(NavLink, '0.75rem', 'normal', 'none');
+
+const MultipleSectionsWrapper = styled.div`
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+`;
+
+const Hr = styled.hr`
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid ${props => props.theme.palette.primary.p600};
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-end: none;
+  margin-inline-start: none;
+`;
+
+const LinksSection = styled.div`
+  padding: 2rem 1rem;
+  background: ${props => props.theme.palette.primary.default};
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const TermsSectionMediumScreen = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const TermsLinksMediumScreen = styled.div`
+  display: flex;
+  gap: 4rem;
+`;
+
 export {
-  Wrapper,
+  TermsSectionMediumScreen,
+  TermsLinksMediumScreen,
+  SmallScreenWrapper,
+  MediumScreenWrapper,
+  LinksSection,
   Links,
+  LinksMediumScreen,
+  SectionTitleMediumScreen,
+  SectionWrapper,
+  SectionNavLink,
+  MultipleSectionsWrapper,
   MainNavLink,
   LinksWrapper,
   SectionLabel,
@@ -97,7 +178,8 @@ export {
   SocialMediasOptions,
   PaymentMethods,
   PaymentOptions,
-  Terms,
+  TermsSmallScreen,
   TermLink,
   CompanyInfos,
+  Hr,
 };

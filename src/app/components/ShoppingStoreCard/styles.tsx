@@ -10,6 +10,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.span`
+  white-space: break-spaces;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.2rem;
@@ -17,6 +18,7 @@ const Title = styled.span`
 `;
 
 const Distance = styled.span`
+  white-space: nowrap;
   font-weight: 500;
   font-size: 1.125rem;
   color: ${props => props.theme.palette.primary.p700};

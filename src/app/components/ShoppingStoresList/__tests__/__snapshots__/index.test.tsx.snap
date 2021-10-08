@@ -179,6 +179,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
 }
 
 .c13 {
+  white-space: break-spaces;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.2rem;
@@ -186,6 +187,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
 }
 
 .c14 {
+  white-space: nowrap;
   font-weight: 500;
   font-size: 1.125rem;
   color: #1A1A1A;
