@@ -16,7 +16,7 @@ exports[`<Dropdown  /> should match snapshot 1`] = `
 .c0 *::-webkit-scrollbar {
   background-color: #FFFFFF;
   width: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
 }
 
 .c0 *::-webkit-scrollbar-button {
@@ -25,12 +25,12 @@ exports[`<Dropdown  /> should match snapshot 1`] = `
 
 .c0 *::-webkit-scrollbar-thumb {
   background-color: #000000;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
 }
 
 .c0 *::-webkit-scrollbar-track {
   background-color: #FFFFFF;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
 }
 
 .c0 *::-webkit-scrollbar-track:hover {

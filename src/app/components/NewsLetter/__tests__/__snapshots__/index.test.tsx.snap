@@ -91,6 +91,12 @@ exports[`<NewsLetter  /> should match snapshot 1`] = `
   text-align: center;
 }
 
+@media (min-width:1024px) {
+  .c0 {
+    padding: 4rem 2.5rem;
+  }
+}
+
 <div
   class="c0"
 >

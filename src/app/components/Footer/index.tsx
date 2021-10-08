@@ -19,7 +19,6 @@ import {
   Hr,
   Links,
   LinksMediumScreen,
-  LinksSection,
   LinksWrapper,
   MainNavLink,
   MediumScreenWrapper,
@@ -36,6 +35,7 @@ import {
   TermsLinksMediumScreen,
   TermsSectionMediumScreen,
   TermsSmallScreen,
+  Wrapper,
 } from './styles';
 
 interface Props {}
@@ -103,7 +103,7 @@ export const Footer = memo((props: Props) => {
     <BrowserRouter>
       <Theme>
         {isMediumScreen && (
-          <LinksSection>
+          <Wrapper>
             <MediumScreenWrapper>
               <LinksMediumScreen>
                 <MainNavLink to="/">
@@ -175,7 +175,7 @@ export const Footer = memo((props: Props) => {
               </TermsLinksMediumScreen>
               <CompanyInfos>{t(messages.i18nCompanyInfos())}</CompanyInfos>
             </TermsSectionMediumScreen>
-          </LinksSection>
+          </Wrapper>
         )}
 
         {!isMediumScreen && (

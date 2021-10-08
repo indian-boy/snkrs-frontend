@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   *::-webkit-scrollbar {
     background-color: ${props => props.theme.palette.secondary.default};
     width: 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.625rem;
   }
 
   *::-webkit-scrollbar-button {
@@ -20,12 +20,12 @@ const Wrapper = styled.div`
 
   *::-webkit-scrollbar-thumb {
     background-color: ${props => props.theme.palette.primary.default};
-    border-radius: 0.5rem;
+    border-radius: 0.625rem;
   }
 
   *::-webkit-scrollbar-track {
     background-color: ${props => props.theme.palette.secondary.default};
-    border-radius: 0.5rem;
+    border-radius: 0.625rem;
   }
 
   *::-webkit-scrollbar-track:hover {

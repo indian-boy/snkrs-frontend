@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 const Wrapper = styled.div`
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
   background-color: ${props => props.theme.palette.secondary.s200};
 `;
 

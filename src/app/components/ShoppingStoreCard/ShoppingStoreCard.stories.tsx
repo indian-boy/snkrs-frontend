@@ -19,9 +19,9 @@ const Template: ComponentStory<typeof ShoppingStoreCard> = args => (
 );
 
 const Wrapper = styled.div`
-  width: 320px;
+  width: 20rem;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
   background-color: ${props => props.theme.palette.secondary.s200};
 `;
 

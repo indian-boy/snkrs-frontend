@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { media } from 'styles/media';
 
-const SmallScreenWrapper = styled.div`
+const SmallScreenWrapper = styled.footer`
   padding: 2rem 1rem;
   background: ${props => props.theme.palette.primary.default};
   display: flex;
@@ -140,8 +140,8 @@ const Hr = styled.hr`
   margin-inline-start: none;
 `;
 
-const LinksSection = styled.div`
-  padding: 2rem 1rem;
+const Wrapper = styled.footer`
+  padding: 2rem 2.5rem;
   background: ${props => props.theme.palette.primary.default};
   display: flex;
   flex-direction: column;
@@ -164,7 +164,7 @@ export {
   TermsLinksMediumScreen,
   SmallScreenWrapper,
   MediumScreenWrapper,
-  LinksSection,
+  Wrapper,
   Links,
   LinksMediumScreen,
   SectionTitleMediumScreen,

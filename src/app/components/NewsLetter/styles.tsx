@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { media } from 'styles/media';
 
 const Content = styled.div`
   display: flex;
@@ -7,6 +8,10 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
   padding: 4rem 1rem;
+
+  ${media.medium`
+    padding: 4rem 2.5rem;
+  `}
 `;
 
 const Title = styled.span`

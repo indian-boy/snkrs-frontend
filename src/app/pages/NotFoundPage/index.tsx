@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 320px;
+  min-height: 20rem;
 `;
 
 const Title = styled.div`

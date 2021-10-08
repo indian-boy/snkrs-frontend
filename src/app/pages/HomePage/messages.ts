@@ -8,4 +8,6 @@ export const messages = {
   i18nShoppingStores: () => _t(translations.homePage.shoppingStores, 'Lojas'),
   i18nSearchPlaceholder: () =>
     _t(translations.homePage.searchPlaceholder, 'Busque por endereço ou CEP'),
+  i18nSearchButtonLabel: () =>
+    _t(translations.homePage.searchButtonLabel, 'Buscar'),
 };

@@ -53,7 +53,7 @@ const SeeOnMap = styled.button`
 const ContentWrapper = styled.div`
   background-color: ${props => props.theme.palette.secondary.default};
   margin: 1rem 0;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

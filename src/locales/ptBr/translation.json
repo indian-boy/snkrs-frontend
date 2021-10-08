@@ -3,7 +3,8 @@
     "pageTitle": "Home Page",
     "pageMetaContent": "Home Page - Meta Content",
     "shoppingStores": "Lojas",
-    "searchPlaceholder": "Busque por endereço ou CEP"
+    "searchPlaceholder": "Busque por endereço ou CEP",
+    "searchButtonLabel": "Buscar"
   },
   "notFoundPage": {
     "pageTitle": "Not Found Page",

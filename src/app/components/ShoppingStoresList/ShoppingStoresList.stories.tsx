@@ -24,7 +24,7 @@ const Template: ComponentStory<typeof ShoppingStoresList> = args => {
 };
 
 const Wrapper = styled.div`
-  width: 320px;
+  width: 20rem;
 `;
 
 export const Primary = Template.bind({});
