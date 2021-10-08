@@ -68,8 +68,8 @@ export function HomePage() {
   }, [shoppingStoreSelectedState, modalContext, isMediumScreen]);
 
   const updateShoppingStoresList = async () => {
-    const result = await getShoppingStores(searchTermState);
-    setShoppingStoresList(result.data);
+    const { data } = await getShoppingStores(searchTermState);
+    setShoppingStoresList(data);
   };
 
   return (
@@ -111,7 +111,6 @@ export function HomePage() {
                     shoppingStores={shoppingStoresListState}
                   />
                 )}
-
                 {shoppingStoreSelectedState && (
                   <Iframe
                     src={`https://www.google.com/maps/embed/v1/place?q=${shoppingStoreSelectedState.address.location}&key=${environment.googleAPIKey}`}
