@@ -41,6 +41,7 @@ const SearchInputWrapper = styled.input<{
   showSearchIcon?: boolean;
   isRounded?: boolean;
   noBorders?: boolean;
+  secondary?: boolean;
 }>`
   font-size: 1rem;
   padding: 0.9rem 2.5rem 0.9rem 0.5rem;
@@ -56,6 +57,13 @@ const SearchInputWrapper = styled.input<{
   background-color: ${props => props.theme.palette.secondary.default};
   border: 1px solid ${props => props.theme.palette.secondary.s300};
   color: ${props => props.theme.palette.secondary.s500};
+
+  ${props =>
+    props.secondary &&
+    css`
+      background-color: ${props => props.theme.palette.secondary.s200};
+      border: none;
+    `};
 
   ::placeholder {
     color: ${props => props.theme.palette.secondary.s500};

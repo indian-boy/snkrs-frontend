@@ -4,7 +4,9 @@
     "pageMetaContent": "Home Page - Meta Content",
     "shoppingStores": "Lojas",
     "searchPlaceholder": "Busque por endereço ou CEP",
-    "searchButtonLabel": "Buscar"
+    "searchButtonLabel": "Buscar",
+    "filterMinorDistanceLabel": "Menor distância",
+    "filterGreaterDistance": "Maior distância"
   },
   "notFoundPage": {
     "pageTitle": "Not Found Page",
@@ -19,9 +21,7 @@
       "availability": "Disponível em {{count}} dias úteis"
     },
     "shoppingStoresList": {
-      "filter": "Filtrar",
-      "minorDistance": "Menor distância",
-      "greaterDistance": "Maior distância"
+      "filter": "Filtrar"
     },
     "newsLetter": {
       "title": "Receba As Novidades Da Nike",
@@ -55,6 +55,17 @@
       "privacyPolicy": "Política de Privacidade",
       "userTerms": "Termos de Uso",
       "companyInfos": "© 2021 Nike. Todos os direitos reservados. Fisia Comércio de Produtos Esportivos Ltda - CNPJ: 59.546.515/0016-10 Rua José Semião Rodrigues Agostinho, 1370 - Galpão Unidade 17 - Nível 0, 1 e 2 - CEP 06833-300 - Embu das Artes/SP."
+    },
+    "header": {
+      "links": {
+        "newOffersPage": "Lançamentos",
+        "malePage": "Masculino",
+        "femalePage": "Feminino",
+        "kidsPage": "Infantil",
+        "offersPage": "Ofertas",
+        "homePage": "SNKRS"
+      },
+      "searchButtonLabel": "Buscar"
     }
   }
 }

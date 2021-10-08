@@ -11,13 +11,7 @@ export const messages = {
   i18nSearchButtonLabel: () =>
     _t(translations.homePage.searchButtonLabel, 'Buscar'),
   i18nMinorDistance: () =>
-    _t(
-      translations.components.shoppingStoresList.minorDistance,
-      'Menor distância',
-    ),
+    _t(translations.homePage.filterMinorDistanceLabel, 'Menor distância'),
   i18nGreaterDistance: () =>
-    _t(
-      translations.components.shoppingStoresList.greaterDistance,
-      'Maior distância',
-    ),
+    _t(translations.homePage.filterGreaterDistance, 'Maior distância'),
 };

@@ -14,6 +14,7 @@ import { IntlProvider } from 'react-intl';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { GlobalStyles } from 'styles/global-styles';
 import Theme from 'styles/themes/main-theme';
+import { Header } from './components/Header';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 
@@ -31,6 +32,7 @@ export function App() {
           >
             <meta name="description" content="SNKRS App" />
           </Helmet>
+          <Header></Header>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route component={NotFoundPage} />

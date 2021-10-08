@@ -9,13 +9,14 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   showCloseIcon?: boolean;
   isRounded?: boolean;
   noBorders?: boolean;
-  secondary?: boolean; // TODO
+  secondary?: boolean;
+  hidden?: boolean;
 }
 
 export const SearchInput = memo(
   ({
+    hidden = false,
     placeholder,
-    secondary,
     type,
     showSearchIcon,
     showCloseIcon,
@@ -31,18 +32,20 @@ export const SearchInput = memo(
 
     return (
       <Theme>
-        <Label showSearchIcon={showSearchIcon}>
-          {showCloseIcon && (
-            <CloseIconButton onClick={() => clearSearch()}></CloseIconButton>
-          )}
-          <SearchInputWrapper
-            placeholder={placeholder}
-            ref={ref}
-            showSearchIcon={showSearchIcon}
-            type={type}
-            {...props}
-          ></SearchInputWrapper>
-        </Label>
+        {!hidden && (
+          <Label showSearchIcon={showSearchIcon}>
+            {showCloseIcon && (
+              <CloseIconButton onClick={() => clearSearch()}></CloseIconButton>
+            )}
+            <SearchInputWrapper
+              placeholder={placeholder}
+              ref={ref}
+              showSearchIcon={showSearchIcon}
+              type={type}
+              {...props}
+            ></SearchInputWrapper>
+          </Label>
+        )}
       </Theme>
     );
   },

@@ -28,6 +28,7 @@ exports[`<App /> should render and match the snapshot 1`] = `
           name="description"
         />
       </Helmet>
+      <Memo />
       <Switch>
         <Route
           component={[Function]}

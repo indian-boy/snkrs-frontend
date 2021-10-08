@@ -67,7 +67,7 @@ const TermsSmallScreen = styled.div`
   gap: 0.5rem;
 `;
 
-const TermLinks = component => styled(component)`
+const TermLinksCustomized = component => styled(component)`
   text-decoration: none;
   color: ${props => props.theme.palette.secondary.default};
   font-size: 0.75rem;
@@ -79,7 +79,7 @@ const TermLinks = component => styled(component)`
   }
 `;
 
-const TermLink = TermLinks(NavLink);
+const TermLink = TermLinksCustomized(NavLink);
 
 const CompanyInfos = styled.span`
   font-size: 0.75rem;
