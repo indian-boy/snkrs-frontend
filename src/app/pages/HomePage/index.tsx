@@ -85,7 +85,6 @@ export function HomePage() {
       GetLatitudeLongitudeFromText(searchTermState);
 
     if (!latitude || !longitude) {
-      setShoppingStores([]);
       return;
     }
 
@@ -103,7 +102,6 @@ export function HomePage() {
         GetLatitudeLongitudeFromText(searchTermState);
 
       if (!latitude || !longitude) {
-        setShoppingStores([]);
         return;
       }
 
