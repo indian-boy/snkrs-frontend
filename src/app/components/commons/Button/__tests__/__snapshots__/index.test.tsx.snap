@@ -53,6 +53,7 @@ exports[`<Button  /> should match snapshot 1`] = `
 
 <button
   class="c0"
+  data-testid="buttonID"
   type="button"
 >
   Label

@@ -96,7 +96,7 @@ export function HomePage() {
   };
 
   const getShoppingStoresBasedOnUserLocation = useCallback(() => {
-    const debounceFetchShoppingStores = async () => {
+    const fetchShoppingStoresWithDebounce = async () => {
       const { latitude, longitude } =
         getLatitudeLongitudeFromText(searchTermState);
 
@@ -113,12 +113,12 @@ export function HomePage() {
     };
 
     if (!isMediumScreen) {
-      const updateShoppingStoresDebounced = debounce(
-        debounceFetchShoppingStores,
+      const fetchShoppingStoresDebounced = debounce(
+        fetchShoppingStoresWithDebounce,
         1500,
       );
 
-      updateShoppingStoresDebounced();
+      fetchShoppingStoresDebounced();
     }
   }, [searchTermState, isMediumScreen]);
 
@@ -127,7 +127,7 @@ export function HomePage() {
     return () => {};
   }, [getShoppingStoresBasedOnUserLocation]);
 
-  const setShoppingStoreToModalAndDisplays = useCallback(() => {
+  const showShoppingStoreOnMapsModal = useCallback(() => {
     if (shoppingStoreSelectedState) {
       if (!isMediumScreen) {
         modalContext.current.setModalDataIntoContext(
@@ -139,10 +139,10 @@ export function HomePage() {
   }, [shoppingStoreSelectedState, modalContext, isMediumScreen]);
 
   useEffect(() => {
-    setShoppingStoreToModalAndDisplays();
-  }, [setShoppingStoreToModalAndDisplays]);
+    showShoppingStoreOnMapsModal();
+  }, [showShoppingStoreOnMapsModal]);
 
-  const getDataSortedOnSelectedFilterOption = useCallback(() => {
+  const sortShoppingStoresByOptionSelected = useCallback(() => {
     const { latitude, longitude } = getLatitudeLongitudeFromText(
       searchTermRef.current,
     );
@@ -161,9 +161,9 @@ export function HomePage() {
   }, [filterOptionSelectedState]);
 
   useEffect(() => {
-    getDataSortedOnSelectedFilterOption();
+    sortShoppingStoresByOptionSelected();
     return () => {};
-  }, [getDataSortedOnSelectedFilterOption]);
+  }, [sortShoppingStoresByOptionSelected]);
 
   return (
     <>
