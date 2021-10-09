@@ -119,6 +119,7 @@ exports[`<NewsLetter  /> should match snapshot 1`] = `
   </span>
   <button
     class="c3"
+    data-testid="buttonID"
     type="button"
   >
     components.newsLetter.registerButtonLabel

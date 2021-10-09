@@ -21,7 +21,7 @@ interface Props {
   label: string;
   options: Option[];
   setOptionSelected: React.Dispatch<React.SetStateAction<Option>>;
-  optionSelectedState: Option | undefined;
+  optionSelectedState?: Option | undefined;
 }
 
 export const Dropdown = memo(
@@ -39,10 +39,10 @@ export const Dropdown = memo(
 
     return (
       <Theme>
-        <Wrapper>
+        <Wrapper data-testid="dropdownID">
           <FieldSet>
             <Legend>{optionSelectedState?.title || label}</Legend>
-            <Details ref={ref}>
+            <Details ref={ref} role="openClose">
               <Summary>{optionSelectedState?.title || label}</Summary>
               <Options>
                 {options.map((item, index) => {

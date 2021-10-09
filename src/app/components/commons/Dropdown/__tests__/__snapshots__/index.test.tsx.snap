@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Dropdown  /> should match snapshot 1`] = `
+exports[`<Dropdown /> should match snapshot 1`] = `
 .c0 {
   font-size: 0.875rem;
   display: contents;
@@ -164,6 +164,7 @@ exports[`<Dropdown  /> should match snapshot 1`] = `
 
 <div
   class="c0"
+  data-testid="dropdownID"
 >
   <fieldset
     class="c1"
@@ -175,6 +176,7 @@ exports[`<Dropdown  /> should match snapshot 1`] = `
     </legend>
     <details
       class="c3"
+      role="openClose"
     >
       <summary
         class="c4"

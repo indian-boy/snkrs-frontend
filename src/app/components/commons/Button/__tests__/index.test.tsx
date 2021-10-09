@@ -15,9 +15,7 @@ jest.mock('react-i18next', () => ({
 
 describe('<Button  />', () => {
   it('should match snapshot', () => {
-    const { getByTestId, container } = render(
-      <Button data-testid="buttonID" label="Label" />,
-    );
+    const { getByTestId, container } = render(<Button label="Label" />);
 
     const buttonElement = getByTestId('buttonID');
 
@@ -26,9 +24,7 @@ describe('<Button  />', () => {
   });
 
   it('should match label inside the button', () => {
-    const { getByTestId } = render(
-      <Button data-testid="buttonID" label="Label" />,
-    );
+    const { getByTestId } = render(<Button label="Label" />);
 
     const buttonElement = getByTestId('buttonID');
     expect(buttonElement).toHaveTextContent('Label');
@@ -36,9 +32,7 @@ describe('<Button  />', () => {
 
   it('should trigger passed onClick function', async () => {
     const onClick = jest.fn();
-    const button = render(
-      <Button data-testid="buttonID" label="Label" onClick={onClick} />,
-    );
+    const button = render(<Button label="Label" onClick={onClick} />);
 
     fireEvent.click(button.getByText('Label'));
     expect(onClick).toHaveBeenCalled();

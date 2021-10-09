@@ -11,7 +11,12 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = memo(({ onClick, label, ...props }: Props) => {
   return (
     <Theme>
-      <ButtonWrapper onClick={onClick} type="button" {...props}>
+      <ButtonWrapper
+        data-testid="buttonID"
+        onClick={onClick}
+        type="button"
+        {...props}
+      >
         {label}
       </ButtonWrapper>
     </Theme>
