@@ -66,6 +66,14 @@
         "homePage": "SNKRS"
       },
       "searchButtonLabel": "Buscar"
+    },
+    "topHeader": {
+      "links": {
+        "help": "Ajuda",
+        "followYourOrder": "Acompanhe seu pedido",
+        "joinUs": "Junte-se a nós",
+        "login": "Entrar"
+      }
     }
   }
 }

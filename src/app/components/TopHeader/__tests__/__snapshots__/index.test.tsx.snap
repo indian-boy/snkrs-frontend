@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TopHeader  /> should match snapshot 1`] = `
+.c0 {
+  display: none;
+  background-color: #F7F7F7;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.c2 {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.c3 {
+  width: 2.9rem;
+  height: 1rem;
+}
+
+.c5 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #737373;
+  font-size: 0.75rem;
+  line-height: 0;
+}
+
+.c5:visited {
+  color: #737373;
+}
+
+.c6 {
+  height: 100%;
+  border-left: 1px solid #737373;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <svg
+      class="c2"
+    >
+      jordan.svg
+    </svg>
+    <svg
+      class="c3"
+    >
+      snkrs.svg
+    </svg>
+  </div>
+  <div
+    class="c4"
+  >
+    <a
+      aria-current="page"
+      class="c5 active"
+      href="/"
+    >
+      components.topHeader.links.help
+      Ajuda
+    </a>
+    <span
+      class="c6"
+    />
+    <a
+      aria-current="page"
+      class="c5 active"
+      href="/"
+    >
+      components.topHeader.links.followYourOrder
+      Acompanhe seu pedido
+    </a>
+    <span
+      class="c6"
+    />
+    <a
+      aria-current="page"
+      class="c5 active"
+      href="/"
+    >
+      components.topHeader.links.joinUs
+      Junte-se a nós
+    </a>
+    <span
+      class="c6"
+    />
+    <a
+      aria-current="page"
+      class="c5 active"
+      href="/"
+    >
+      components.topHeader.links.login
+      Entrar
+    </a>
+  </div>
+</div>
+`;

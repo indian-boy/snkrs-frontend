@@ -18,6 +18,7 @@ import Theme from 'styles/themes/main-theme';
 import { ShoppingStore } from 'types';
 import { ModalContext } from './components/commons/Modal/context';
 import { Header } from './components/Header';
+import { TopHeader } from './components/TopHeader';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 
@@ -49,7 +50,8 @@ export function App() {
 
           <ModalContext.Provider value={{ state, setModalDataIntoContext }}>
             <Wrapper>
-              <Header></Header>
+              <TopHeader />
+              <Header />
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route component={NotFoundPage} />

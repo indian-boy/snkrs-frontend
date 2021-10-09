@@ -177,7 +177,6 @@ export function HomePage() {
         <title>{t(messages.i18nTitle())}</title>
         <meta name="description" content={t(messages.i18nPageMetaContent())} />
       </Helmet>
-
       <Wrapper>
         <Main>
           <Title>{t(messages.i18nShoppingStores())}</Title>
@@ -234,7 +233,7 @@ export function HomePage() {
   );
 }
 
-const sortByFilterSelectedOption = (
+const sortBySelectedOption = (
   prev: ShoppingStore,
   next: ShoppingStore,
   filterOptionSelectedState: Option,
@@ -292,6 +291,6 @@ const mapShoppingStoresWithDistanceApplyingSortingOption = (
       return shoppingStore;
     })
     .sort((prev, next) =>
-      sortByFilterSelectedOption(prev, next, filterOptionSelectedState),
+      sortBySelectedOption(prev, next, filterOptionSelectedState),
     );
 };
