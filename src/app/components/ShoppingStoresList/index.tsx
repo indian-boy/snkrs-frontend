@@ -11,10 +11,7 @@ interface Props {
   setShoppingStoreSelected: Dispatch<SetStateAction<ShoppingStore | null>>;
   shoppingStores: ShoppingStore[];
   setFilterOptionSelected: React.Dispatch<React.SetStateAction<Option>>;
-  filterOptions: {
-    key: number;
-    title: string;
-  }[];
+  filterOptions: Option[];
   filterOptionSelectedState: Option;
 }
 

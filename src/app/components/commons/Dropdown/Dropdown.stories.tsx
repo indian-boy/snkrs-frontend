@@ -21,6 +21,7 @@ const Template: ComponentStory<typeof Dropdown> = args => {
       {...args}
       optionSelectedState={optionSelectedState}
       setOptionSelected={setOptionSelected}
+      options={options}
     />
   );
 };

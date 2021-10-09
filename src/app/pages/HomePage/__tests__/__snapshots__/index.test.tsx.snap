@@ -20,8 +20,37 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       name="description"
     />
   </Helmet>
-  <Context.Consumer>
-    [Function]
-  </Context.Consumer>
+  <styles__Wrapper>
+    <styles__Main>
+      <styles__Title>
+        homePage.shoppingStores
+        Lojas
+      </styles__Title>
+      <styles__SearchWrapper>
+        <styles__SearchInputCustomized
+          isRounded={true}
+          onChange={[Function]}
+          placeholder={
+            Array [
+              "homePage.searchPlaceholder",
+              "Busque por endereço ou CEP",
+            ]
+          }
+          showSearchIcon={true}
+          type="search"
+        />
+        <Memo
+          label={
+            Array [
+              "homePage.searchButtonLabel",
+              "Buscar",
+            ]
+          }
+          onClick={[Function]}
+        />
+      </styles__SearchWrapper>
+    </styles__Main>
+    <Unknown />
+  </styles__Wrapper>
 </React.Fragment>
 `;

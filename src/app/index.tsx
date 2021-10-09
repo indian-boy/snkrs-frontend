@@ -48,7 +48,7 @@ export function App() {
           </Helmet>
 
           <ModalContext.Provider value={{ state, setModalDataIntoContext }}>
-            <Wrapper style={state.showModal ? { pointerEvents: 'none' } : {}}>
+            <Wrapper>
               <Header></Header>
               <Switch>
                 <Route exact path="/" component={HomePage} />

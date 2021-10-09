@@ -39,9 +39,7 @@ exports[`<App /> should render and match the snapshot 1`] = `
           }
         }
       >
-        <app__Wrapper
-          style={Object {}}
-        >
+        <app__Wrapper>
           <Memo />
           <Switch>
             <Route
