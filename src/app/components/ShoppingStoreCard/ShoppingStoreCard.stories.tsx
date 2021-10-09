@@ -38,4 +38,5 @@ Primary.args = {
   },
   availability: 4,
   serviceHours: 'Segunda a Sábado 10h às 22h | Domingo 11h às 20h',
+  distance: 1000,
 };

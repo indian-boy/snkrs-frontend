@@ -29,8 +29,8 @@ export const Dropdown = memo(
     const ref = React.useRef<HTMLDetailsElement>(null);
 
     const handleClick = (optionsSelected: Option) => {
-      closeSummary();
       setOptionSelected(optionsSelected);
+      closeSummary();
     };
 
     const closeSummary = () => {

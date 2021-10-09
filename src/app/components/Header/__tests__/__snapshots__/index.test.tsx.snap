@@ -103,8 +103,8 @@ exports[`<Header  /> should match snapshot 1`] = `
 }
 
 .c8 {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.7rem;
+  height: 1.7rem;
   cursor: pointer;
 }
 
@@ -152,13 +152,6 @@ exports[`<Header  /> should match snapshot 1`] = `
   .c1 {
     width: 3.75rem;
     height: 3.75rem;
-  }
-}
-
-@media (min-width:1024px) {
-  .c8 {
-    width: 1.9rem;
-    height: 1.9rem;
   }
 }
 

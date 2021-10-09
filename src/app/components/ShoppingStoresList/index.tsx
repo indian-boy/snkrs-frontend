@@ -15,12 +15,12 @@ interface Props {
     key: number;
     title: string;
   }[];
-  filterOptionSelected: Option;
+  filterOptionSelectedState: Option;
 }
 
 export const ShoppingStoresList = memo(
   ({
-    filterOptionSelected,
+    filterOptionSelectedState,
     filterOptions,
     setFilterOptionSelected,
     setShoppingStoreSelected,
@@ -40,7 +40,7 @@ export const ShoppingStoresList = memo(
             <Dropdown
               label={t(messages.i18nFilter())}
               options={filterOptions}
-              optionSelectedState={filterOptionSelected}
+              optionSelectedState={filterOptionSelectedState}
               setOptionSelected={setFilterOptionSelected}
             />
           </Filters>

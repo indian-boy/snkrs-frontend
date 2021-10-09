@@ -20,52 +20,8 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       name="description"
     />
   </Helmet>
-  <Context.Provider
-    value={
-      Object {
-        "setModalDataIntoContext": [Function],
-        "state": Object {
-          "data": Object {},
-          "showModal": false,
-        },
-      }
-    }
-  >
-    <styles__Wrapper>
-      <styles__Main
-        style={Object {}}
-      >
-        <styles__Title>
-          homePage.shoppingStores
-          Lojas
-        </styles__Title>
-        <styles__SearchWrapper>
-          <styles__SearchInputCustomized
-            isRounded={true}
-            onChange={[Function]}
-            placeholder={
-              Array [
-                "homePage.searchPlaceholder",
-                "Busque por endereço ou CEP",
-              ]
-            }
-            showSearchIcon={true}
-            type="search"
-          />
-          <Memo
-            label={
-              Array [
-                "homePage.searchButtonLabel",
-                "Buscar",
-              ]
-            }
-            onClick={[Function]}
-          />
-        </styles__SearchWrapper>
-        <styles__ContentWrapperMediumScreen />
-      </styles__Main>
-      <Unknown />
-    </styles__Wrapper>
-  </Context.Provider>
+  <Context.Consumer>
+    [Function]
+  </Context.Consumer>
 </React.Fragment>
 `;

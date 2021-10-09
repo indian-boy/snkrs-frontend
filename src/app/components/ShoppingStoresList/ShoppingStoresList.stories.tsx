@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof ShoppingStoresList> = args => {
     { key: 2, title: 'Filter #2' },
   ];
 
-  const [filterOptionSelected, setFilterOptionSelected] = useState<Option>(
+  const [filterOptionSelectedState, setFilterOptionSelected] = useState<Option>(
     filterOptions[0],
   );
 
@@ -28,7 +28,7 @@ const Template: ComponentStory<typeof ShoppingStoresList> = args => {
       <ShoppingStoresList
         {...args}
         filterOptions={filterOptions}
-        filterOptionSelected={filterOptionSelected}
+        filterOptionSelectedState={filterOptionSelectedState}
         setFilterOptionSelected={setFilterOptionSelected}
         setShoppingStoreSelected={setShoppingStoreSelected}
       />
@@ -55,6 +55,7 @@ Primary.args = {
       },
       availability: 4,
       serviceHours: 'Segunda a Sábado 10h às 22h | Domingo 11h às 20h',
+      distance: 1000,
     },
     {
       id: 2,
@@ -67,6 +68,7 @@ Primary.args = {
       },
       availability: 6,
       serviceHours: 'Segunda a Sábado 10h às 22h | Domingo 11h às 20h',
+      distance: 2000,
     },
     {
       id: 2,
@@ -79,6 +81,7 @@ Primary.args = {
       },
       availability: 2,
       serviceHours: 'Segunda a Sábado 10h às 22h | Domingo 11h às 20h',
+      distance: 3000,
     },
   ],
 };

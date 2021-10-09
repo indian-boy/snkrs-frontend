@@ -70,8 +70,7 @@ const NikeLogoCustomized = CustomizeSvg(NikeLogo, {
 });
 
 const BagIconCustomized = CustomizeSvg(BagIcon, {
-  size: '1.8rem',
-  desktopSize: '1.9rem',
+  size: '1.7rem',
   clickable: true,
 });
 

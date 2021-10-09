@@ -7,19 +7,33 @@
  */
 
 import { Footer, NewsLetter } from 'app/components';
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components/macro';
 import { GlobalStyles } from 'styles/global-styles';
 import Theme from 'styles/themes/main-theme';
+import { ShoppingStore } from 'types';
+import { ModalContext } from './components/commons/Modal/context';
 import { Header } from './components/Header';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 
 export function App() {
   const { i18n } = useTranslation();
+  const [state, setModalData] = useState<{
+    showModal: boolean;
+    data: any;
+  }>({
+    showModal: false,
+    data: {},
+  });
+
+  const setModalDataIntoContext = (showModal: boolean, data: ShoppingStore) => {
+    setModalData({ showModal, data });
+  };
 
   return (
     <IntlProvider locale={navigator.language}>
@@ -32,16 +46,27 @@ export function App() {
           >
             <meta name="description" content="SNKRS App" />
           </Helmet>
-          <Header></Header>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route component={NotFoundPage} />
-          </Switch>
-          <NewsLetter></NewsLetter>
-          <Footer></Footer>
+
+          <ModalContext.Provider value={{ state, setModalDataIntoContext }}>
+            <Wrapper style={state.showModal ? { pointerEvents: 'none' } : {}}>
+              <Header></Header>
+              <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route component={NotFoundPage} />
+              </Switch>
+              <NewsLetter></NewsLetter>
+              <Footer></Footer>
+            </Wrapper>
+          </ModalContext.Provider>
+
           <GlobalStyles />
         </BrowserRouter>
       </Theme>
     </IntlProvider>
   );
 }
+
+const Wrapper = styled.div`
+  height: 100%;
+  width: 100%;
+`;

@@ -28,19 +28,35 @@ exports[`<App /> should render and match the snapshot 1`] = `
           name="description"
         />
       </Helmet>
-      <Memo />
-      <Switch>
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/"
-        />
-        <Route
-          component={[Function]}
-        />
-      </Switch>
-      <Memo />
-      <Memo />
+      <Context.Provider
+        value={
+          Object {
+            "setModalDataIntoContext": [Function],
+            "state": Object {
+              "data": Object {},
+              "showModal": false,
+            },
+          }
+        }
+      >
+        <app__Wrapper
+          style={Object {}}
+        >
+          <Memo />
+          <Switch>
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/"
+            />
+            <Route
+              component={[Function]}
+            />
+          </Switch>
+          <Memo />
+          <Memo />
+        </app__Wrapper>
+      </Context.Provider>
       <Memo(l) />
     </BrowserRouter>
   </Theme>

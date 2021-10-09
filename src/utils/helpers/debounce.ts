@@ -1,10 +1,7 @@
-export const debounce = (callback, delay = 250) => {
-  let timeoutId;
-  return (...args) => {
+export const debounce = (fn: Function, ms: number) => {
+  let timeoutId: ReturnType<typeof setTimeout>;
+  return function (this: any, ...args: any[]) {
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      timeoutId = null;
-      callback(...args);
-    }, delay);
+    timeoutId = setTimeout(() => fn.apply(this, args), ms);
   };
 };

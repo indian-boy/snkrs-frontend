@@ -6,7 +6,7 @@ export const shoppingStoresHandler = [
   rest.get(`${environment.backendURL}/shopping-stores`, (req, res, ctx) => {
     ctx.delay(2000);
     return res(
-      ctx.json<ShoppingStore[]>([
+      ctx.json<Omit<ShoppingStore, 'distance'>[]>([
         {
           id: 1,
           placeName: 'Nike Store Oscar Freire',

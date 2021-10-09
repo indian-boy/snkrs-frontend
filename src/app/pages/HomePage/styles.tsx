@@ -50,6 +50,11 @@ const ContentWrapperMediumScreen = styled.div`
   width: 100%;
 `;
 
+const ContentWrapperMobileScreen = styled.div`
+  height: 100%;
+  width: 100%;
+`;
+
 const Iframe = styled.iframe`
   border-radius: 0.625rem;
 `;
@@ -62,4 +67,5 @@ export {
   SearchWrapper,
   Iframe,
   ContentWrapperMediumScreen,
+  ContentWrapperMobileScreen,
 };

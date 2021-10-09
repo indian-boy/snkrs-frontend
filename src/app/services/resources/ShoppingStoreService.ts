@@ -1,10 +1,17 @@
 import api from 'app/services/resources/api';
 import { ShoppingStore } from 'types';
 
-const getShoppingStores = (search?: string) => {
+const getShoppingStores = ({
+  latitude,
+  longitude,
+}: {
+  latitude: number;
+  longitude: number;
+}) => {
   return api.get<ShoppingStore[]>('/shopping-stores', {
     params: {
-      search,
+      latitude,
+      longitude,
     },
   });
 };

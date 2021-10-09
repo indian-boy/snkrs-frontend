@@ -15,7 +15,7 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
-const shoppingStoresMock = [
+const shoppingStoresMock: ShoppingStore[] = [
   {
     id: 1,
     placeName: 'Avenida paulista',
@@ -26,6 +26,7 @@ const shoppingStoresMock = [
     },
     availability: 4,
     serviceHours: 'Segunda a Sábado 10h às 22h | Domingo 11h às 20h',
+    distance: 1000,
   },
   {
     id: 2,
@@ -38,6 +39,7 @@ const shoppingStoresMock = [
     },
     availability: 6,
     serviceHours: 'Segunda a Sábado 10h às 22h | Domingo 11h às 20h',
+    distance: 1000,
   },
 ];
 
@@ -51,14 +53,14 @@ const ShoppingStoresMockParent = () => {
     { key: 2, title: 'Filter #2' },
   ];
 
-  const [filterOptionSelected, setFilterOptionSelected] = useState<Option>(
+  const [filterOptionSelectedState, setFilterOptionSelected] = useState<Option>(
     filterOptions[0],
   );
 
   return (
     <ShoppingStoresList
       filterOptions={filterOptions}
-      filterOptionSelected={filterOptionSelected}
+      filterOptionSelectedState={filterOptionSelectedState}
       setFilterOptionSelected={setFilterOptionSelected}
       setShoppingStoreSelected={setShoppingStoreSelected}
       shoppingStores={shoppingStoresMock}
