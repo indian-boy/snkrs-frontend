@@ -1,8 +1,11 @@
 import { render } from '@testing-library/react';
 import { Option } from 'app/components';
 import React, { useState } from 'react';
-import { ShoppingStore } from 'types';
-import { ShoppingStoresList } from '..';
+import { Provider } from 'react-redux';
+import { Store } from 'redux';
+import { configureAppStore } from 'store/configureStore';
+import { CommonUsedAttributes, ShoppingStore } from 'types';
+import { ShoppingStoreProps, ShoppingStoresList } from '..';
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
@@ -43,7 +46,12 @@ const shoppingStoresMock: ShoppingStore[] = [
   },
 ];
 
-const ShoppingStoresMockParent = () => {
+const ParentComponentRenderingWithProviders = (
+  props: Partial<ShoppingStoreProps> & CommonUsedAttributes,
+  store: Store,
+) => {
+  const { shoppingStores } = props;
+
   const [, setShoppingStoreSelected] = React.useState<ShoppingStore | null>(
     shoppingStoresMock[0],
   );
@@ -53,24 +61,45 @@ const ShoppingStoresMockParent = () => {
     { key: 2, title: 'Filter #2' },
   ];
 
-  const [filterOptionSelectedState, setFilterOptionSelected] = useState<Option>(
-    filterOptions[0],
-  );
+  const [filterOptionSelectedState, setFilterOptionSelected] = useState<
+    Option | undefined
+  >(filterOptions[0]);
 
   return (
-    <ShoppingStoresList
-      filterOptions={filterOptions}
-      filterOptionSelectedState={filterOptionSelectedState}
-      setFilterOptionSelected={setFilterOptionSelected}
-      setShoppingStoreSelected={setShoppingStoreSelected}
-      shoppingStores={shoppingStoresMock}
-    />
+    <Provider store={store}>
+      <ShoppingStoresList
+        {...props}
+        shoppingStores={shoppingStores ?? []}
+        filterOptions={filterOptions}
+        filterOptionSelectedState={filterOptionSelectedState}
+        setFilterOptionSelected={setFilterOptionSelected}
+        setShoppingStoreSelected={setShoppingStoreSelected}
+      />
+    </Provider>
   );
 };
 
 describe('<ShoppingStoresList  />', () => {
+  let store: ReturnType<typeof configureAppStore>;
+
+  beforeEach(() => {
+    store = configureAppStore();
+  });
+
   it('should match snapshot', () => {
-    const loadingIndicator = render(<ShoppingStoresMockParent />);
-    expect(loadingIndicator.container.firstChild).toMatchSnapshot();
+    const ParentComponent = () =>
+      ParentComponentRenderingWithProviders(
+        {
+          'data-testid': 'shoppingStoresListID',
+          shoppingStores: shoppingStoresMock,
+        },
+        store,
+      );
+
+    const { getByTestId, container } = render(<ParentComponent />);
+    const shoppingStoresListElement = getByTestId('shoppingStoresListID');
+
+    expect(shoppingStoresListElement).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

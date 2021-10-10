@@ -167,6 +167,7 @@ exports[`<Footer  /> should match snapshot 1`] = `
 
 <footer
   class="c0"
+  data-testid="footerID"
 >
   <div
     class="c1"

@@ -7,12 +7,14 @@ import { ShoppingStoreCard } from '../ShoppingStoreCard';
 import { messages } from './messages';
 import { Filters, List, Wrapper } from './styles';
 
-interface Props {
+export interface ShoppingStoreProps {
   setShoppingStoreSelected: Dispatch<SetStateAction<ShoppingStore | null>>;
   shoppingStores: ShoppingStore[];
-  setFilterOptionSelected: React.Dispatch<React.SetStateAction<Option>>;
+  setFilterOptionSelected: React.Dispatch<
+    React.SetStateAction<Option | undefined>
+  >;
   filterOptions: Option[];
-  filterOptionSelectedState: Option;
+  filterOptionSelectedState: Option | undefined;
   role?: React.AriaRole | undefined;
 }
 
@@ -24,7 +26,7 @@ export const ShoppingStoresList = memo(
     setShoppingStoreSelected,
     shoppingStores,
     ...props
-  }: Props) => {
+  }: ShoppingStoreProps) => {
     const { t } = useTranslation();
 
     const onSelectShoppingStore = value => {

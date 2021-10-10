@@ -14,7 +14,6 @@ import { IntlProvider } from 'react-intl';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { GlobalStyles } from 'styles/global-styles';
-import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { ShoppingStore } from 'types';
 import { ModalContext } from './components/commons/Modal/context';
 import { Header } from './components/Header';
@@ -38,32 +37,30 @@ export function App() {
 
   return (
     <IntlProvider locale={navigator.language}>
-      <ThemeProviderWrapper>
-        <BrowserRouter>
-          <Helmet
-            titleTemplate="%s - SNKRS App"
-            defaultTitle="SNKRS App"
-            htmlAttributes={{ lang: i18n.language }}
-          >
-            <meta name="description" content="SNKRS App" />
-          </Helmet>
+      <BrowserRouter>
+        <Helmet
+          titleTemplate="%s - SNKRS App"
+          defaultTitle="SNKRS App"
+          htmlAttributes={{ lang: i18n.language }}
+        >
+          <meta name="description" content="SNKRS App" />
+        </Helmet>
 
-          <ModalContext.Provider value={{ state, setModalDataIntoContext }}>
-            <Wrapper>
-              <TopHeader />
-              <Header />
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route component={NotFoundPage} />
-              </Switch>
-              <NewsLetter></NewsLetter>
-              <Footer></Footer>
-            </Wrapper>
-          </ModalContext.Provider>
+        <ModalContext.Provider value={{ state, setModalDataIntoContext }}>
+          <Wrapper>
+            <TopHeader />
+            <Header />
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route component={NotFoundPage} />
+            </Switch>
+            <NewsLetter></NewsLetter>
+            <Footer></Footer>
+          </Wrapper>
+        </ModalContext.Provider>
 
-          <GlobalStyles />
-        </BrowserRouter>
-      </ThemeProviderWrapper>
+        <GlobalStyles />
+      </BrowserRouter>
     </IntlProvider>
   );
 }

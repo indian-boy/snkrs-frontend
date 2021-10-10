@@ -17,6 +17,7 @@ import reportWebVitals from 'reportWebVitals';
 // Use consistent styling
 import 'sanitize.css/sanitize.css';
 import { configureAppStore } from 'store/configureStore';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 // Initialize languages
 import './locales/i18n';
 
@@ -30,11 +31,13 @@ const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
 ReactDOM.render(
   <Provider store={store}>
-    <HelmetProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </HelmetProvider>
+    <ThemeProviderWrapper>
+      <HelmetProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </HelmetProvider>
+    </ThemeProviderWrapper>
   </Provider>,
   MOUNT_NODE,
 );

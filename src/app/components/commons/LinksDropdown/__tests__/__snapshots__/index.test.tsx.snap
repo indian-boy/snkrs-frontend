@@ -112,6 +112,7 @@ exports[`<LinksDropdown  /> should match snapshot 1`] = `
 
 <details
   class="c0"
+  data-testid="linksDropdownID"
 >
   <summary
     class="c1"

@@ -1,5 +1,9 @@
+import { Store } from '@reduxjs/toolkit';
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
+import { CommonUsedAttributes } from 'types';
 import { Button } from '..';
 
 jest.mock('react-i18next', () => ({
@@ -13,9 +17,31 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
+const renderWithProviders = (
+  props: Parameters<typeof Button>[number] & CommonUsedAttributes,
+  store: Store,
+) =>
+  render(
+    <Provider store={store}>
+      <Button {...props} />
+    </Provider>,
+  );
+
 describe('<Button  />', () => {
+  let store: ReturnType<typeof configureAppStore>;
+
+  beforeEach(() => {
+    store = configureAppStore();
+  });
+
   it('should match snapshot', () => {
-    const { getByTestId, container } = render(<Button label="Label" />);
+    const { getByTestId, container } = renderWithProviders(
+      {
+        'data-testid': 'buttonID',
+        label: 'Label',
+      },
+      store,
+    );
 
     const buttonElement = getByTestId('buttonID');
 
@@ -24,7 +50,13 @@ describe('<Button  />', () => {
   });
 
   it('should match label inside the button', () => {
-    const { getByTestId } = render(<Button label="Label" />);
+    const { getByTestId } = renderWithProviders(
+      {
+        'data-testid': 'buttonID',
+        label: 'Label',
+      },
+      store,
+    );
 
     const buttonElement = getByTestId('buttonID');
     expect(buttonElement).toHaveTextContent('Label');
@@ -32,7 +64,15 @@ describe('<Button  />', () => {
 
   it('should trigger passed onClick function', async () => {
     const onClick = jest.fn();
-    const button = render(<Button label="Label" onClick={onClick} />);
+
+    const button = renderWithProviders(
+      {
+        'data-testid': 'buttonID',
+        label: 'Label',
+        onClick,
+      },
+      store,
+    );
 
     fireEvent.click(button.getByText('Label'));
     expect(onClick).toHaveBeenCalled();

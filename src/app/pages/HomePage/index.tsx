@@ -25,7 +25,10 @@ import {
   Title,
   Wrapper,
 } from './styles';
-export function HomePage() {
+
+interface Props {}
+
+export function HomePage(props: Props) {
   const { t } = useTranslation();
   const modalContext = useRef(useContext(ModalContext));
   const isMediumScreen = useCheckIsMediumScreen();
@@ -48,9 +51,9 @@ export function HomePage() {
     },
   ];
 
-  const [filterOptionSelectedState, setFilterOptionSelected] = useState<Option>(
-    filterOptions[0],
-  );
+  const [filterOptionSelectedState, setFilterOptionSelected] = useState<
+    Option | undefined
+  >(filterOptions[0]);
 
   const filterOptionSelectedStateRef = useRef(filterOptionSelectedState);
 
@@ -78,13 +81,22 @@ export function HomePage() {
   let timeout: NodeJS.Timeout;
 
   const onSearchInputChangeHandler = (searchTerm: string) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      setSearchTerm(searchTerm);
-    }, 1500);
+    if (!isMediumScreen) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setSearchTerm(searchTerm);
+      }, 1500);
+      return;
+    }
+
+    setSearchTerm(searchTerm);
   };
 
   const setShoppingStoresFromSearchResult = async () => {
+    if (!filterOptionSelectedState) {
+      return;
+    }
+
     const data = await searchShoppingStores(
       searchTermState,
       filterOptionSelectedState,
@@ -95,6 +107,10 @@ export function HomePage() {
 
   const getNearestShoppingStoresCallback = useCallback(async () => {
     if (!isMediumScreen) {
+      if (!filterOptionSelectedStateRef.current) {
+        return;
+      }
+
       const data = await searchShoppingStores(
         searchTermState,
         filterOptionSelectedStateRef.current,
@@ -125,6 +141,10 @@ export function HomePage() {
   }, [showShoppingStoreOnMapsModal]);
 
   const sortShoppingStoresCallback = useCallback(() => {
+    if (!filterOptionSelectedState) {
+      return;
+    }
+
     const { latitude, longitude } = GetLatitudeLongitudeFromText(
       searchTermRef.current,
     );
@@ -158,7 +178,7 @@ export function HomePage() {
         <title>{t(messages.i18nTitle())}</title>
         <meta name="description" content={t(messages.i18nPageMetaContent())} />
       </Helmet>
-      <Wrapper>
+      <Wrapper {...props}>
         <Main>
           <Title>{t(messages.i18nShoppingStores())}</Title>
           <SearchWrapper>
@@ -245,7 +265,6 @@ const fetchShoppingStores = async (
   filterOptionSelectedState: Option,
 ) => {
   const { data } = await getShoppingStores({ latitude, longitude });
-
   return mapShoppingStoresWithDistanceApplyingSortingOption(
     data,
     {
@@ -290,7 +309,7 @@ const searchShoppingStores = async (
     return [];
   }
 
-  return await fetchShoppingStores(
+  return fetchShoppingStores(
     { latitude, longitude },
     filterOptionSelectedState,
   );

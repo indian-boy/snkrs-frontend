@@ -10,54 +10,52 @@ exports[`<App /> should render and match the snapshot 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <ThemeProviderWrapper>
-    <BrowserRouter>
-      <Helmet
-        defaultTitle="SNKRS App"
-        defer={true}
-        encodeSpecialCharacters={true}
-        htmlAttributes={
-          Object {
-            "lang": undefined,
-          }
+  <BrowserRouter>
+    <Helmet
+      defaultTitle="SNKRS App"
+      defer={true}
+      encodeSpecialCharacters={true}
+      htmlAttributes={
+        Object {
+          "lang": undefined,
         }
-        titleTemplate="%s - SNKRS App"
-      >
-        <meta
-          content="SNKRS App"
-          name="description"
-        />
-      </Helmet>
-      <Context.Provider
-        value={
-          Object {
-            "setModalDataIntoContext": [Function],
-            "state": Object {
-              "data": Object {},
-              "showModal": false,
-            },
-          }
+      }
+      titleTemplate="%s - SNKRS App"
+    >
+      <meta
+        content="SNKRS App"
+        name="description"
+      />
+    </Helmet>
+    <Context.Provider
+      value={
+        Object {
+          "setModalDataIntoContext": [Function],
+          "state": Object {
+            "data": Object {},
+            "showModal": false,
+          },
         }
-      >
-        <app__Wrapper>
-          <Memo />
-          <Memo />
-          <Switch>
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/"
-            />
-            <Route
-              component={[Function]}
-            />
-          </Switch>
-          <Memo />
-          <Memo />
-        </app__Wrapper>
-      </Context.Provider>
-      <Memo(l) />
-    </BrowserRouter>
-  </ThemeProviderWrapper>
+      }
+    >
+      <app__Wrapper>
+        <Memo />
+        <Memo />
+        <Switch>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+          />
+          <Route
+            component={[Function]}
+          />
+        </Switch>
+        <Memo />
+        <Memo />
+      </app__Wrapper>
+    </Context.Provider>
+    <Memo(l) />
+  </BrowserRouter>
 </IntlProvider>
 `;

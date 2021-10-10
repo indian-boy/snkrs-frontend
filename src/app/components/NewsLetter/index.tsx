@@ -13,7 +13,7 @@ export const NewsLetter = memo((props: Props) => {
 
   return (
     <ThemeProviderWrapper>
-      <Content>
+      <Content {...props}>
         <NikeLogo style={{ marginBottom: '1.5rem' }}></NikeLogo>
         <Title>{t(messages.i18nTitle())}</Title>
         <Message>{t(messages.i18nMessage())}</Message>

@@ -17,10 +17,10 @@ export interface Option {
   key: string | number;
 }
 
-interface Props {
+export interface DropdownProps {
   label: string;
   options: Option[];
-  setOptionSelected: React.Dispatch<React.SetStateAction<Option>>;
+  setOptionSelected: React.Dispatch<React.SetStateAction<Option | undefined>>;
   optionSelectedState?: Option | undefined;
 }
 
@@ -31,7 +31,7 @@ export const Dropdown = memo(
     optionSelectedState,
     setOptionSelected,
     ...props
-  }: Props) => {
+  }: DropdownProps) => {
     const ref = React.useRef<HTMLDetailsElement>(null);
 
     const handleClick = (optionsSelected: Option) => {

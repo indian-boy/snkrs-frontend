@@ -297,6 +297,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
 
 <div
   class="c0"
+  data-testid="shoppingStoresListID"
 >
   <div
     class="c1"

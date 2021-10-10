@@ -21,7 +21,7 @@ export const TopHeader = memo((props: Props) => {
   return (
     <BrowserRouter>
       <ThemeProviderWrapper>
-        <Wrapper>
+        <Wrapper {...props}>
           <LeftIcons>
             <JordanLogoCustomized />
             <SNKRSLogoCustomized />

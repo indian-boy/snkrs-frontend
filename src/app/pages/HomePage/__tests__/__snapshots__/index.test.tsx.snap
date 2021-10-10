@@ -20,7 +20,9 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       name="description"
     />
   </Helmet>
-  <styles__Wrapper>
+  <styles__Wrapper
+    data-testid="homePageID"
+  >
     <styles__Main>
       <styles__Title>
         homePage.shoppingStores

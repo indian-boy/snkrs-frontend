@@ -13,11 +13,11 @@ interface Props {
   links?: Link[];
 }
 
-export const LinksDropdown = memo(({ title, links }: Props) => {
+export const LinksDropdown = memo(({ title, links, ...props }: Props) => {
   return (
     <BrowserRouter>
       <ThemeProviderWrapper>
-        <Details>
+        <Details {...props}>
           <Summary>
             {title}
             <Icon></Icon>

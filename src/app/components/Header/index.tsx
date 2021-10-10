@@ -25,7 +25,7 @@ export const Header = memo((props: Props) => {
   return (
     <BrowserRouter>
       <ThemeProviderWrapper>
-        <Wrapper>
+        <Wrapper {...props}>
           <LeftSideWrapper>
             <NikeLogoCustomized />
           </LeftSideWrapper>

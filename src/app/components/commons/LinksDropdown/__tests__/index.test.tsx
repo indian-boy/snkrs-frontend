@@ -1,5 +1,9 @@
+import { Store } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
+import { CommonUsedAttributes } from 'types';
 import { LinksDropdown } from '..';
 
 jest.mock('react-i18next', () => ({
@@ -27,9 +31,36 @@ const mockData = {
   ],
 };
 
+const renderWithProviders = (
+  props: Parameters<typeof LinksDropdown>[number] & CommonUsedAttributes,
+  store: Store,
+) => {
+  return render(
+    <Provider store={store}>
+      <LinksDropdown {...props} />
+    </Provider>,
+  );
+};
+
 describe('<LinksDropdown  />', () => {
+  let store: ReturnType<typeof configureAppStore>;
+
+  beforeEach(() => {
+    store = configureAppStore();
+  });
+
   it('should match snapshot', () => {
-    const linksDropdown = render(<LinksDropdown {...mockData} />);
-    expect(linksDropdown.container.firstChild).toMatchSnapshot();
+    const { getByTestId, container } = renderWithProviders(
+      {
+        'data-testid': 'linksDropdownID',
+        ...mockData,
+      },
+      store,
+    );
+
+    const linksDropdownElement = getByTestId('linksDropdownID');
+
+    expect(linksDropdownElement).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

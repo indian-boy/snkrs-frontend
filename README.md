@@ -10,15 +10,17 @@
 
 - [![Stylelint](https://img.shields.io/badge/Stylelint-v13.13.1-007ACC?logo=stylelint)](https://stylelint.io/changelog/#13131)
 
-- [![Node](https://img.shields.io/badge/Node-%3E%3D%2014.0.0-brightgreen)](https://nodejs.org/dist/latest-v14.x/docs/api/)
+- [![Node](https://img.shields.io/badge/Node-%3E%3D%2014.0.0-007ACC)](https://nodejs.org/dist/latest-v14.x/docs/api/)
 
 - [![TypeScript](https://img.shields.io/badge/TypeScript-v4.2.2-007ACC?logo=typescript)](https://www.typescriptlang.org/)
 
-- [![Jest](https://img.shields.io/badge/Jest-v26.0.23-C21325?logo=jest)](https://jestjs.io/)
+- [![Jest](https://img.shields.io/badge/Jest-v26.0.23-007ACC?logo=jest)](https://jestjs.io/)
 
-- [![Cypress](https://img.shields.io/badge/Cypress-v8.5.0-C21325?logo=cypress)](https://www.cypress.io/)
+- [![Cypress](https://img.shields.io/badge/Cypress-v8.5.0-007ACC?logo=cypress)](https://www.cypress.io/)
 
-- [![Storybook](https://img.shields.io/badge/Storybook-v6.3.8-C21325?logo=storybook)](https://storybook.js.org/)
+- [![Storybook](https://img.shields.io/badge/Storybook-v6.3.8-007ACC?logo=storybook)](https://storybook.js.org/)
+
+- [![MockServiceWorker](https://img.shields.io/badge/MSW-v0.35.0-007ACC)](https://mswjs.io/)
 
 ## Prepare && Start
 
@@ -133,6 +135,10 @@ Checks for TypeScript errors.
 
   <dt>Typescript</dt>
   <dd>Typescript is the key to scalability. Build self-documented code, easy-to-debug code and create maintainable large applications and codebases with a highly productive development experience.</dd>
+
+  <dt>MSW (Mock Service Worker)</dt>
+  <dd>Mock by intercepting requests on the network level. Seamlessly reuse the same mock definition for testing, development, and debugging.
+  </dd>
 
   <dt>Storybook</dt>
   <dd>This allows you to work on one component at a time. Developing entire UIs without needing to start up a complex dev stack, force certain data into your database, or navigate around your application.

@@ -167,6 +167,7 @@ exports[`<Header  /> should match snapshot 1`] = `
 
 <div
   class="c0"
+  data-testid="headerID"
 >
   <div
     class="c1"

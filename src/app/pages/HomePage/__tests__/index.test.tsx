@@ -17,7 +17,7 @@ jest.mock('react-i18next', () => ({
 
 describe('<HomePage />', () => {
   it('should render and match the snapshot', () => {
-    renderer.render(<HomePage />);
+    renderer.render(<HomePage data-testid="homePageID" />);
     const renderedOutput = renderer.getRenderOutput();
     expect(renderedOutput).toMatchSnapshot();
   });

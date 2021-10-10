@@ -1,44 +1,56 @@
 import { fireEvent, render } from '@testing-library/react';
 import React, { useState } from 'react';
-import { Dropdown, Option } from '..';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
+import { CommonUsedAttributes } from 'types';
+import { Dropdown, DropdownProps, Option } from '..';
 
-const options = [
+const defaultOptions = [
   { key: 1, title: 'Option #1' },
   { key: 2, title: 'Option #2' },
 ];
 
-const DropdownWithMockedParent = () => {
-  const [optionSelectedState, setOptionSelected] = useState<Option>(options[0]);
+const WithParentRenderingProviders = (
+  props: Partial<DropdownProps> & CommonUsedAttributes,
+) => {
+  const { label, options, optionSelectedState } = props;
+
+  const [optionSelectedStateFromParent, setOptionSelected] = useState<
+    Option | undefined
+  >(optionSelectedState);
 
   return (
     <Dropdown
-      data-testid="dropdownID"
-      optionSelectedState={optionSelectedState}
+      {...props}
+      label={label ?? ''}
+      options={options ?? []}
+      optionSelectedState={optionSelectedStateFromParent}
       setOptionSelected={setOptionSelected}
-      label="Dropdown"
-      options={options}
-    />
-  );
-};
-
-const DropdownWithMockedParentAndNoCurrentSelectedOption = () => {
-  const [_optionSelectedState, setOptionSelected] = useState<Option>(
-    options[0],
-  );
-
-  return (
-    <Dropdown
-      data-testid="dropdownID"
-      setOptionSelected={setOptionSelected}
-      label="Dropdown"
-      options={options}
     />
   );
 };
 
 describe('<Dropdown />', () => {
+  let store: ReturnType<typeof configureAppStore>;
+
+  beforeEach(() => {
+    store = configureAppStore();
+  });
+
   it('should match snapshot', () => {
-    const { getByTestId, container } = render(<DropdownWithMockedParent />);
+    const DropdownWrapped = () =>
+      WithParentRenderingProviders({
+        'data-testid': 'dropdownID',
+        label: 'Dropdown',
+        options: defaultOptions,
+        optionSelectedState: defaultOptions[0],
+      });
+
+    const { getByTestId, container } = render(
+      <Provider store={store}>
+        <DropdownWrapped></DropdownWrapped>
+      </Provider>,
+    );
 
     const dropdownElement = getByTestId('dropdownID');
 
@@ -47,7 +59,19 @@ describe('<Dropdown />', () => {
   });
 
   it('should display first selected option by default', () => {
-    const { getByText } = render(<DropdownWithMockedParent />);
+    const DropdownWrapped = () =>
+      WithParentRenderingProviders({
+        'data-testid': 'dropdownID',
+        label: 'Dropdown',
+        options: defaultOptions,
+        optionSelectedState: defaultOptions[0],
+      });
+
+    const { getByText } = render(
+      <Provider store={store}>
+        <DropdownWrapped></DropdownWrapped>
+      </Provider>,
+    );
 
     const currentOptionSelected = getByText(
       (content, element) =>
@@ -58,7 +82,19 @@ describe('<Dropdown />', () => {
   });
 
   it('should open and close dropdown', async () => {
-    const { getByText, getByRole } = render(<DropdownWithMockedParent />);
+    const DropdownWrapped = () =>
+      WithParentRenderingProviders({
+        'data-testid': 'dropdownID',
+        label: 'Dropdown',
+        options: defaultOptions,
+        optionSelectedState: defaultOptions[0],
+      });
+
+    const { getByText, getByRole } = render(
+      <Provider store={store}>
+        <DropdownWrapped></DropdownWrapped>
+      </Provider>,
+    );
 
     const currentOptionSelected = getByText(
       (content, element) =>
@@ -75,14 +111,28 @@ describe('<Dropdown />', () => {
   });
 
   it('should update option selected state on clicking on input', async () => {
+    const DropdownWrapped = () =>
+      WithParentRenderingProviders({
+        'data-testid': 'dropdownID',
+        label: 'Dropdown',
+        options: defaultOptions,
+        optionSelectedState: defaultOptions[0],
+      });
+
     const { rerender, getByLabelText, getByText } = render(
-      <DropdownWithMockedParent />,
+      <Provider store={store}>
+        <DropdownWrapped />
+      </Provider>,
     );
 
     const secondInputRadioOption = getByLabelText('Option #2');
     fireEvent.click(secondInputRadioOption);
 
-    rerender(<DropdownWithMockedParent />);
+    rerender(
+      <Provider store={store}>
+        <DropdownWrapped />
+      </Provider>,
+    );
 
     const currentOptionSelected = getByText(
       (content, element) =>
@@ -93,8 +143,17 @@ describe('<Dropdown />', () => {
   });
 
   it('should display the label when not passed option selected initially', () => {
+    const DropdownWrapped = () =>
+      WithParentRenderingProviders({
+        'data-testid': 'dropdownID',
+        label: 'Dropdown',
+        options: defaultOptions,
+      });
+
     const { getByText } = render(
-      <DropdownWithMockedParentAndNoCurrentSelectedOption />,
+      <Provider store={store}>
+        <DropdownWrapped />
+      </Provider>,
     );
 
     const label = getByText(

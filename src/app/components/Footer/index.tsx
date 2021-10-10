@@ -103,7 +103,7 @@ export const Footer = memo((props: Props) => {
     <BrowserRouter>
       <ThemeProviderWrapper>
         {isMediumScreen && (
-          <Wrapper>
+          <Wrapper {...props}>
             <MediumScreenWrapper>
               <LinksMediumScreen>
                 <MainNavLink to="/">
@@ -179,7 +179,7 @@ export const Footer = memo((props: Props) => {
         )}
 
         {!isMediumScreen && (
-          <SmallScreenWrapper>
+          <SmallScreenWrapper {...props}>
             <Links>
               <MainNavLink to="/">
                 {t(messages.i18nFindShoppingStore())}

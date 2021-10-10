@@ -28,6 +28,8 @@ export const ShoppingStoreCard = memo(
     address,
     availability,
     serviceHours,
+    id: _id,
+    ...props
   }: Props) => {
     const { t } = useTranslation();
 
@@ -36,7 +38,7 @@ export const ShoppingStoreCard = memo(
     return (
       <IntlProvider locale={navigator.language}>
         <ThemeProviderWrapper>
-          <Wrapper>
+          <Wrapper {...props}>
             <Header>
               <Title>{placeName}</Title>
               <Distance>

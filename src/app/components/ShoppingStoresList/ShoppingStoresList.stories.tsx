@@ -19,9 +19,9 @@ const Template: ComponentStory<typeof ShoppingStoresList> = args => {
     { key: 2, title: 'Filter #2' },
   ];
 
-  const [filterOptionSelectedState, setFilterOptionSelected] = useState<Option>(
-    filterOptions[0],
-  );
+  const [filterOptionSelectedState, setFilterOptionSelected] = useState<
+    Option | undefined
+  >(filterOptions[0]);
 
   return (
     <Wrapper>

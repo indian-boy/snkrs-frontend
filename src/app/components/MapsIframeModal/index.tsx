@@ -15,7 +15,7 @@ const MapsIframe = ({ ...props }: Props) => {
   return (
     <ModalContext.Consumer>
       {({ state }: { state: { data: ShoppingStore } }) => (
-        <Wrapper role="mapsLocationModal">
+        <Wrapper role="mapsLocationModal" {...props}>
           <SearchInput
             style={{ width: '100%' }}
             showCloseIcon={true}

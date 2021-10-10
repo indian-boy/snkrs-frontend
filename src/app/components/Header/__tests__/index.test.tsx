@@ -1,6 +1,9 @@
-import * as React from 'react';
+import { Store } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
-
+import * as React from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
+import { CommonUsedAttributes } from 'types';
 import { Header } from '..';
 
 jest.mock('react-i18next', () => ({
@@ -14,9 +17,34 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
+const renderWithProviders = (
+  props: Parameters<typeof Header>[number] & CommonUsedAttributes,
+  store: Store,
+) =>
+  render(
+    <Provider store={store}>
+      <Header {...props} />
+    </Provider>,
+  );
+
 describe('<Header  />', () => {
+  let store: ReturnType<typeof configureAppStore>;
+
+  beforeEach(() => {
+    store = configureAppStore();
+  });
+
   it('should match snapshot', () => {
-    const loadingIndicator = render(<Header />);
-    expect(loadingIndicator.container.firstChild).toMatchSnapshot();
+    const { getByTestId, container } = renderWithProviders(
+      {
+        'data-testid': 'headerID',
+      },
+      store,
+    );
+
+    const headerElement = getByTestId('headerID');
+
+    expect(headerElement).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

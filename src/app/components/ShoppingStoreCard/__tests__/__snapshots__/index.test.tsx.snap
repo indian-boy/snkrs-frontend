@@ -108,6 +108,7 @@ exports[`<ShoppingStoreCard  /> should match snapshot 1`] = `
 
 <div
   class="styles__Wrapper-sc-103prks-0"
+  data-testid="shoppingStoreCardID"
 >
   <div
     class="c0"

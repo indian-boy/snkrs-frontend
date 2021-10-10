@@ -1,3 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MockedComponenteWithModal  /> should match snapshot 1`] = `null`;
+exports[`<MockedComponenteWithModal  /> should match snapshot 1`] = `
+.c0 {
+  position: fixed;
+  z-index: 999;
+  left: 5%;
+  top: 10%;
+  width: 90%;
+  height: 80%;
+  overflow: auto;
+  box-shadow: 0 0 4rem rgb(0 0 0 / 10%);
+  background-color: #FFFFFF;
+  border-radius: 0.625rem;
+}
+
+.c1 {
+  position: fixed;
+  right: 5%;
+  bottom: 3%;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  padding: 0.5rem;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+  >
+    <svg>
+      close.svg
+    </svg>
+  </button>
+  <div
+    data-testid="modalID"
+  >
+    Modal Content
+  </div>
+</div>
+`;

@@ -1,5 +1,9 @@
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { Store } from 'redux';
+import { configureAppStore } from 'store/configureStore';
+import { CommonUsedAttributes } from 'types';
 import { SearchInput } from '..';
 
 jest.mock('react-i18next', () => ({
@@ -13,14 +17,31 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
+const renderWithProviders = (
+  props: Parameters<typeof SearchInput>[number] & CommonUsedAttributes,
+  store: Store,
+) =>
+  render(
+    <Provider store={store}>
+      <SearchInput {...props} />
+    </Provider>,
+  );
+
 describe('<SearchInput />', () => {
+  let store: ReturnType<typeof configureAppStore>;
+
+  beforeEach(() => {
+    store = configureAppStore();
+  });
+
   it('should match snapshot', () => {
-    const { getByTestId, container } = render(
-      <SearchInput
-        data-testid="searchID"
-        type="search"
-        placeholder="placeholder"
-      />,
+    const { getByTestId, container } = renderWithProviders(
+      {
+        'data-testid': 'searchID',
+        type: 'search',
+        placeholder: 'placeholder',
+      },
+      store,
     );
 
     const searchElement = getByTestId('searchID');
@@ -30,13 +51,15 @@ describe('<SearchInput />', () => {
   });
 
   it('should clear search', () => {
-    const { getByRole, getByTestId } = render(
-      <SearchInput
-        data-testid="searchID"
-        type="search"
-        showCloseIcon={true}
-        showSearchIcon={true}
-      />,
+    const { getByTestId, getByRole } = renderWithProviders(
+      {
+        'data-testid': 'searchID',
+        type: 'search',
+        placeholder: 'placeholder',
+        showCloseIcon: true,
+        showSearchIcon: true,
+      },
+      store,
     );
 
     const searchElement = getByTestId('searchID') as HTMLInputElement;
@@ -53,8 +76,13 @@ describe('<SearchInput />', () => {
   });
 
   it('should hide input', () => {
-    const { queryByTestId } = render(
-      <SearchInput data-testid="searchID" type="search" hidden={true} />,
+    const { queryByTestId } = renderWithProviders(
+      {
+        'data-testid': 'searchID',
+        type: 'search',
+        hidden: true,
+      },
+      store,
     );
 
     const searchElement = queryByTestId('searchID') as HTMLInputElement;

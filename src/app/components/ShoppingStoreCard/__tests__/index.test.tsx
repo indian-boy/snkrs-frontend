@@ -1,5 +1,9 @@
+import { Store } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
+import { CommonUsedAttributes } from 'types';
 import { ShoppingStoreCard } from '..';
 
 jest.mock('react-i18next', () => ({
@@ -13,7 +17,7 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
-const shoppingStoreData = {
+const shoppingStoreMock = {
   id: 1,
   placeName: 'Avenida paulista',
   address: {
@@ -26,12 +30,35 @@ const shoppingStoreData = {
   distance: 1000,
 };
 
+const renderWithProviders = (
+  props: Parameters<typeof ShoppingStoreCard>[number] & CommonUsedAttributes,
+  store: Store,
+) =>
+  render(
+    <Provider store={store}>
+      <ShoppingStoreCard {...props} />
+    </Provider>,
+  );
+
 describe('<ShoppingStoreCard  />', () => {
+  let store: ReturnType<typeof configureAppStore>;
+
+  beforeEach(() => {
+    store = configureAppStore();
+  });
+
   it('should match snapshot', () => {
-    const shoppingStoreCard = render(
-      <ShoppingStoreCard {...shoppingStoreData} />,
+    const { getByTestId, container } = renderWithProviders(
+      {
+        'data-testid': 'shoppingStoreCardID',
+        ...shoppingStoreMock,
+      },
+      store,
     );
 
-    expect(shoppingStoreCard.container.firstChild).toMatchSnapshot();
+    const shoppingStoreCardElement = getByTestId('shoppingStoreCardID');
+
+    expect(shoppingStoreCardElement).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

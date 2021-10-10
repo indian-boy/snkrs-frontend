@@ -1,5 +1,9 @@
+import { Store } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
+import { CommonUsedAttributes } from 'types';
 import { NewsLetter } from '..';
 
 jest.mock('react-i18next', () => ({
@@ -13,9 +17,34 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
+const renderWithProviders = (
+  props: Parameters<typeof NewsLetter>[number] & CommonUsedAttributes,
+  store: Store,
+) =>
+  render(
+    <Provider store={store}>
+      <NewsLetter {...props} />
+    </Provider>,
+  );
+
 describe('<NewsLetter  />', () => {
+  let store: ReturnType<typeof configureAppStore>;
+
+  beforeEach(() => {
+    store = configureAppStore();
+  });
+
   it('should match snapshot', () => {
-    const newsLetter = render(<NewsLetter />);
-    expect(newsLetter.container.firstChild).toMatchSnapshot();
+    const { getByTestId, container } = renderWithProviders(
+      {
+        'data-testid': 'newsLetterID',
+      },
+      store,
+    );
+
+    const newsLetterElement = getByTestId('newsLetterID');
+
+    expect(newsLetterElement).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
