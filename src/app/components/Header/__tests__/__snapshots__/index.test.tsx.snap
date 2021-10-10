@@ -248,6 +248,7 @@ exports[`<Header  /> should match snapshot 1`] = `
     >
       <input
         class="c6 c7"
+        data-testid="searchID"
         placeholder="components.header.searchButtonLabel,Buscar"
         style="width: 12rem;"
         type="search"

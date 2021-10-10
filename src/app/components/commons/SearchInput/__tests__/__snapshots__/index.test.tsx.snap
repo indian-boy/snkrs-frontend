@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SearchInput  /> should match snapshot 1`] = `
+exports[`<SearchInput /> should match snapshot 1`] = `
 .c0 {
   position: relative;
 }
@@ -50,6 +50,8 @@ exports[`<SearchInput  /> should match snapshot 1`] = `
 >
   <input
     class="c1"
+    data-testid="searchID"
+    placeholder="placeholder"
     type="search"
   />
 </label>

@@ -25,6 +25,7 @@ export const SearchInput = memo(
     const ref = React.useRef<HTMLInputElement>(null);
 
     const clearSearch = () => {
+      /* istanbul ignore else */
       if (ref.current) {
         ref.current.value = '';
       }
@@ -35,9 +36,10 @@ export const SearchInput = memo(
         {!hidden && (
           <Label showSearchIcon={showSearchIcon}>
             {showCloseIcon && (
-              <CloseIconButton onClick={() => clearSearch()}></CloseIconButton>
+              <CloseIconButton role="clear" onClick={() => clearSearch()} />
             )}
             <SearchInputWrapper
+              data-testid="searchID"
               placeholder={placeholder}
               ref={ref}
               showSearchIcon={showSearchIcon}
