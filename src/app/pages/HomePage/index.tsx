@@ -78,14 +78,16 @@ export function HomePage(props: Props) {
     shoppingStoresStateRef.current = shoppingStoresState;
   }
 
-  let timeout: NodeJS.Timeout;
+  let debounceUpdateTimeout: NodeJS.Timeout;
 
   const onSearchInputChangeHandler = (searchTerm: string) => {
     if (!isMediumScreen) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
+      clearTimeout(debounceUpdateTimeout);
+
+      debounceUpdateTimeout = setTimeout(() => {
         setSearchTerm(searchTerm);
       }, 1500);
+
       return;
     }
 
@@ -122,7 +124,6 @@ export function HomePage(props: Props) {
 
   useEffect(() => {
     getNearestShoppingStoresCallback();
-    return () => {};
   }, [getNearestShoppingStoresCallback]);
 
   const showShoppingStoreOnMapsModal = useCallback(() => {
@@ -151,6 +152,7 @@ export function HomePage(props: Props) {
 
     if (!latitude || !longitude) {
       setShoppingStores([]);
+
       return;
     }
 
@@ -169,7 +171,6 @@ export function HomePage(props: Props) {
 
   useEffect(() => {
     sortShoppingStoresCallback();
-    return () => {};
   }, [sortShoppingStoresCallback]);
 
   return (
