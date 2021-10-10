@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
 import { LinksDropdown } from '.';
 
 export default {
@@ -8,11 +10,17 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof LinksDropdown>;
 
-const Template: ComponentStory<typeof LinksDropdown> = args => (
-  <div style={{ width: '50%', margin: '0 auto' }}>
-    <LinksDropdown {...args} />
-  </div>
-);
+const Template: ComponentStory<typeof LinksDropdown> = args => {
+  const store = configureAppStore();
+
+  return (
+    <Provider store={store}>
+      <div style={{ width: '50%', margin: '0 auto' }}>
+        <LinksDropdown {...args} />
+      </div>
+    </Provider>
+  );
+};
 
 export const Primary = Template.bind({});
 

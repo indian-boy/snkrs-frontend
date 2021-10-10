@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
 import { Button } from '.';
 
 export default {
@@ -8,7 +10,15 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = args => {
+  const store = configureAppStore();
+
+  return (
+    <Provider store={store}>
+      <Button {...args} />
+    </Provider>
+  );
+};
 
 export const Primary = Template.bind({});
 

@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
 import { NewsLetter } from '.';
 
 export default {
@@ -8,9 +10,15 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof NewsLetter>;
 
-const Template: ComponentStory<typeof NewsLetter> = args => (
-  <NewsLetter {...args} />
-);
+const Template: ComponentStory<typeof NewsLetter> = args => {
+  const store = configureAppStore();
+
+  return (
+    <Provider store={store}>
+      <NewsLetter {...args} />
+    </Provider>
+  );
+};
 
 export const Primary = Template.bind({});
 

@@ -1,6 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Option } from 'app/components';
 import React, { useState } from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
 import styled from 'styled-components/macro';
 import { ShoppingStore } from 'types';
 import { ShoppingStoresList } from '.';
@@ -12,6 +14,8 @@ export default {
 } as ComponentMeta<typeof ShoppingStoresList>;
 
 const Template: ComponentStory<typeof ShoppingStoresList> = args => {
+  const store = configureAppStore();
+
   const [, setShoppingStoreSelected] = useState<ShoppingStore | null>(null);
 
   const filterOptions = [
@@ -24,15 +28,17 @@ const Template: ComponentStory<typeof ShoppingStoresList> = args => {
   >(filterOptions[0]);
 
   return (
-    <Wrapper>
-      <ShoppingStoresList
-        {...args}
-        filterOptions={filterOptions}
-        filterOptionSelectedState={filterOptionSelectedState}
-        setFilterOptionSelected={setFilterOptionSelected}
-        setShoppingStoreSelected={setShoppingStoreSelected}
-      />
-    </Wrapper>
+    <Provider store={store}>
+      <Wrapper>
+        <ShoppingStoresList
+          {...args}
+          filterOptions={filterOptions}
+          filterOptionSelectedState={filterOptionSelectedState}
+          setFilterOptionSelected={setFilterOptionSelected}
+          setShoppingStoreSelected={setShoppingStoreSelected}
+        />
+      </Wrapper>
+    </Provider>
   );
 };
 

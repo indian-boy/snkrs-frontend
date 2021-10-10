@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { configureAppStore } from 'store/configureStore';
 import styled from 'styled-components/macro';
 import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { ShoppingStoreCard } from '.';
@@ -10,13 +12,19 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof ShoppingStoreCard>;
 
-const Template: ComponentStory<typeof ShoppingStoreCard> = args => (
-  <ThemeProviderWrapper>
-    <Wrapper>
-      <ShoppingStoreCard {...args} />
-    </Wrapper>
-  </ThemeProviderWrapper>
-);
+const Template: ComponentStory<typeof ShoppingStoreCard> = args => {
+  const store = configureAppStore();
+
+  return (
+    <Provider store={store}>
+      <ThemeProviderWrapper>
+        <Wrapper>
+          <ShoppingStoreCard {...args} />
+        </Wrapper>
+      </ThemeProviderWrapper>
+    </Provider>
+  );
+};
 
 const Wrapper = styled.div`
   width: 20rem;
