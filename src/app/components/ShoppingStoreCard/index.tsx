@@ -48,7 +48,11 @@ export const ShoppingStoreCard = memo(
                 />
               </Distance>
             </Header>
-            <SeeOnMap type="button" onClick={onClick}>
+            <SeeOnMap
+              role="showShoppingStoreOnMap"
+              type="button"
+              onClick={onClick}
+            >
               <PinLocation />
               {t(messages.i18nSeeOnMapLabel())}
             </SeeOnMap>

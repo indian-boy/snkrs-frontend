@@ -125,6 +125,7 @@ exports[`<ShoppingStoreCard  /> should match snapshot 1`] = `
   </div>
   <button
     class="c3"
+    role="showShoppingStoreOnMap"
     type="button"
   >
     <svg>

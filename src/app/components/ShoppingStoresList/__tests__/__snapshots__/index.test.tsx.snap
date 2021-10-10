@@ -380,6 +380,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
       </div>
       <button
         class="c15"
+        role="showShoppingStoreOnMap"
         type="button"
       >
         <svg>
@@ -432,6 +433,7 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
       </div>
       <button
         class="c15"
+        role="showShoppingStoreOnMap"
         type="button"
       >
         <svg>

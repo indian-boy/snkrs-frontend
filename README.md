@@ -16,6 +16,10 @@
 
 - [![Jest](https://img.shields.io/badge/Jest-v26.0.23-C21325?logo=jest)](https://jestjs.io/)
 
+- [![Cypress](https://img.shields.io/badge/Cypress-v8.5.0-C21325?logo=cypress)](https://www.cypress.io/)
+
+- [![Storybook](https://img.shields.io/badge/Storybook-v6.3.8-C21325?logo=storybook)](https://storybook.js.org/)
+
 ## Prepare && Start
 
 ⚠️ Using [Yarn Package Manager](https://yarnpkg.com) is recommended over `npm`.
@@ -72,6 +76,14 @@ yarn storybook
 
 It makes development faster and easier by isolating components.
 
+### Cypress (e2e)
+
+```shell
+yarn cy:run
+```
+
+Fast, easy and reliable testing for anything that runs in a browser.
+
 ### Linting
 
 ```shell
@@ -124,6 +136,10 @@ Checks for TypeScript errors.
 
   <dt>Storybook</dt>
   <dd>This allows you to work on one component at a time. Developing entire UIs without needing to start up a complex dev stack, force certain data into your database, or navigate around your application.
+  </dd>
+
+  <dt>Cypress</dt>
+  <dd>Cypress is for developers and QA engineers. Making test-driven development a reality for end-to-end testing.
   </dd>
 
   <dt>Quick scaffolding</dt>
