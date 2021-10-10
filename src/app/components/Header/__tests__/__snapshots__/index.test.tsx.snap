@@ -109,7 +109,7 @@ exports[`<Header  /> should match snapshot 1`] = `
 
 .c2 {
   width: 2.5rem;
-  height: 2.5rem;
+  height: 2rem;
   cursor: pointer;
 }
 
@@ -155,8 +155,7 @@ exports[`<Header  /> should match snapshot 1`] = `
 
 @media (min-width:1024px) {
   .c2 {
-    width: 3.75rem;
-    height: 3.75rem;
+    width: 3.5rem;
   }
 }
 
@@ -174,7 +173,6 @@ exports[`<Header  /> should match snapshot 1`] = `
   >
     <svg
       class="c2"
-      style="height: 2rem;"
     >
       nike.svg
     </svg>

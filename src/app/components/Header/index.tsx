@@ -27,7 +27,7 @@ export const Header = memo((props: Props) => {
       <Theme>
         <Wrapper>
           <LeftSideWrapper>
-            <NikeLogoCustomized style={{ height: '2rem' }} />
+            <NikeLogoCustomized />
           </LeftSideWrapper>
           <CenterWrapper>
             <HeaderLink to="/">

@@ -42,12 +42,11 @@ const RightSideWrapper = styled.div`
 
 const CustomizeNikeSvg = (component: typeof NikeLogo) => styled(component)`
   width: 2.5rem;
-  height: 2.5rem;
+  height: 2rem;
   cursor: pointer;
 
   ${media.medium`
-      width: 3.75rem;
-      height: 3.75rem;
+    width: 3.5rem;
   `}
 `;
 
