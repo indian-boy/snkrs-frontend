@@ -27,32 +27,29 @@ const RightIcons = styled.div`
   gap: 1rem;
 `;
 
-const CustomizeSvg = (
+const CustomizeJordanLogoSvg = (component: typeof JordanLogo) => styled(
   component,
-  customProps: {
-    height: string;
-    width: string;
-  },
-) => styled(component)`
-  width: ${customProps.width};
-  height: ${customProps.height};
+)`
+  width: 1.8rem;
+  height: 1.8rem;
 `;
 
-const JordanLogoCustomized = CustomizeSvg(JordanLogo, {
-  height: '1.6rem',
-  width: '1.6rem',
-});
+const JordanLogoCustomized = CustomizeJordanLogoSvg(JordanLogo);
 
-const SNKRSLogoCustomized = CustomizeSvg(SNKRSLogo, {
-  height: '1rem',
-  width: '2.9rem',
-});
+const CustomizeSNKRSLogoSvg = (component: typeof SNKRSLogo) => styled(
+  component,
+)`
+  width: 2.9rem;
+  height: 2.9rem;
+`;
+
+const SNKRSLogoCustomized = CustomizeSNKRSLogoSvg(SNKRSLogo);
 
 const MainNavLinks = (component: typeof NavLink) => styled(component)`
   text-decoration: none;
   color: ${props => props.theme.palette.secondary.s500};
   font-size: 0.75rem;
-  line-height: 0;
+  line-height: 1.5rem;
 
   :visited {
     color: ${props => props.theme.palette.secondary.s500};
@@ -62,7 +59,7 @@ const MainNavLinks = (component: typeof NavLink) => styled(component)`
 const TopHeaderNavLink = MainNavLinks(NavLink);
 
 const VerticalLineSeparator = styled.span`
-  height: 100%;
+  height: 1.5rem;
   border-left: 1px solid ${props => props.theme.palette.secondary.s500};
 `;
 

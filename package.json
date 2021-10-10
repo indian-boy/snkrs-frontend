@@ -83,7 +83,10 @@
     "extract-messages": "i18next-scanner --config=internals/extractMessages/i18next-scanner.config.js",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --headed",
+    "test:e2e": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "browserslist": {
     "production": [
@@ -145,7 +148,9 @@
     "@storybook/node-logger": "6.3.8",
     "@storybook/preset-create-react-app": "3.2.0",
     "@storybook/react": "6.3.8",
+    "cypress": "8.5.0",
     "msw": "0.35.0",
+    "start-server-and-test": "1.14.0",
     "storybook-react-i18next": "1.0.10"
   },
   "eslintConfig": {

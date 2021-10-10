@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header  /> should match snapshot 1`] = `
-.c5 {
+.c6 {
   position: relative;
 }
 
-.c5::before {
+.c6::before {
   position: absolute;
   content: '';
   background-image: url(magnifier.svg);
@@ -20,7 +20,7 @@ exports[`<Header  /> should match snapshot 1`] = `
   transform: translateY(-50%);
 }
 
-.c6 {
+.c7 {
   font-size: 1rem;
   padding: 0.9rem 2.5rem 0.9rem 0.5rem;
   outline: none;
@@ -33,34 +33,34 @@ exports[`<Header  /> should match snapshot 1`] = `
   padding: 0.85rem 2.5rem;
 }
 
-.c6::-webkit-search-decoration,
-.c6::-webkit-search-cancel-button,
-.c6::-webkit-search-results-button,
-.c6::-webkit-search-results-decoration {
+.c7::-webkit-search-decoration,
+.c7::-webkit-search-cancel-button,
+.c7::-webkit-search-results-button,
+.c7::-webkit-search-results-decoration {
   display: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #737373;
   opacity: 1;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #737373;
   opacity: 1;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #737373;
   opacity: 1;
 }
 
-.c6::placeholder {
+.c7::placeholder {
   color: #737373;
   opacity: 1;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #737373;
 }
 
@@ -80,11 +80,16 @@ exports[`<Header  /> should match snapshot 1`] = `
   padding: 1rem 1rem;
 }
 
-.c2 {
+.c1 {
+  width: 100%;
+  margin-right: 1rem;
+}
+
+.c3 {
   display: none;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,32 +98,32 @@ exports[`<Header  /> should match snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 1.875rem;
+  gap: 1rem;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  width: 100%;
+  margin-left: 1rem;
 }
 
-.c1 {
+.c2 {
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
 }
 
-.c8 {
+.c9 {
   width: 1.7rem;
   height: 1.7rem;
   cursor: pointer;
 }
 
-.c9 {
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-}
-
-.c7 {
+.c8 {
   display: none;
 }
 
-.c3 {
+.c4 {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #000000;
@@ -128,7 +133,7 @@ exports[`<Header  /> should match snapshot 1`] = `
   font-weight: bold;
 }
 
-.c3:visited {
+.c4:visited {
   color: #1A1A1A;
 }
 
@@ -139,7 +144,7 @@ exports[`<Header  /> should match snapshot 1`] = `
 }
 
 @media (min-width:1024px) {
-  .c2 {
+  .c3 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -149,20 +154,14 @@ exports[`<Header  /> should match snapshot 1`] = `
 }
 
 @media (min-width:1024px) {
-  .c1 {
+  .c2 {
     width: 3.75rem;
     height: 3.75rem;
   }
 }
 
 @media (min-width:1024px) {
-  .c9 {
-    display: none;
-  }
-}
-
-@media (min-width:1024px) {
-  .c7 {
+  .c8 {
     display: block;
   }
 }
@@ -171,21 +170,21 @@ exports[`<Header  /> should match snapshot 1`] = `
   class="c0"
 >
   <div
-    class="styles__LeftSideWrapper-sc-16gafkx-1"
+    class="c1"
   >
     <svg
-      class="c1"
+      class="c2"
       style="height: 2rem;"
     >
       nike.svg
     </svg>
   </div>
   <div
-    class="c2"
+    class="c3"
   >
     <a
       aria-current="page"
-      class="c3 active"
+      class="c4 active"
       href="/"
     >
       components.header.links.newOffersPage
@@ -193,7 +192,7 @@ exports[`<Header  /> should match snapshot 1`] = `
     </a>
     <a
       aria-current="page"
-      class="c3 active"
+      class="c4 active"
       href="/"
     >
       components.header.links.malePage
@@ -201,7 +200,7 @@ exports[`<Header  /> should match snapshot 1`] = `
     </a>
     <a
       aria-current="page"
-      class="c3 active"
+      class="c4 active"
       href="/"
     >
       components.header.links.femalePage
@@ -209,7 +208,7 @@ exports[`<Header  /> should match snapshot 1`] = `
     </a>
     <a
       aria-current="page"
-      class="c3 active"
+      class="c4 active"
       href="/"
     >
       components.header.links.kidsPage
@@ -217,7 +216,7 @@ exports[`<Header  /> should match snapshot 1`] = `
     </a>
     <a
       aria-current="page"
-      class="c3 active"
+      class="c4 active"
       href="/"
     >
       components.header.links.offersPage
@@ -225,7 +224,7 @@ exports[`<Header  /> should match snapshot 1`] = `
     </a>
     <a
       aria-current="page"
-      class="c3 active"
+      class="c4 active"
       href="/"
     >
       components.header.links.newOffersPage
@@ -233,7 +232,7 @@ exports[`<Header  /> should match snapshot 1`] = `
     </a>
     <a
       aria-current="page"
-      class="c3 active"
+      class="c4 active"
       href="/"
     >
       components.header.links.homePage
@@ -241,28 +240,22 @@ exports[`<Header  /> should match snapshot 1`] = `
     </a>
   </div>
   <div
-    class="c4"
+    class="c5"
   >
     <label
-      class="c5"
+      class="c6"
     >
       <input
-        class="c6 c7"
-        data-testid="searchID"
+        class="c7 c8"
         placeholder="components.header.searchButtonLabel,Buscar"
         style="width: 12rem;"
         type="search"
       />
     </label>
     <svg
-      class="c8"
-    >
-      bag.svg
-    </svg>
-    <svg
       class="c9"
     >
-      hamburger_menu.svg
+      bag.svg
     </svg>
   </div>
 </div>

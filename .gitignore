@@ -5,6 +5,8 @@ node_modules
 stats.json
 .pnp
 .pnp.js
+cypress/videos
+cypress/screenshots
 
 # misc
 .DS_Store

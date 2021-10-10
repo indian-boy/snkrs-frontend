@@ -25,7 +25,13 @@ interface Props {
 }
 
 export const Dropdown = memo(
-  ({ label, options, optionSelectedState, setOptionSelected }: Props) => {
+  ({
+    label,
+    options,
+    optionSelectedState,
+    setOptionSelected,
+    ...props
+  }: Props) => {
     const ref = React.useRef<HTMLDetailsElement>(null);
 
     const handleClick = (optionsSelected: Option) => {
@@ -39,7 +45,7 @@ export const Dropdown = memo(
 
     return (
       <Theme>
-        <Wrapper data-testid="dropdownID">
+        <Wrapper {...props}>
           <FieldSet>
             <Legend>{optionSelectedState?.title || label}</Legend>
             <Details ref={ref} role="openClose">

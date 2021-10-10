@@ -53,7 +53,7 @@ export const Header = memo((props: Props) => {
               placeholder={t(messages.i18nSearchButtonLabel())}
             />
             <BagIconCustomized />
-            <HamburguerMenuIconCustomized />
+            {!isMediumScreen && <HamburguerMenuIconCustomized />}
           </RightSideWrapper>
         </Wrapper>
       </Theme>

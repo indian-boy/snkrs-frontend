@@ -16,24 +16,19 @@ const Links = styled.div`
   flex-direction: column;
 `;
 
-const MainNavLinks = (
-  component: typeof NavLink,
-  fontSize: string,
-  fontWeight: string,
-  textTransform: string,
-) => styled(component)`
+const MainNavLinks = (component: typeof NavLink) => styled(component)`
   text-decoration: none;
   color: ${props => props.theme.palette.secondary.default};
-  text-transform: ${textTransform};
-  font-size: ${fontSize};
-  font-weight: ${fontWeight};
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
 
   :visited {
     color: ${props => props.theme.palette.secondary.s300};
   }
 `;
 
-const MainNavLink = MainNavLinks(NavLink, '1rem', 'bold', 'uppercase');
+const MainNavLink = MainNavLinks(NavLink);
 
 const LinksWrapper = styled.div``;
 
@@ -122,7 +117,19 @@ const SectionWrapper = styled.div`
   flex-direction: column;
 `;
 
-const SectionNavLink = MainNavLinks(NavLink, '0.75rem', 'normal', 'none');
+const SectionNavLinks = (component: typeof NavLink) => styled(component)`
+  text-decoration: none;
+  color: ${props => props.theme.palette.secondary.default};
+  text-transform: none;
+  font-size: 0.75rem;
+  font-weight: normal;
+
+  :visited {
+    color: ${props => props.theme.palette.secondary.s300};
+  }
+`;
+
+const SectionNavLink = SectionNavLinks(NavLink);
 
 const MultipleSectionsWrapper = styled.div`
   display: flex;

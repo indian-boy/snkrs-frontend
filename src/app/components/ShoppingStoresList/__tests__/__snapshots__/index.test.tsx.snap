@@ -303,7 +303,6 @@ exports[`<ShoppingStoresList  /> should match snapshot 1`] = `
   >
     <div
       class="c2"
-      data-testid="dropdownID"
     >
       <fieldset
         class="c3"

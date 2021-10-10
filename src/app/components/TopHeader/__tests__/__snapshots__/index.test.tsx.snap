@@ -31,13 +31,13 @@ exports[`<TopHeader  /> should match snapshot 1`] = `
 }
 
 .c2 {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .c3 {
   width: 2.9rem;
-  height: 1rem;
+  height: 2.9rem;
 }
 
 .c5 {
@@ -45,7 +45,7 @@ exports[`<TopHeader  /> should match snapshot 1`] = `
   text-decoration: none;
   color: #737373;
   font-size: 0.75rem;
-  line-height: 0;
+  line-height: 1.5rem;
 }
 
 .c5:visited {
@@ -53,7 +53,7 @@ exports[`<TopHeader  /> should match snapshot 1`] = `
 }
 
 .c6 {
-  height: 100%;
+  height: 1.5rem;
   border-left: 1px solid #737373;
 }
 

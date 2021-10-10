@@ -97,6 +97,7 @@ const withLinkStyles = component => styled(component)`
   color: ${props => props.theme.palette.secondary.s200};
   font-size: 0.75rem;
   line-height: 1.5rem;
+
   :visited {
     color: ${props => props.theme.palette.secondary.s300};
   }

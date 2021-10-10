@@ -39,7 +39,6 @@ export const SearchInput = memo(
               <CloseIconButton role="clear" onClick={() => clearSearch()} />
             )}
             <SearchInputWrapper
-              data-testid="searchID"
               placeholder={placeholder}
               ref={ref}
               showSearchIcon={showSearchIcon}

@@ -12,6 +12,7 @@ const DropdownWithMockedParent = () => {
 
   return (
     <Dropdown
+      data-testid="dropdownID"
       optionSelectedState={optionSelectedState}
       setOptionSelected={setOptionSelected}
       label="Dropdown"
@@ -27,6 +28,7 @@ const DropdownWithMockedParentAndNoCurrentSelectedOption = () => {
 
   return (
     <Dropdown
+      data-testid="dropdownID"
       setOptionSelected={setOptionSelected}
       label="Dropdown"
       options={options}

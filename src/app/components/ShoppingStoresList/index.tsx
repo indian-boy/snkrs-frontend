@@ -13,6 +13,7 @@ interface Props {
   setFilterOptionSelected: React.Dispatch<React.SetStateAction<Option>>;
   filterOptions: Option[];
   filterOptionSelectedState: Option;
+  role?: React.AriaRole | undefined;
 }
 
 export const ShoppingStoresList = memo(
@@ -32,7 +33,7 @@ export const ShoppingStoresList = memo(
 
     return (
       <Theme>
-        <Wrapper>
+        <Wrapper {...props}>
           <Filters>
             <Dropdown
               label={t(messages.i18nFilter())}

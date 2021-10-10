@@ -16,7 +16,11 @@ jest.mock('react-i18next', () => ({
 describe('<SearchInput />', () => {
   it('should match snapshot', () => {
     const { getByTestId, container } = render(
-      <SearchInput type="search" placeholder="placeholder" />,
+      <SearchInput
+        data-testid="searchID"
+        type="search"
+        placeholder="placeholder"
+      />,
     );
 
     const searchElement = getByTestId('searchID');
@@ -27,7 +31,12 @@ describe('<SearchInput />', () => {
 
   it('should clear search', () => {
     const { getByRole, getByTestId } = render(
-      <SearchInput type="search" showCloseIcon={true} showSearchIcon={true} />,
+      <SearchInput
+        data-testid="searchID"
+        type="search"
+        showCloseIcon={true}
+        showSearchIcon={true}
+      />,
     );
 
     const searchElement = getByTestId('searchID') as HTMLInputElement;
@@ -45,7 +54,7 @@ describe('<SearchInput />', () => {
 
   it('should hide input', () => {
     const { queryByTestId } = render(
-      <SearchInput type="search" hidden={true} />,
+      <SearchInput data-testid="searchID" type="search" hidden={true} />,
     );
 
     const searchElement = queryByTestId('searchID') as HTMLInputElement;

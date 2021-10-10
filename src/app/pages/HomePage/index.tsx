@@ -182,6 +182,7 @@ export function HomePage() {
           <Title>{t(messages.i18nShoppingStores())}</Title>
           <SearchWrapper>
             <HomeSearchInput
+              role="homeSearchInput"
               onChange={e => onSearchInputChangeHandler(e.target.value)}
               isRounded={true}
               showSearchIcon={true}
@@ -190,6 +191,7 @@ export function HomePage() {
             />
             {isMediumScreen && (
               <Button
+                role="homeSearchButton"
                 onClick={() => getDataBasedOnUserLocation()}
                 label={t(messages.i18nSearchButtonLabel())}
               ></Button>
@@ -198,6 +200,7 @@ export function HomePage() {
           {!isMediumScreen && shoppingStoresState.length > 0 && (
             <ContentWrapperMobileScreen>
               <ShoppingStoresList
+                role="showShoppingStoresList"
                 setFilterOptionSelected={setFilterOptionSelected}
                 filterOptions={filterOptions}
                 filterOptionSelectedState={filterOptionSelectedState}
@@ -209,6 +212,7 @@ export function HomePage() {
           {isMediumScreen && shoppingStoresState.length > 0 && (
             <ContentWrapperMediumScreen>
               <ShoppingStoresList
+                role="showShoppingStoresList"
                 setFilterOptionSelected={setFilterOptionSelected}
                 filterOptions={filterOptions}
                 filterOptionSelectedState={filterOptionSelectedState}

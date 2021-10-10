@@ -2,7 +2,7 @@ import { ReactComponent as BagIcon } from 'assets/svgs/icons/bag.svg';
 import { ReactComponent as HamburguerMenuIcon } from 'assets/svgs/icons/hamburger_menu.svg';
 import { ReactComponent as NikeLogo } from 'assets/svgs/logos/nike.svg';
 import { NavLink } from 'react-router-dom';
-import styled, { css } from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import { media } from 'styles/media';
 import { SearchInput } from '..';
 
@@ -17,7 +17,10 @@ const Wrapper = styled.div`
   `}
 `;
 
-const LeftSideWrapper = styled.div``;
+const LeftSideWrapper = styled.div`
+  width: 100%;
+  margin-right: 1rem;
+`;
 
 const CenterWrapper = styled.div`
   display: none;
@@ -31,54 +34,47 @@ const CenterWrapper = styled.div`
 const RightSideWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.875rem;
+  gap: 1rem;
+  justify-content: end;
+  width: 100%;
+  margin-left: 1rem;
 `;
 
-const CustomizeSvg = (
-  component,
-  customProps: {
-    size: string;
-    desktopSize?: string;
-    hideDesktop?: boolean;
-    clickable?: boolean;
-  },
-) => styled(component)`
-  width: ${customProps.size};
-  height: ${customProps.size};
+const CustomizeNikeSvg = (component: typeof NikeLogo) => styled(component)`
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
 
-  ${customProps.desktopSize &&
-  media.medium`
-    width: ${customProps.desktopSize};
-    height: ${customProps.desktopSize};
-  `};
-
-  ${customProps.hideDesktop &&
-  media.medium`
-      display: none;
-    `}
-
-  ${customProps.clickable &&
-  css`
-    cursor: pointer; ;
+  ${media.medium`
+      width: 3.75rem;
+      height: 3.75rem;
   `}
 `;
 
-const NikeLogoCustomized = CustomizeSvg(NikeLogo, {
-  size: '2.5rem',
-  desktopSize: '3.75rem',
-  clickable: true,
-});
+const NikeLogoCustomized = CustomizeNikeSvg(NikeLogo);
 
-const BagIconCustomized = CustomizeSvg(BagIcon, {
-  size: '1.7rem',
-  clickable: true,
-});
+const CustomizeBagSvg = (component: typeof BagIcon) => styled(component)`
+  width: 1.7rem;
+  height: 1.7rem;
+  cursor: pointer;
+`;
 
-const HamburguerMenuIconCustomized = CustomizeSvg(HamburguerMenuIcon, {
-  size: '2rem',
-  hideDesktop: true,
-  clickable: true,
-});
+const BagIconCustomized = CustomizeBagSvg(BagIcon);
+
+const CustomizeHamburguerMenuSvg = (
+  component: typeof HamburguerMenuIcon,
+) => styled(component)`
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+
+  ${media.medium`
+      display:none;
+  `}
+`;
+
+const HamburguerMenuIconCustomized =
+  CustomizeHamburguerMenuSvg(HamburguerMenuIcon);
 
 const SearchInputCustomized = (component: typeof SearchInput) => styled(
   component,
