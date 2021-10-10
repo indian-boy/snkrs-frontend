@@ -13,7 +13,6 @@ import {
   GetLatitudeLongitudeFromText,
   useCheckIsMediumScreen,
 } from 'utils/helpers';
-import { debounce } from 'utils/helpers/debounce';
 import { ShoppingStoreSortOptions } from 'utils/types/enums';
 import { messages } from './messages';
 import {
@@ -76,57 +75,39 @@ export function HomePage() {
     shoppingStoresStateRef.current = shoppingStoresState;
   }
 
+  let timeout: NodeJS.Timeout;
+
   const onSearchInputChangeHandler = (searchTerm: string) => {
-    setSearchTerm(searchTerm);
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      setSearchTerm(searchTerm);
+    }, 1500);
   };
 
-  const getDataBasedOnUserLocation = async () => {
-    const { latitude, longitude } =
-      GetLatitudeLongitudeFromText(searchTermState);
-
-    if (!latitude || !longitude) {
-      return;
-    }
-
-    const data = await fetchShoppingStores(
-      { latitude, longitude },
+  const setShoppingStoresFromSearchResult = async () => {
+    const data = await searchShoppingStores(
+      searchTermState,
       filterOptionSelectedState,
     );
 
     setShoppingStores(data);
   };
 
-  const getShoppingStoresBasedOnUserLocation = useCallback(() => {
-    const fetchShoppingStoresWithDebounce = async () => {
-      const { latitude, longitude } =
-        GetLatitudeLongitudeFromText(searchTermState);
-
-      if (!latitude || !longitude) {
-        return;
-      }
-
-      const data = await fetchShoppingStores(
-        { latitude, longitude },
+  const getNearestShoppingStoresCallback = useCallback(async () => {
+    if (!isMediumScreen) {
+      const data = await searchShoppingStores(
+        searchTermState,
         filterOptionSelectedStateRef.current,
       );
 
       setShoppingStores(data);
-    };
-
-    if (!isMediumScreen) {
-      const fetchShoppingStoresDebounced = debounce(
-        fetchShoppingStoresWithDebounce,
-        1500,
-      );
-
-      fetchShoppingStoresDebounced();
     }
   }, [searchTermState, isMediumScreen]);
 
   useEffect(() => {
-    getShoppingStoresBasedOnUserLocation();
+    getNearestShoppingStoresCallback();
     return () => {};
-  }, [getShoppingStoresBasedOnUserLocation]);
+  }, [getNearestShoppingStoresCallback]);
 
   const showShoppingStoreOnMapsModal = useCallback(() => {
     if (shoppingStoreSelectedState) {
@@ -143,7 +124,7 @@ export function HomePage() {
     showShoppingStoreOnMapsModal();
   }, [showShoppingStoreOnMapsModal]);
 
-  const sortShoppingStoresByOptionSelected = useCallback(() => {
+  const sortShoppingStoresCallback = useCallback(() => {
     const { latitude, longitude } = GetLatitudeLongitudeFromText(
       searchTermRef.current,
     );
@@ -167,9 +148,9 @@ export function HomePage() {
   }, [filterOptionSelectedState]);
 
   useEffect(() => {
-    sortShoppingStoresByOptionSelected();
+    sortShoppingStoresCallback();
     return () => {};
-  }, [sortShoppingStoresByOptionSelected]);
+  }, [sortShoppingStoresCallback]);
 
   return (
     <>
@@ -192,7 +173,7 @@ export function HomePage() {
             {isMediumScreen && (
               <Button
                 role="homeSearchButton"
-                onClick={() => getDataBasedOnUserLocation()}
+                onClick={() => setShoppingStoresFromSearchResult()}
                 label={t(messages.i18nSearchButtonLabel())}
               ></Button>
             )}
@@ -297,4 +278,20 @@ const mapShoppingStoresWithDistanceApplyingSortingOption = (
     .sort((prev, next) =>
       sortBySelectedOption(prev, next, filterOptionSelectedState),
     );
+};
+
+const searchShoppingStores = async (
+  searchTermState: string,
+  filterOptionSelectedState: Option,
+) => {
+  const { latitude, longitude } = GetLatitudeLongitudeFromText(searchTermState);
+
+  if (!latitude || !longitude) {
+    return [];
+  }
+
+  return await fetchShoppingStores(
+    { latitude, longitude },
+    filterOptionSelectedState,
+  );
 };
