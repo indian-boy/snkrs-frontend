@@ -2,11 +2,11 @@
 
 - [![React](https://img.shields.io/badge/React-v17.0.13-007ACC?logo=react)](https://github.com/facebook/react/blob/main/CHANGELOG.md#1702-march-22-2021)
 
-- [![StyledComponents](https://img.shields.io/badge/Styled&nbsp;Components-v5.3.0-007ACC?logo=styled-components)](https://styled-components.com/releases#v5.3.0)
+- [![StyledComponents](https://img.shields.io/badge/Styled Components-v5.3.0-007ACC?logo=styled-components)](https://styled-components.com/releases#v5.3.0)
 
 - [![Redux](https://img.shields.io/badge/Redux-v7.2.4-007ACC?logo=redux)](https://newreleases.io/project/npm/react-redux/release/7.2.4)
 
-- [![ReduxSaga](https://img.shields.io/badge/Redux&nbsp;Saga-v1.1.3-007ACC?logo=redux-saga)](https://newreleases.io/project/npm/react-redux/release/7.2.4)
+- [![ReduxSaga](https://img.shields.io/badge/Redux Saga-v1.1.3-007ACC?logo=redux-saga)](https://newreleases.io/project/npm/react-redux/release/7.2.4)
 
 - [![Stylelint](https://img.shields.io/badge/Stylelint-v13.13.1-007ACC?logo=stylelint)](https://stylelint.io/changelog/#13131)
 
@@ -64,6 +64,14 @@ All the test commands allow an optional `-- [string]` argument to filter the tes
 yarn test -- Button // Run only the Button component tests
 ```
 
+### Storybook
+
+```shell
+yarn storybook
+```
+
+It makes development faster and easier by isolating components.
+
 ### Linting
 
 ```shell
@@ -113,6 +121,10 @@ Checks for TypeScript errors.
 
   <dt>Typescript</dt>
   <dd>Typescript is the key to scalability. Build self-documented code, easy-to-debug code and create maintainable large applications and codebases with a highly productive development experience.</dd>
+
+  <dt>Storybook</dt>
+  <dd>This allows you to work on one component at a time. Developing entire UIs without needing to start up a complex dev stack, force certain data into your database, or navigate around your application.
+  </dd>
 
   <dt>Quick scaffolding</dt>
   <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>

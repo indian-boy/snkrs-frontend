@@ -18,7 +18,6 @@ import {
 
 interface Props extends ShoppingStore {
   onClick?: () => void;
-  distance: number;
 }
 
 export const ShoppingStoreCard = memo(
