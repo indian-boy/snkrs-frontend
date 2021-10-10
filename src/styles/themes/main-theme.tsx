@@ -1,5 +1,4 @@
-import React from 'react';
-import { DefaultTheme, ThemeProvider } from 'styled-components/macro';
+import { DefaultTheme } from 'styled-components/macro';
 
 export const mainTheme: DefaultTheme = {
   palette: {
@@ -19,9 +18,3 @@ export const mainTheme: DefaultTheme = {
     },
   },
 };
-
-const Theme = ({ children }) => {
-  return <ThemeProvider theme={mainTheme}>{children}</ThemeProvider>;
-};
-
-export default Theme;

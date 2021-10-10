@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { ButtonWrapper } from './styles';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,7 +10,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = memo(({ onClick, label, ...props }: Props) => {
   return (
-    <Theme>
+    <ThemeProviderWrapper>
       <ButtonWrapper
         data-testid="buttonID"
         onClick={onClick}
@@ -19,6 +19,6 @@ export const Button = memo(({ onClick, label, ...props }: Props) => {
       >
         {label}
       </ButtonWrapper>
-    </Theme>
+    </ThemeProviderWrapper>
   );
 });

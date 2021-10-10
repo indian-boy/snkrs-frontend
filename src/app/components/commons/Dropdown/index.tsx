@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import {
   Details,
   FieldSet,
@@ -44,7 +44,7 @@ export const Dropdown = memo(
     };
 
     return (
-      <Theme>
+      <ThemeProviderWrapper>
         <Wrapper {...props}>
           <FieldSet>
             <Legend>{optionSelectedState?.title || label}</Legend>
@@ -68,7 +68,7 @@ export const Dropdown = memo(
             </Details>
           </FieldSet>
         </Wrapper>
-      </Theme>
+      </ThemeProviderWrapper>
     );
   },
 );

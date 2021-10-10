@@ -14,7 +14,7 @@ import { IntlProvider } from 'react-intl';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { GlobalStyles } from 'styles/global-styles';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { ShoppingStore } from 'types';
 import { ModalContext } from './components/commons/Modal/context';
 import { Header } from './components/Header';
@@ -38,7 +38,7 @@ export function App() {
 
   return (
     <IntlProvider locale={navigator.language}>
-      <Theme>
+      <ThemeProviderWrapper>
         <BrowserRouter>
           <Helmet
             titleTemplate="%s - SNKRS App"
@@ -63,7 +63,7 @@ export function App() {
 
           <GlobalStyles />
         </BrowserRouter>
-      </Theme>
+      </ThemeProviderWrapper>
     </IntlProvider>
   );
 }

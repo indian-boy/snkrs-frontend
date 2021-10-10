@@ -10,7 +10,7 @@ exports[`<App /> should render and match the snapshot 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <Theme>
+  <ThemeProviderWrapper>
     <BrowserRouter>
       <Helmet
         defaultTitle="SNKRS App"
@@ -58,6 +58,6 @@ exports[`<App /> should render and match the snapshot 1`] = `
       </Context.Provider>
       <Memo(l) />
     </BrowserRouter>
-  </Theme>
+  </ThemeProviderWrapper>
 </IntlProvider>
 `;

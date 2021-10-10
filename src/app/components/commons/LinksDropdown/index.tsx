@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { Details, Icon, Options, StyledNavLink, Summary } from './styles';
 
 export interface Link {
@@ -16,7 +16,7 @@ interface Props {
 export const LinksDropdown = memo(({ title, links }: Props) => {
   return (
     <BrowserRouter>
-      <Theme>
+      <ThemeProviderWrapper>
         <Details>
           <Summary>
             {title}
@@ -31,7 +31,7 @@ export const LinksDropdown = memo(({ title, links }: Props) => {
               ))}
           </Options>
         </Details>
-      </Theme>
+      </ThemeProviderWrapper>
     </BrowserRouter>
   );
 });

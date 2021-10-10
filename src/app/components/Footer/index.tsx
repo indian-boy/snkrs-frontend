@@ -11,7 +11,7 @@ import { ReactComponent as YoutubeLogo } from 'assets/svgs/logos/youtube_rounded
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter, NavLink } from 'react-router-dom';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { useCheckIsMediumScreen } from 'utils/helpers';
 import { messages } from './messages';
 import {
@@ -101,7 +101,7 @@ export const Footer = memo((props: Props) => {
 
   return (
     <BrowserRouter>
-      <Theme>
+      <ThemeProviderWrapper>
         {isMediumScreen && (
           <Wrapper>
             <MediumScreenWrapper>
@@ -234,7 +234,7 @@ export const Footer = memo((props: Props) => {
             <CompanyInfos>{t(messages.i18nCompanyInfos())}</CompanyInfos>
           </SmallScreenWrapper>
         )}
-      </Theme>
+      </ThemeProviderWrapper>
     </BrowserRouter>
   );
 });

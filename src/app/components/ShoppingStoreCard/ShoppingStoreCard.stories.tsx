@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components/macro';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { ShoppingStoreCard } from '.';
 
 export default {
@@ -11,11 +11,11 @@ export default {
 } as ComponentMeta<typeof ShoppingStoreCard>;
 
 const Template: ComponentStory<typeof ShoppingStoreCard> = args => (
-  <Theme>
+  <ThemeProviderWrapper>
     <Wrapper>
       <ShoppingStoreCard {...args} />
     </Wrapper>
-  </Theme>
+  </ThemeProviderWrapper>
 );
 
 const Wrapper = styled.div`

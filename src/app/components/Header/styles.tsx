@@ -68,7 +68,7 @@ const CustomizeHamburguerMenuSvg = (
   cursor: pointer;
 
   ${media.medium`
-      display:none;
+    display:none;
   `}
 `;
 

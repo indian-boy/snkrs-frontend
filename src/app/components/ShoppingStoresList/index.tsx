@@ -1,7 +1,7 @@
 import { Dropdown, Option } from 'app/components';
 import React, { Dispatch, memo, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { ShoppingStore } from 'types';
 import { ShoppingStoreCard } from '../ShoppingStoreCard';
 import { messages } from './messages';
@@ -32,7 +32,7 @@ export const ShoppingStoresList = memo(
     };
 
     return (
-      <Theme>
+      <ThemeProviderWrapper>
         <Wrapper {...props}>
           <Filters>
             <Dropdown
@@ -53,7 +53,7 @@ export const ShoppingStoresList = memo(
               ))}
           </List>
         </Wrapper>
-      </Theme>
+      </ThemeProviderWrapper>
     );
   },
 );

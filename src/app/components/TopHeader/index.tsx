@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { messages } from './messages';
 import {
   JordanLogoCustomized,
@@ -20,7 +20,7 @@ export const TopHeader = memo((props: Props) => {
 
   return (
     <BrowserRouter>
-      <Theme>
+      <ThemeProviderWrapper>
         <Wrapper>
           <LeftIcons>
             <JordanLogoCustomized />
@@ -44,7 +44,7 @@ export const TopHeader = memo((props: Props) => {
             </TopHeaderNavLink>
           </RightIcons>
         </Wrapper>
-      </Theme>
+      </ThemeProviderWrapper>
     </BrowserRouter>
   );
 });

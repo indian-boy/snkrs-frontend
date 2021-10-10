@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { CloseIconButton, Label, SearchInputWrapper } from './styles';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -32,7 +32,7 @@ export const SearchInput = memo(
     };
 
     return (
-      <Theme>
+      <ThemeProviderWrapper>
         {!hidden && (
           <Label showSearchIcon={showSearchIcon}>
             {showCloseIcon && (
@@ -47,7 +47,7 @@ export const SearchInput = memo(
             ></SearchInputWrapper>
           </Label>
         )}
-      </Theme>
+      </ThemeProviderWrapper>
     );
   },
 );

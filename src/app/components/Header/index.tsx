@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { useCheckIsMediumScreen } from 'utils/helpers';
 import { messages } from './messages';
 import {
@@ -24,7 +24,7 @@ export const Header = memo((props: Props) => {
 
   return (
     <BrowserRouter>
-      <Theme>
+      <ThemeProviderWrapper>
         <Wrapper>
           <LeftSideWrapper>
             <NikeLogoCustomized />
@@ -56,7 +56,7 @@ export const Header = memo((props: Props) => {
             {!isMediumScreen && <HamburguerMenuIconCustomized />}
           </RightSideWrapper>
         </Wrapper>
-      </Theme>
+      </ThemeProviderWrapper>
     </BrowserRouter>
   );
 });

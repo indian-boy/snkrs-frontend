@@ -2,7 +2,7 @@ import { ReactComponent as PinLocation } from 'assets/svgs/icons/pin_location.sv
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormattedNumber, IntlProvider } from 'react-intl';
-import Theme from 'styles/themes/main-theme';
+import ThemeProviderWrapper from 'styles/themes/themeProvider';
 import { ShoppingStore } from 'types';
 import { messages } from './messages';
 import {
@@ -35,7 +35,7 @@ export const ShoppingStoreCard = memo(
 
     return (
       <IntlProvider locale={navigator.language}>
-        <Theme>
+        <ThemeProviderWrapper>
           <Wrapper>
             <Header>
               <Title>{placeName}</Title>
@@ -68,7 +68,7 @@ export const ShoppingStoreCard = memo(
               </Availability>
             </ContentWrapper>
           </Wrapper>
-        </Theme>
+        </ThemeProviderWrapper>
       </IntlProvider>
     );
   },
