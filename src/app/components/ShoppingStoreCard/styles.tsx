@@ -77,6 +77,8 @@ const Availability = styled.span`
   color: ${props => props.theme.palette.success.s300};
 `;
 
+//
+
 export {
   Wrapper,
   Header,

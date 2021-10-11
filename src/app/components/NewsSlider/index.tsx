@@ -19,7 +19,6 @@ interface Props {}
 export const NewsSlider = memo((props: Props) => {
   useNewsSliceSlice();
 
-  const [animateToRightState, setAnimateToRight] = useState<boolean>(true);
   const [loopOverSlidesState, setLoopOverSlides] = useState<boolean>(true);
   const sliceState = useSelector(selectNewsSlice);
   const dispatch = useDispatch();
@@ -32,22 +31,19 @@ export const NewsSlider = memo((props: Props) => {
   > = sliceState.selected.Image;
 
   const onGoToNext = () => {
-    setAnimateToRight(true);
     setLoopOverSlides(false);
     dispatch(newsSliceActions.goToNext());
   };
 
   const onGoToPrevious = () => {
-    setAnimateToRight(false);
     setLoopOverSlides(false);
     dispatch(newsSliceActions.goToNext());
   };
 
   React.useEffect(() => {
     let loopTimeoutID: NodeJS.Timeout = setInterval(() => {
-      setAnimateToRight(true);
       dispatch(newsSliceActions.goToNext());
-    }, 3000);
+    }, 4000);
 
     if (!loopOverSlidesState) {
       clearInterval(loopTimeoutID);
@@ -65,12 +61,7 @@ export const NewsSlider = memo((props: Props) => {
               <ArrowLeftIconCustomized />
             </ArrowButtonWrapper>
 
-            <Content
-              key={sliceState.selected.id}
-              style={{
-                animationDirection: animateToRightState ? 'normal' : 'reverse',
-              }}
-            >
+            <Content key={sliceState.selected.id}>
               {sliceState.selected && <Image></Image>}
               {sliceState.selected.title}
               <Link to={sliceState.selected.link.url}>

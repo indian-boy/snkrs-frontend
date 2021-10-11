@@ -34,9 +34,9 @@ const CustomizeArrowRightIconSvg = (component: typeof ArrowLeftIcon) => styled(
 
 const ArrowRightCustomized = CustomizeArrowRightIconSvg(ArrowRightIcon);
 
-const FromRightToLeft = keyframes`
-  0%  { transform: translateX(0) }
-  100% { transform: translateX(-20rem); opacity: 0;}
+const FadeIn = keyframes`
+  0%  { opacity: 0; }
+  100% { opacity: 1;}
 `;
 
 const Content = styled.div`
@@ -49,7 +49,7 @@ const Content = styled.div`
   gap: 0.5rem;
   width: 40rem;
 
-  animation: ${FromRightToLeft} 0.6s ease-in-out;
+  animation: ${FadeIn} 0.6s ease-in-out;
 `;
 
 const LinkCustomized = (component: typeof NavLink) => styled(component)`

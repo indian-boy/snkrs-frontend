@@ -43,8 +43,8 @@ exports[`<NewsSlider  /> should match snapshot 1`] = `
   justify-content: center;
   gap: 0.5rem;
   width: 40rem;
-  -webkit-animation: hcoIze 0.6s ease-in-out;
-  animation: hcoIze 0.6s ease-in-out;
+  -webkit-animation: fQRpvB 0.6s ease-in-out;
+  animation: fQRpvB 0.6s ease-in-out;
 }
 
 .c4 {
@@ -109,7 +109,6 @@ exports[`<NewsSlider  /> should match snapshot 1`] = `
   </button>
   <div
     class="c3"
-    style="animation-direction: normal;"
   >
     <svg>
       nike_snkrs.svg
