@@ -22,7 +22,7 @@ interface Props extends ShoppingStore {
 
 export const ShoppingStoreCard = memo(
   ({
-    distance,
+    distance = 0,
     onClick,
     placeName,
     address,
@@ -33,7 +33,7 @@ export const ShoppingStoreCard = memo(
   }: Props) => {
     const { t } = useTranslation();
 
-    const distanceInKilometersApproximately = (distance ?? 0 / 1000).toFixed(1);
+    const distanceInKilometersApproximately = (distance / 1000).toFixed(1);
 
     return (
       <IntlProvider locale={navigator.language}>
