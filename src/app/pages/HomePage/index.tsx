@@ -78,13 +78,13 @@ export function HomePage(props: Props) {
     shoppingStoresStateRef.current = shoppingStoresState;
   }
 
-  let debounceUpdateTimeout: NodeJS.Timeout;
+  let updateSearchTermDelay: NodeJS.Timeout;
 
   const onSearchInputChangeHandler = (searchTerm: string) => {
     if (!isMediumScreen) {
-      clearTimeout(debounceUpdateTimeout);
+      clearTimeout(updateSearchTermDelay);
 
-      debounceUpdateTimeout = setTimeout(() => {
+      updateSearchTermDelay = setTimeout(() => {
         setSearchTerm(searchTerm);
       }, 1500);
 
