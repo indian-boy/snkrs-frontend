@@ -1,6 +1,10 @@
-import { Button, Option, ShoppingStoresList } from 'app/components';
+import {
+  Button,
+  MapsIframeModal,
+  Option,
+  ShoppingStoresList,
+} from 'app/components';
 import { ModalContext } from 'app/components/commons/Modal/context';
-import { MapsIframeModal } from 'app/components/MapsIframeModal';
 import { getShoppingStores } from 'app/services/resources';
 import { environment } from 'environment';
 import isDeepEqual from 'fast-deep-equal/react';

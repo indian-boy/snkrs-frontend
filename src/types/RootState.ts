@@ -1,3 +1,4 @@
+import { NewsSliceState } from 'app/components/NewsSlider/slice/types';
 import { ThemeState } from 'styles/themes/slice/types';
 
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
@@ -8,5 +9,6 @@ import { ThemeState } from 'styles/themes/slice/types';
 */
 export interface RootState {
   theme?: ThemeState;
+  newsSlice?: NewsSliceState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

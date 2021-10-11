@@ -6,7 +6,7 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import { Footer, NewsLetter } from 'app/components';
+import { Footer, NewsLetter, NewsSlider } from 'app/components';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
@@ -15,9 +15,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { GlobalStyles } from 'styles/global-styles';
 import { ShoppingStore } from 'types';
+import { Header, TopHeader } from './components';
 import { ModalContext } from './components/commons/Modal/context';
-import { Header } from './components/Header';
-import { TopHeader } from './components/TopHeader';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 
@@ -50,6 +49,7 @@ export function App() {
           <Wrapper>
             <TopHeader />
             <Header />
+            <NewsSlider />
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route component={NotFoundPage} />
