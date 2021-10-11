@@ -2,7 +2,6 @@
   "name": "nike",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://erik-henrique.github.io/snkrs-frontend",
   "resolutions": {
     "babel-loader": "8.1.0"
   },
@@ -31,7 +30,6 @@
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-react-hooks": "4.2.0",
     "fontfaceobserver": "2.1.0",
-    "gh-pages": "3.2.3",
     "husky": "7.0.0",
     "i18next": "21.2.4",
     "i18next-browser-languagedetector": "6.1.2",
@@ -88,9 +86,7 @@
     "build-storybook": "build-storybook -s public",
     "cy:open": "cypress open",
     "cy:run": "cypress run --headed",
-    "test:e2e": "start-server-and-test start http://localhost:3000 cy:run",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test:e2e": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "browserslist": {
     "production": [
