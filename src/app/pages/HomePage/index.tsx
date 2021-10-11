@@ -99,7 +99,7 @@ export function HomePage(props: Props) {
       return;
     }
 
-    const data = await searchShoppingStores(
+    const data = await searchNearestShoppingStores(
       searchTermState,
       filterOptionSelectedState,
     );
@@ -113,7 +113,7 @@ export function HomePage(props: Props) {
         return;
       }
 
-      const data = await searchShoppingStores(
+      const data = await searchNearestShoppingStores(
         searchTermState,
         filterOptionSelectedStateRef.current,
       );
@@ -300,7 +300,7 @@ const mapShoppingStoresWithDistanceApplyingSortingOption = (
     );
 };
 
-const searchShoppingStores = async (
+const searchNearestShoppingStores = async (
   searchTermState: string,
   filterOptionSelectedState: Option,
 ) => {
