@@ -244,6 +244,10 @@ const sortBySelectedOption = (
   next: ShoppingStore,
   filterOptionSelectedState: Option,
 ) => {
+  if (!prev.distance || !next.distance) {
+    return 1;
+  }
+
   if (filterOptionSelectedState.key === ShoppingStoreSortOptions.Asc) {
     return prev.distance > next.distance ? 1 : -1;
   }

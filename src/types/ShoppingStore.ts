@@ -6,5 +6,5 @@ export interface ShoppingStore {
   address: Address;
   availability: number;
   serviceHours: string;
-  distance: number;
+  distance?: number;
 }
