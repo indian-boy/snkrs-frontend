@@ -91,7 +91,8 @@ const Message = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  gap: 0.5rem;
+  column-gap: 0.5rem;
+  flex-wrap: wrap;
 
   ${media.medium`
     gap: 1.5rem;

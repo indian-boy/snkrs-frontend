@@ -63,6 +63,7 @@ export const NewsSlider = memo((props: Props) => {
             {sliceState.selected && <Image></Image>}
             <Message>
               {sliceState.selected.title}
+
               <Link to={sliceState.selected.link.url}>
                 {sliceState.selected.link.label}
               </Link>
