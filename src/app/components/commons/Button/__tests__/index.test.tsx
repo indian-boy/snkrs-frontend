@@ -17,7 +17,7 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
-const renderWithProviders = (
+const renderComponentWithProviders = (
   props: Parameters<typeof Button>[number] & CommonUsedAttributes,
   store: Store,
 ) =>
@@ -35,7 +35,7 @@ describe('<Button  />', () => {
   });
 
   it('should match snapshot', () => {
-    const { getByTestId, container } = renderWithProviders(
+    const { getByTestId, container } = renderComponentWithProviders(
       {
         'data-testid': 'buttonID',
         label: 'Label',
@@ -50,7 +50,7 @@ describe('<Button  />', () => {
   });
 
   it('should match label inside the button', () => {
-    const { getByTestId } = renderWithProviders(
+    const { getByTestId } = renderComponentWithProviders(
       {
         'data-testid': 'buttonID',
         label: 'Label',
@@ -65,7 +65,7 @@ describe('<Button  />', () => {
   it('should trigger passed onClick function', async () => {
     const onClick = jest.fn();
 
-    const button = renderWithProviders(
+    const button = renderComponentWithProviders(
       {
         'data-testid': 'buttonID',
         label: 'Label',

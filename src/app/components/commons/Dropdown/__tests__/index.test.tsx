@@ -10,7 +10,7 @@ const defaultOptions = [
   { key: 2, title: 'Option #2' },
 ];
 
-const WithParentRenderingProviders = (
+const WithParentAndProviders = (
   props: Partial<DropdownProps> & CommonUsedAttributes,
 ) => {
   const { label, options, optionSelectedState } = props;
@@ -38,8 +38,8 @@ describe('<Dropdown />', () => {
   });
 
   it('should match snapshot', () => {
-    const DropdownWrapped = () =>
-      WithParentRenderingProviders({
+    const DropdownMocked = () =>
+      WithParentAndProviders({
         'data-testid': 'dropdownID',
         label: 'Dropdown',
         options: defaultOptions,
@@ -48,7 +48,7 @@ describe('<Dropdown />', () => {
 
     const { getByTestId, container } = render(
       <Provider store={store}>
-        <DropdownWrapped></DropdownWrapped>
+        <DropdownMocked></DropdownMocked>
       </Provider>,
     );
 
@@ -59,8 +59,8 @@ describe('<Dropdown />', () => {
   });
 
   it('should display first selected option by default', () => {
-    const DropdownWrapped = () =>
-      WithParentRenderingProviders({
+    const DropdownMocked = () =>
+      WithParentAndProviders({
         'data-testid': 'dropdownID',
         label: 'Dropdown',
         options: defaultOptions,
@@ -69,7 +69,7 @@ describe('<Dropdown />', () => {
 
     const { getByText } = render(
       <Provider store={store}>
-        <DropdownWrapped></DropdownWrapped>
+        <DropdownMocked></DropdownMocked>
       </Provider>,
     );
 
@@ -82,8 +82,8 @@ describe('<Dropdown />', () => {
   });
 
   it('should open and close dropdown', async () => {
-    const DropdownWrapped = () =>
-      WithParentRenderingProviders({
+    const DropdownMocked = () =>
+      WithParentAndProviders({
         'data-testid': 'dropdownID',
         label: 'Dropdown',
         options: defaultOptions,
@@ -92,7 +92,7 @@ describe('<Dropdown />', () => {
 
     const { getByText, getByRole } = render(
       <Provider store={store}>
-        <DropdownWrapped></DropdownWrapped>
+        <DropdownMocked></DropdownMocked>
       </Provider>,
     );
 
@@ -111,8 +111,8 @@ describe('<Dropdown />', () => {
   });
 
   it('should update option selected state on clicking on input', async () => {
-    const DropdownWrapped = () =>
-      WithParentRenderingProviders({
+    const DropdownMocked = () =>
+      WithParentAndProviders({
         'data-testid': 'dropdownID',
         label: 'Dropdown',
         options: defaultOptions,
@@ -121,7 +121,7 @@ describe('<Dropdown />', () => {
 
     const { rerender, getByLabelText, getByText } = render(
       <Provider store={store}>
-        <DropdownWrapped />
+        <DropdownMocked />
       </Provider>,
     );
 
@@ -130,7 +130,7 @@ describe('<Dropdown />', () => {
 
     rerender(
       <Provider store={store}>
-        <DropdownWrapped />
+        <DropdownMocked />
       </Provider>,
     );
 
@@ -143,8 +143,8 @@ describe('<Dropdown />', () => {
   });
 
   it('should display the label when not passed option selected initially', () => {
-    const DropdownWrapped = () =>
-      WithParentRenderingProviders({
+    const DropdownMocked = () =>
+      WithParentAndProviders({
         'data-testid': 'dropdownID',
         label: 'Dropdown',
         options: defaultOptions,
@@ -152,7 +152,7 @@ describe('<Dropdown />', () => {
 
     const { getByText } = render(
       <Provider store={store}>
-        <DropdownWrapped />
+        <DropdownMocked />
       </Provider>,
     );
 

@@ -6,7 +6,7 @@ import { configureAppStore } from 'store/configureStore';
 import { CommonUsedAttributes } from 'types';
 import { NewsSlider } from '..';
 
-const renderWithProviders = (
+const renderComponentWithProviders = (
   props: Parameters<typeof NewsSlider>[number] & CommonUsedAttributes,
   store: Store,
 ) =>
@@ -24,7 +24,7 @@ describe('<NewsSlider  />', () => {
   });
 
   it('should match snapshot', () => {
-    const { getByTestId, container } = renderWithProviders(
+    const { getByTestId, container } = renderComponentWithProviders(
       {
         'data-testid': 'newsSliderID',
       },

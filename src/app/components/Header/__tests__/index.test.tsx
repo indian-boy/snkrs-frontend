@@ -17,7 +17,7 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
-const renderWithProviders = (
+const renderComponentWithProviders = (
   props: Parameters<typeof Header>[number] & CommonUsedAttributes,
   store: Store,
 ) =>
@@ -35,7 +35,7 @@ describe('<Header  />', () => {
   });
 
   it('should match snapshot', () => {
-    const { getByTestId, container } = renderWithProviders(
+    const { getByTestId, container } = renderComponentWithProviders(
       {
         'data-testid': 'headerID',
       },

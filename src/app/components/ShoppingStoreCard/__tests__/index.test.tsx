@@ -30,7 +30,7 @@ const shoppingStoreMock = {
   distance: 1000,
 };
 
-const renderWithProviders = (
+const renderComponentWithProviders = (
   props: Parameters<typeof ShoppingStoreCard>[number] & CommonUsedAttributes,
   store: Store,
 ) =>
@@ -48,7 +48,7 @@ describe('<ShoppingStoreCard  />', () => {
   });
 
   it('should match snapshot', () => {
-    const { getByTestId, container } = renderWithProviders(
+    const { getByTestId, container } = renderComponentWithProviders(
       {
         'data-testid': 'shoppingStoreCardID',
         ...shoppingStoreMock,

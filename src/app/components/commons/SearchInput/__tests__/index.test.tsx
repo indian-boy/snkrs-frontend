@@ -17,7 +17,7 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
-const renderWithProviders = (
+const renderComponentWithProviders = (
   props: Parameters<typeof SearchInput>[number] & CommonUsedAttributes,
   store: Store,
 ) =>
@@ -35,7 +35,7 @@ describe('<SearchInput />', () => {
   });
 
   it('should match snapshot', () => {
-    const { getByTestId, container } = renderWithProviders(
+    const { getByTestId, container } = renderComponentWithProviders(
       {
         'data-testid': 'searchID',
         type: 'search',
@@ -51,7 +51,7 @@ describe('<SearchInput />', () => {
   });
 
   it('should clear search', () => {
-    const { getByTestId, getByRole } = renderWithProviders(
+    const { getByTestId, getByRole } = renderComponentWithProviders(
       {
         'data-testid': 'searchID',
         type: 'search',
@@ -76,7 +76,7 @@ describe('<SearchInput />', () => {
   });
 
   it('should hide input', () => {
-    const { queryByTestId } = renderWithProviders(
+    const { queryByTestId } = renderComponentWithProviders(
       {
         'data-testid': 'searchID',
         type: 'search',

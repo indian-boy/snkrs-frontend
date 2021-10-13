@@ -31,7 +31,7 @@ const mockData = {
   ],
 };
 
-const renderWithProviders = (
+const renderComponentWithProviders = (
   props: Parameters<typeof LinksDropdown>[number] & CommonUsedAttributes,
   store: Store,
 ) => {
@@ -50,7 +50,7 @@ describe('<LinksDropdown  />', () => {
   });
 
   it('should match snapshot', () => {
-    const { getByTestId, container } = renderWithProviders(
+    const { getByTestId, container } = renderComponentWithProviders(
       {
         'data-testid': 'linksDropdownID',
         ...mockData,
