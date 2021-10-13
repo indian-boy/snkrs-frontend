@@ -2,7 +2,6 @@ import React, { memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import ThemeProviderWrapper from 'styles/themes/themeProvider';
-import { useCheckIsMediumScreen } from 'utils/helpers';
 import { newsSliceActions, useNewsSliceSlice } from './slice';
 import { selectNewsSlice } from './slice/selectors';
 import {
@@ -11,6 +10,7 @@ import {
   ArrowRightCustomized,
   Content,
   Link,
+  Message,
   Wrapper,
 } from './styles';
 
@@ -22,7 +22,6 @@ export const NewsSlider = memo((props: Props) => {
   const [loopOverSlidesState, setLoopOverSlides] = useState<boolean>(true);
   const sliceState = useSelector(selectNewsSlice);
   const dispatch = useDispatch();
-  const isMediumScreen = useCheckIsMediumScreen();
 
   const Image: React.FunctionComponent<
     React.SVGProps<SVGSVGElement> & {
@@ -55,25 +54,25 @@ export const NewsSlider = memo((props: Props) => {
   return (
     <BrowserRouter>
       <ThemeProviderWrapper>
-        {isMediumScreen && (
-          <Wrapper {...props}>
-            <ArrowButtonWrapper onClick={() => onGoToPrevious()}>
-              <ArrowLeftIconCustomized />
-            </ArrowButtonWrapper>
+        <Wrapper {...props}>
+          <ArrowButtonWrapper onClick={() => onGoToPrevious()}>
+            <ArrowLeftIconCustomized />
+          </ArrowButtonWrapper>
 
-            <Content key={sliceState.selected.id}>
-              {sliceState.selected && <Image></Image>}
+          <Content key={sliceState.selected.id}>
+            {sliceState.selected && <Image></Image>}
+            <Message>
               {sliceState.selected.title}
               <Link to={sliceState.selected.link.url}>
                 {sliceState.selected.link.label}
               </Link>
-            </Content>
+            </Message>
+          </Content>
 
-            <ArrowButtonWrapper onClick={() => onGoToNext()}>
-              <ArrowRightCustomized />
-            </ArrowButtonWrapper>
-          </Wrapper>
-        )}
+          <ArrowButtonWrapper onClick={() => onGoToNext()}>
+            <ArrowRightCustomized />
+          </ArrowButtonWrapper>
+        </Wrapper>
       </ThemeProviderWrapper>
     </BrowserRouter>
   );

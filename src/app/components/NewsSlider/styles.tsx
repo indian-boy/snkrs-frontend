@@ -5,15 +5,11 @@ import styled, { keyframes } from 'styled-components/macro';
 import { media } from 'styles/media';
 
 const Wrapper = styled.div`
-  display: none;
+  display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: ${props => props.theme.palette.secondary.s200};
   padding: 0.5rem 0;
-
-  ${media.medium`
-    display: flex;
-  `}
 `;
 
 const CustomizeArrowLeftIconSvg = (component: typeof ArrowLeftIcon) => styled(
@@ -40,6 +36,7 @@ const FadeIn = keyframes`
 `;
 
 const Content = styled.div`
+  flex-direction: column;
   font-size: 0.875rem;
   line-height: 1.5rem;
   color: ${props => props.theme.palette.primary.p700};
@@ -47,7 +44,13 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  width: 40rem;
+  max-width: 40rem;
+  text-align: center;
+
+  ${media.medium`
+    flex-direction: row;
+    gap: 1.5rem;
+  `}
 
   animation: ${FadeIn} 0.6s ease-in-out;
 `;
@@ -83,6 +86,18 @@ const ArrowButtonWrapper = styled.button`
   border: none;
 `;
 
+const Message = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+
+  ${media.medium`
+    gap: 1.5rem;
+  `}
+`;
+
 export {
   Wrapper,
   ArrowLeftIconCustomized,
@@ -91,4 +106,5 @@ export {
   Link,
   Image,
   ArrowButtonWrapper,
+  Message,
 };

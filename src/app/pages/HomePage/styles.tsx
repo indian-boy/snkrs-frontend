@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   justify-content: center;
 
   ${media.medium`
-    padding: 2rem 2.5rem;
+    padding: 2.5rem;
   `}
 `;
 
