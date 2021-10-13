@@ -6,10 +6,14 @@ import { media } from 'styles/media';
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: ${props => props.theme.palette.secondary.s200};
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
+
+  ${media.medium`
+    padding: 0.5rem 2.5rem;
+  `}
 `;
 
 const CustomizeArrowLeftIconSvg = (component: typeof ArrowLeftIcon) => styled(
