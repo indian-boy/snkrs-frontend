@@ -1,7 +1,7 @@
 import { environment } from 'environment';
 import { rest } from 'msw';
 import { ShoppingStore } from 'types';
-import { ShoppingStoresMockData } from './mockData';
+import { ShoppingStoresMockData } from './data';
 
 export const shoppingStoresHandler = [
   rest.get(`${environment.backendURL}/shopping-stores`, (req, res, ctx) => {

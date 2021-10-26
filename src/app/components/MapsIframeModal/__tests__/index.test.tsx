@@ -1,6 +1,6 @@
 import { Store } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
-import { ModalContext } from 'app/components/commons/Modal/context';
+import { ModalContext } from 'app/components/Shared/Modal/context';
 import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import { configureAppStore } from 'store/configureStore';

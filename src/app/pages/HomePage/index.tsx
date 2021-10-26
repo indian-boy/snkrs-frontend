@@ -4,7 +4,7 @@ import {
   Option,
   ShoppingStoresList,
 } from 'app/components';
-import { ModalContext } from 'app/components/commons/Modal/context';
+import { ModalContext } from 'app/components/Shared/Modal/context';
 import { getShoppingStores } from 'app/services/resources';
 import { environment } from 'environment';
 import isDeepEqual from 'fast-deep-equal/react';
@@ -130,7 +130,7 @@ export function HomePage(props: Props) {
     getNearestShoppingStoresCallback();
   }, [getNearestShoppingStoresCallback]);
 
-  const showShoppingStoreOnMapsModal = useCallback(() => {
+  const showShoppingStoreOnMapsModalCallback = useCallback(() => {
     if (shoppingStoreSelectedState) {
       if (!isMediumScreen) {
         modalContext.current.setModalDataIntoContext(
@@ -142,8 +142,8 @@ export function HomePage(props: Props) {
   }, [shoppingStoreSelectedState, modalContext, isMediumScreen]);
 
   useEffect(() => {
-    showShoppingStoreOnMapsModal();
-  }, [showShoppingStoreOnMapsModal]);
+    showShoppingStoreOnMapsModalCallback();
+  }, [showShoppingStoreOnMapsModalCallback]);
 
   const sortShoppingStoresCallback = useCallback(() => {
     if (!filterOptionSelectedState) {

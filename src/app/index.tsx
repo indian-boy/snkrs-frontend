@@ -16,7 +16,7 @@ import styled from 'styled-components/macro';
 import { GlobalStyles } from 'styles/global-styles';
 import { ShoppingStore } from 'types';
 import { Header, TopHeader } from './components';
-import { ModalContext } from './components/commons/Modal/context';
+import { ModalContext } from './components/Shared/Modal/context';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 

@@ -2,8 +2,8 @@ import { environment } from 'environment';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ShoppingStore } from 'types';
-import { Modal, SearchInput } from '../commons';
-import { ModalContext } from '../commons/Modal/context';
+import { Modal, SearchInput } from '../Shared';
+import { ModalContext } from '../Shared/Modal/context';
 import { messages } from './messages';
 import { Iframe, Wrapper } from './styles';
 

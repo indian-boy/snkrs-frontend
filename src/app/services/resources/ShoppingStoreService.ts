@@ -1,5 +1,5 @@
 import api from 'app/services/resources/api';
-import { ShoppingStoresMockData } from 'mocks/shoppingStores/mockData';
+import { ShoppingStoresMockData } from 'mocks/shoppingStores/data';
 import { ShoppingStore } from 'types';
 
 const getShoppingStores = async ({

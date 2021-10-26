@@ -4,7 +4,7 @@ import { ReactComponent as NikeLogo } from 'assets/svgs/logos/nike.svg';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { media } from 'styles/media';
-import { SearchInput } from '..';
+import { SearchInput } from '../Shared';
 
 const Wrapper = styled.div`
   display: flex;
